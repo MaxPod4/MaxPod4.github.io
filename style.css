@@ -1,64 +1,63 @@
-/* 🌄 Windows XP Desktop Background */
-body {
+/* ========== Global reset / page frame ========== */
+html, body {
   margin: 0;
   padding: 0;
-  height: 100vh;
-
-  /* Use your wallpaper */
-  background-image: url('images/WindowsXP_Desktop.jpg');
-  background-size: contain;        /* fit entire image inside screen */
-  background-position: center;     /* keep centered */
-  background-repeat: no-repeat;    /* no tiling */
-  background-attachment: fixed;    /* stays still when scrolling */
-
-  /* fills behind any letterboxing areas */
-  background-color: #1a4ba1;       /* XP sky blue tone */
+  height: 100%;
+  overflow: hidden;               /* no scrollbars; desktop fills viewport */
+  background-color: #0d2c6e;      /* gutter color outside the wallpaper */
 }
 
-/* Ensure full-page layout without scrollbars */
-html, body {
-  height: 100%;
+/* ========== Center the desktop on the page ========== */
+.desktop {
+  display: grid;
+  place-items: center;            /* centers the .desktop-area */
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
 }
 
-/* Desktop container for clickable icons */
-.desktop {
+/* ========== The actual "screen" with the wallpaper ========== */
+/* Set this aspect ratio to match your image. For 4K/1080p, 16:9 is correct. */
+.desktop-area {
   position: relative;
-  width: 100%;
-  height: 100vh;
+  width: min(100vw, calc(100vh * (16 / 9)));
+  aspect-ratio: 16 / 9;
+
+  /* Put the wallpaper here (NOT on body) */
+  background: url('images/WindowsXP_Desktop.jpg') center / cover no-repeat;
+  /* Because .desktop-area has the same aspect ratio as your wallpaper,
+     'cover' will fill the area perfectly without cropping the visible area. */
 }
 
-/* Optional: if you ever use an <img> background element */
-.background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-/* Desktop “folder” icons */
+/* ========== Desktop icons ========== */
 .icon {
-  position: absolute;
+  position: absolute;             /* position relative to .desktop-area */
   width: 80px;
   text-align: center;
   cursor: pointer;
+  /* Use percentage top/left inline on each icon so positions scale with the image */
 }
 
 .icon img {
   width: 48px;
   height: 48px;
+  display: block;
+  margin: 0 auto;
 }
 
 .icon span {
   display: block;
+  margin-top: 4px;
   font-family: Tahoma, sans-serif;
   font-size: 12px;
   color: white;
   text-shadow: 1px 1px 2px black;
+  line-height: 1.2;
 }
-/* 💠 When an icon is clicked or selected */
+
+/* Selected (click highlight) */
 .icon.selected span {
-  background-color: rgba(0, 120, 215, 0.6); /* XP-style highlight blue */
+  background-color: rgba(0, 120, 215, 0.6); /* XP-style blue */
   border-radius: 3px;
   padding: 2px 4px;
 }
