@@ -1,15 +1,18 @@
+// 🖱️ Handle double-click behavior on desktop icons
 document.querySelectorAll('.icon').forEach(icon => {
   let clickTimer = null;
 
   icon.addEventListener('click', () => {
-    if (clickTimer === null) {
-      clickTimer = setTimeout(() => {
-        clickTimer = null;
-      }, 250);
-    } else {
-      clearTimeout(clickTimer);
-      clickTimer = null;
-      const link = icon.getAttribute('data-link');
+    // Remove 'selected' from all icons
+    document.querySelectorAll('.icon').forEach(i => i.classList.remove('selected'));
+    // Highlight this icon
+    icon.classList.add('selected');
+  });
+
+  icon.addEventListener('dblclick', () => {
+    const link = icon.dataset.link;
+    if (link) {
+      // Simulate "opening" the folder — navigate to that page
       window.location.href = link;
     }
   });
