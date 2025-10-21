@@ -2,62 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Windows XP Themed Site</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Centers the desktop area and prevents page scroll (CSS handles background color outside the image) -->
   <div class="desktop">
+    <!-- This area keeps a 16:9 aspect ratio (matches your 4K/1080p wallpaper).
+         Your CSS should set the wallpaper on this element:
+         .desktop-area { background: url('images/WindowsXP_Desktop.jpg') center/cover no-repeat; } -->
+    <div class="desktop-area">
 
-    <!-- Background image handled in CSS -->
-    
-    <!-- 💻 Desktop Icons -->
-    <div class="icon" style="top: 60px; left: 50px;" data-link="about.html">
-      <img src="images/recycle-bin-icon.png" alt="Recycle Bin Icon"> <!-- Recycle Bin -->
-      <span>Recycle Bin</span>
+      <!-- ♻ Recycle Bin -->
+      <div class="icon" style="top: 6%; left: 6%;" data-link="about.html">
+        <img src="images/recycle-bin-icon.png" alt="Recycle Bin Icon">
+        <span>Recycle Bin</span>
+      </div>
+
+      <!-- 👤 User -->
+      <div class="icon" style="top: 16%; left: 6%;" data-link="projects.html">
+        <img src="images/user-icon.png" alt="User Icon">
+        <span>User</span>
+      </div>
+
+      <!-- 🖼 JPG -->
+      <div class="icon" style="top: 26%; left: 6%;" data-link="gallery.html">
+        <img src="images/jpg-icon.png" alt="JPG Icon">
+        <span>jpg</span>
+      </div>
+
+      <!-- ✨ Fated Finds -->
+      <div class="icon" style="top: 36%; left: 6%;" data-link="blog.html">
+        <img src="images/fatedfinds-icon.png" alt="Fated Finds Icon">
+        <span>Fated Finds</span>
+      </div>
+
+      <!-- 📻 Fine Tuned Broadcast -->
+      <div class="icon" style="top: 46%; left: 6%;" data-link="contact.html">
+        <img src="images/finetuned-broadcast-icon.png" alt="Fine Tuned Broadcast Icon">
+        <span>Fine Tuned Broadcast</span>
+      </div>
+
+      <!-- 🤝 Get Involved -->
+      <div class="icon" style="top: 56%; left: 6%;" data-link="resume.html">
+        <img src="images/get-involved-icon.png" alt="Get Involved Icon">
+        <span>Get Involved</span>
+      </div>
+
+      <!-- 📫 MaxyMail -->
+      <div class="icon" style="top: 66%; left: 6%;" data-link="store.html">
+        <img src="images/maxymail-icon.png" alt="Maxy Mail Icon">
+        <span>MaxyMail</span>
+      </div>
+
+      <!-- 🧑‍💼 Hire -->
+      <div class="icon" style="top: 76%; left: 6%;" data-link="credits.html">
+        <img src="images/hire-icon.png" alt="Hire Icon">
+        <span>Hire</span>
+      </div>
+
+      <!-- 🎮 Gaming -->
+      <div class="icon" style="top: 86%; left: 6%;" data-link="settings.html">
+        <img src="images/gaming-icon.png" alt="Gaming Icon">
+        <span>Gaming</span>
+      </div>
+
     </div>
-
-    <div class="icon" style="top: 160px; left: 50px;" data-link="projects.html">
-      <img src="images/user-icon.png" alt="User Icon"> <!-- User -->
-      <span>User</span>
-    </div>
-
-    <div class="icon" style="top: 260px; left: 50px;" data-link="gallery.html">
-      <img src="images/jpg-icon.png" alt="JPG Icon"> <!-- jpg -->
-      <span>jpg</span>
-    </div>
-
-    <div class="icon" style="top: 360px; left: 50px;" data-link="blog.html">
-      <img src="images/fatedfinds-icon.png" alt="Fated Finds Icon"> <!-- FatedFinds -->
-      <span>Fated Finds</span>
-    </div>
-
-    <div class="icon" style="top: 460px; left: 50px;" data-link="contact.html">
-      <img src="images/finetuned-broadcast-icon.png" alt="Fine Tuned Broadcast Icon"> <!-- FineTuned -->
-      <span>Fine Tuned Broadcast</span>
-    </div>
-
-    <div class="icon" style="top: 560px; left: 50px;" data-link="resume.html">
-      <img src="images/get-involved-icon.png" alt="Get Involved Icon"> <!-- Get Involved -->
-      <span>Get Involved</span>
-    </div>
-
-    <div class="icon" style="top: 660px; left: 50px;" data-link="store.html">
-      <img src="images/maxymail-icon.png" alt="Maxy Mail Icon"> <!-- MaxyMail -->
-      <span>MaxyMail</span>
-    </div>
-
-    <div class="icon" style="top: 760px; left: 50px;" data-link="credits.html">
-      <img src="images/hire-icon.png" alt="Hire Icon"> <!-- Hire -->
-      <span>Hire</span>
-    </div>
-
-    <div class="icon" style="top: 860px; left: 50px;" data-link="settings.html">
-      <img src="images/gaming-icon.png" alt="Gaming Icon"> <!-- Gaming -->
-      <span>Gaming</span>
-    </div>
-
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
