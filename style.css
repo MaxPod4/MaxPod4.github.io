@@ -1,13 +1,13 @@
-/* 🌄 Set Windows XP background image (no cropping) */
+/* 🌄 Set Windows XP background image (full cover, immersive) */
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
   background-image: url('images/WindowsXP_Desktop.jpg'); /* make sure file name + extension match */
-  background-size: contain;     /* show full image without cropping */
-  background-position: center;  /* center the image on screen */
-  background-repeat: no-repeat; /* don’t tile the image */
-  background-color: black;      /* fill edges if aspect ratio doesn’t match */
+  background-size: cover;        /* fill the screen fully */
+  background-position: center;   /* center the image */
+  background-repeat: no-repeat;  /* don’t tile the image */
+  background-attachment: fixed;  /* keeps it still while scrolling */
 }
 
 /* 🖥️ General Layout */
@@ -44,4 +44,3 @@ html, body {
   color: white;
   text-shadow: 1px 1px 2px black;
 }
-
