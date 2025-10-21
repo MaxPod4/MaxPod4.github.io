@@ -1,30 +1,42 @@
-/* 🌄 Set Windows XP background image (full cover, immersive) */
+/* 🌄 Windows XP Desktop Background */
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-image: url('images/WindowsXP_Desktop.jpg'); /* make sure file name + extension match */
-  background-size: cover;        /* fill the screen fully */
-  background-position: center;   /* center the image */
-  background-repeat: no-repeat;  /* don’t tile the image */
-  background-attachment: fixed;  /* keeps it still while scrolling */
+
+  /* Use your wallpaper */
+  background-image: url('images/WindowsXP_Desktop.jpg');
+  background-size: contain;        /* fit entire image inside screen */
+  background-position: center;     /* keep centered */
+  background-repeat: no-repeat;    /* no tiling */
+  background-attachment: fixed;    /* stays still when scrolling */
+
+  /* fills behind any letterboxing areas */
+  background-color: #1a4ba1;       /* XP sky blue tone */
 }
 
-/* 🖥️ General Layout */
+/* Ensure full-page layout without scrollbars */
 html, body {
-  margin: 0;
-  padding: 0;
   height: 100%;
-  overflow: hidden; /* prevents scrolling */
+  overflow: hidden;
 }
 
+/* Desktop container for clickable icons */
 .desktop {
   position: relative;
   width: 100%;
   height: 100vh;
 }
 
-/* 🗂️ Folder Icon Layout */
+/* Optional: if you ever use an <img> background element */
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Desktop “folder” icons */
 .icon {
   position: absolute;
   width: 80px;
