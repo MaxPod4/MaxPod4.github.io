@@ -56,3 +56,9 @@ html, body {
   color: white;
   text-shadow: 1px 1px 2px black;
 }
+/* 💠 When an icon is clicked or selected */
+.icon.selected span {
+  background-color: rgba(0, 120, 215, 0.6); /* XP-style highlight blue */
+  border-radius: 3px;
+  padding: 2px 4px;
+}
