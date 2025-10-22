@@ -1,14 +1,12 @@
-// Handle icon selection + open (single click highlight, double click opens)
+// Single-click highlight + double-click open
 const icons = document.querySelectorAll('.icon');
 
 icons.forEach(icon => {
-  // Click selects
   icon.addEventListener('click', () => {
     icons.forEach(i => i.classList.remove('selected'));
     icon.classList.add('selected');
   });
 
-  // Double click opens link
   icon.addEventListener('dblclick', () => {
     const link = icon.dataset.link;
     if (link) {
@@ -17,7 +15,7 @@ icons.forEach(icon => {
   });
 });
 
-// Click empty desktop = clear selection
+// Click empty space clears selection
 document.addEventListener('click', (e) => {
   if (!e.target.closest('.icon')) {
     icons.forEach(i => i.classList.remove('selected'));
