@@ -7,11 +7,8 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Centers the desktop area and prevents page scroll (CSS handles background color outside the image) -->
   <div class="desktop">
-    <!-- This area keeps a 16:9 aspect ratio (matches your 4K/1080p wallpaper).
-         Your CSS should set the wallpaper on this element:
-         .desktop-area { background: url('images/WindowsXP_Desktop.jpg') center/cover no-repeat; } -->
+    <!-- 16:9 “screen” that shows your wallpaper (set in CSS on .desktop-area) -->
     <div class="desktop-area">
 
       <!-- ♻ Recycle Bin -->
@@ -69,6 +66,39 @@
       </div>
 
     </div>
+
+    <!-- HTML/CSS Taskbar pinned to bottom -->
+    <div class="taskbar">
+      <button class="start-button" id="startBtn" aria-haspopup="true" aria-controls="startMenu" aria-expanded="false">
+        <span class="start-orb" aria-hidden="true">🟢</span>
+        <span class="start-text">Start</span>
+      </button>
+
+      <div class="taskbar-items" aria-label="Taskbar items">
+        <div class="task-btn" title="My Documents">
+          <span class="task-icon" aria-hidden="true">🗂️</span>
+          <span class="task-title">My Documents</span>
+        </div>
+      </div>
+
+      <div class="system-tray" aria-label="System tray">
+        <span class="tray-icon" title="Volume" aria-hidden="true">🔊</span>
+        <span class="tray-icon" title="Network" aria-hidden="true">📶</span>
+        <span class="clock" id="clock" aria-label="Clock">12:00</span>
+      </div>
+    </div>
+
+    <!-- Start Menu -->
+    <nav class="start-menu" id="startMenu" hidden aria-label="Start menu">
+      <div class="start-menu-header">MaximPod</div>
+      <ul class="start-menu-list">
+        <li data-link="user.html">User</li>
+        <li data-link="fatedfinds.html">Fated Finds</li>
+        <li data-link="maxymail.html">MaxyMail</li>
+        <li data-link="gaming.html">Gaming</li>
+        <li data-link="settings.html">Settings</li>
+      </ul>
+    </nav>
   </div>
 
   <script src="script.js"></script>
