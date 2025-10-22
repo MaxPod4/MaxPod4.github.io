@@ -1,14 +1,21 @@
+/* ========== Theme Vars ========== */
+:root {
+  --taskbar-h: 56px;
+  --gutter-color: #0d2c6e;      /* color outside the wallpaper */
+}
+
 /* ========== Global reset / page frame ========== */
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   overflow: hidden;               /* no scrollbars; desktop fills viewport */
-  background-color: #0d2c6e;      /* gutter color outside the wallpaper */
+  background-color: var(--gutter-color);
 }
 
 /* ========== Center the desktop on the page ========== */
 .desktop {
+  position: relative;
   display: grid;
   place-items: center;            /* centers the .desktop-area */
   width: 100vw;
@@ -17,16 +24,16 @@ html, body {
 }
 
 /* ========== The actual "screen" with the wallpaper ========== */
-/* Set this aspect ratio to match your image. For 4K/1080p, 16:9 is correct. */
+/* Matches your 4K/1080p wallpaper ratio (16:9) and leaves room for the taskbar */
 .desktop-area {
   position: relative;
-  width: min(100vw, calc(100vh * (16 / 9)));
+  width: min(100vw, calc((100vh - var(--taskbar-h)) * (16 / 9)));
   aspect-ratio: 16 / 9;
 
   /* Put the wallpaper here (NOT on body) */
   background: url('images/WindowsXP_Desktop.jpg') center / cover no-repeat;
-  /* Because .desktop-area has the same aspect ratio as your wallpaper,
-     'cover' will fill the area perfectly without cropping the visible area. */
+  border-radius: 6px; /* optional “monitor” feel */
+  overflow: hidden;
 }
 
 /* ========== Desktop icons ========== */
@@ -60,4 +67,115 @@ html, body {
   background-color: rgba(0, 120, 215, 0.6); /* XP-style blue */
   border-radius: 3px;
   padding: 2px 4px;
+}
+
+/* ========== XP-style Taskbar ========== */
+.taskbar {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: var(--taskbar-h);
+  padding: 4px 8px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(#1f4788, #133a77);
+  border-top: 2px solid rgba(255,255,255,0.25);
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.35) inset;
+  z-index: 5;
+}
+
+/* Start button */
+.start-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: calc(var(--taskbar-h) - 12px);
+  padding: 0 14px;
+  border: 1px solid #0a5c12;
+  border-radius: 8px;
+  background: linear-gradient(#2bb84a, #138b2d);
+  color: #fff;
+  font: 600 14px Tahoma, sans-serif;
+  cursor: pointer;
+}
+.start-button:active { transform: translateY(1px); }
+.start-orb { font-size: 16px; line-height: 1; }
+.start-text { text-shadow: 1px 1px 0 rgba(0,0,0,0.4); }
+
+/* Taskbar window buttons */
+.taskbar-items {
+  display: flex;
+  gap: 6px;
+  min-width: 0;
+}
+.task-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  min-width: 120px;
+  max-width: 280px;
+  background: linear-gradient(#2a5fad, #214e8f);
+  color: #fff;
+  border: 1px solid #143a71;
+  border-radius: 6px;
+  font: 12px Tahoma, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.task-icon { width: 16px; display: inline-block; text-align: center; }
+
+/* System tray */
+.system-tray {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font: 12px Tahoma, sans-serif;
+}
+.tray-icon { opacity: 0.95; }
+.clock { min-width: 54px; text-align: right; }
+
+/* ========== Start Menu ========== */
+.start-menu {
+  position: absolute;
+  left: 8px;
+  bottom: var(--taskbar-h); /* sits above taskbar */
+  width: 260px;
+  background: linear-gradient(#eaf2ff, #c9dafb);
+  border: 1px solid #2a5fad;
+  border-radius: 6px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+  overflow: hidden;
+  z-index: 10;
+}
+.start-menu-header {
+  background: linear-gradient(#2a5fad, #214e8f);
+  color: #fff;
+  padding: 10px 12px;
+  font: 700 13px Tahoma, sans-serif;
+}
+.start-menu-list { list-style: none; margin: 8px 0; padding: 0; }
+.start-menu-list li {
+  padding: 8px 12px;
+  font: 13px Tahoma, sans-serif;
+  color: #173a6a;
+  cursor: pointer;
+}
+.start-menu-list li:hover {
+  background: rgba(33,78,143,0.12);
+}
+
+/* ========== Responsive tweaks ========== */
+@media (max-width: 900px) {
+  :root { --taskbar-h: 50px; } /* smaller taskbar on mobile */
+  .desktop-area {
+    width: min(100vw, calc((100vh - var(--taskbar-h)) * (16 / 9)));
+    aspect-ratio: 16 / 9;
+  }
+  .icon { width: 64px; }
+  .icon img { width: 40px; height: 40px; }
+  .icon span { font-size: 11px; }
 }
