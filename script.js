@@ -10,7 +10,7 @@ icons.forEach(icon => {
   icon.addEventListener('dblclick', () => {
     const link = icon.dataset.link;
     if (link) {
-      window.location.href = link;
+      window.open(link, "_blank");
     }
   });
 });
