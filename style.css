@@ -1,34 +1,23 @@
-/* Global page frame */
+/* Full-page wallpaper */
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   overflow: hidden;
-  background-color: #0d2c6e; /* filler outside wallpaper */
+  background: url('images/WindowsXP_Desktop.jpg') center / cover no-repeat fixed;
+  background-color: #0d2c6e; /* fallback while image loads */
 }
 
-/* Container */
-.desktop {
-  position: relative;
-  display: grid;
-  place-items: center;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-/* Desktop area with wallpaper */
+/* Container for icons */
 .desktop-area {
   position: relative;
-  width: min(100vw, calc((100vh - 48px) * (16 / 9))); /* leave space for taskbar img */
-  aspect-ratio: 16 / 9;
-  background: url('images/WindowsXP_Desktop.jpg') center / cover no-repeat;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 /* Icons */
 .icon {
-  position: absolute;
+  position: absolute;   /* manual top/left via inline HTML */
   width: 80px;
   text-align: center;
   cursor: pointer;
@@ -48,16 +37,15 @@ html, body {
   font-size: 12px;
   color: white;
   text-shadow: 1px 1px 2px black;
-  line-height: 1.2;
 }
 
 .icon.selected span {
-  background-color: rgba(0, 120, 215, 0.6); /* highlight */
+  background-color: rgba(0, 120, 215, 0.6);
   border-radius: 3px;
   padding: 2px 4px;
 }
 
-/* Static Taskbar image at bottom */
+/* Taskbar image pinned to bottom */
 .taskbar-image {
   position: absolute;
   bottom: 0;
