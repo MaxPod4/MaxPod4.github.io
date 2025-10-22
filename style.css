@@ -51,11 +51,9 @@ html, body {
   bottom: 0;
   left: 0;
   width: 100%;
-  pointer-events: none; /* ✅ lets clicks go through the taskbar image */
 }
 .taskbar-image img {
   width: 100%;
   height: auto;
   display: block;
 }
-
