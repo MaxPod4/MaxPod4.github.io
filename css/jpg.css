@@ -1,0 +1,36 @@
+/* Black background */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: sans-serif;
+}
+
+/* Gallery container */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Each image takes full screen height */
+.photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* each photo fills viewport height */
+  width: 100%;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+/* Photos scale responsively */
+.photo img {
+  max-height: 90vh;
+  max-width: 90vw;
+  object-fit: contain;
+  border-radius: 6px; /* optional */
+}
