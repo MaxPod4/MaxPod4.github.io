@@ -63,8 +63,7 @@ html, body {
   display: block;
 }
 
-
-/* ================= XP Window Popup Styles ================= */
+/* ================= Authentic XP Window Styles ================= */
 .xp-window[hidden] { 
   display: none; 
 }
@@ -75,63 +74,71 @@ html, body {
   left: 15vw;
   width: 520px;
   max-width: 90vw;
-  background: #ece9d8;      /* XP beige */
-  border: 1px solid #3a6ea5;
-  box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+  background: #ECE9D8; /* XP beige */
+  border: 2px solid #0A246A; /* deep XP border */
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
   z-index: 999;
-  border-radius: 6px;
+  border-radius: 0; /* XP windows were square */
   overflow: hidden;
 }
 
+/* Title bar */
 .xp-titlebar {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 8px;
-  padding: 6px 8px;
-  background: linear-gradient(#3b78c2, #2a62aa);
+  padding: 3px 6px;
+  background: linear-gradient(to bottom, #3A6EA5, #2B579A); /* XP blue gradient */
   color: #fff;
   cursor: move;
   user-select: none;
+  border-bottom: 1px solid #0A246A;
 }
 
+/* Title text */
 .xp-title {
-  font: 700 13px Tahoma, sans-serif;
-  text-shadow: 0 1px 0 rgba(0,0,0,0.35);
-  padding-left: 4px;
+  font: bold 11px Tahoma, sans-serif;
+  text-shadow: 1px 1px 0 #000; /* subtle XP text shadow */
+  padding-left: 2px;
 }
 
+/* Control buttons (close, etc.) */
 .xp-controls {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
 }
 
 .xp-btn {
-  width: 22px;
-  height: 22px;
-  border: 1px solid rgba(0,0,0,0.35);
-  border-radius: 3px;
-  background: #e8e8e8;
-  font: 700 12px/20px Tahoma, sans-serif;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #404040;
+  font: bold 12px/16px Tahoma, sans-serif;
   text-align: center;
   cursor: pointer;
-}
-.xp-btn:hover { 
-  filter: brightness(0.95); 
-}
-.xp-close {
-  background: #e26d6d;
-  color: #fff;
-  border-color: #9b3a3a;
+  background: linear-gradient(to bottom, #fff, #cfcfcf);
+  box-shadow: inset 1px 1px #fff, inset -1px -1px #7d7d7d;
+  padding: 0;
 }
 
+.xp-btn:hover { 
+  background: linear-gradient(to bottom, #fefefe, #bdbdbd);
+}
+
+.xp-close {
+  background: linear-gradient(to bottom, #ff6666, #cc0000);
+  color: #fff;
+  border: 1px solid #7d0000;
+  box-shadow: inset 1px 1px #ffb3b3, inset -1px -1px #660000;
+}
+
+/* Content area */
 .xp-content {
-  padding: 14px;
-  color: #222;
-  font: 13px/1.5 Tahoma, sans-serif;
-  background: #fff;         /* classic XP white interior */
-  border-top: 1px solid #b7c7df;
+  padding: 10px;
+  color: #000;
+  font: 11px/1.4 Tahoma, sans-serif;
+  background: #fff;
+  border-top: 1px solid #7f9db9;
   max-height: 70vh;
   overflow: auto;
 }
