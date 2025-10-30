@@ -8,8 +8,8 @@
 </head>
 <body>
   <div class="desktop-area">
-    <!-- ♻ Recycle Bin -->
-    <div class="icon" style="top: 6%; left: 1%;" data-link="recycle.html">
+    <!-- ♻ Recycle Bin (popup) -->
+    <div class="icon" style="top: 6%; left: 1%;" data-window="recycleWindow">
       <img src="images/recycle-bin-icon.png" alt="Recycle Bin Icon">
       <span>Recycle Bin</span>
     </div>
@@ -63,11 +63,24 @@
     </div>
   </div>
 
-  <!-- Static start bar image (clean export, no padding) -->
+  <!-- ♻ XP-style popup window for Recycle Bin -->
+  <div class="xp-window" id="recycleWindow" role="dialog" aria-labelledby="recycleTitle" hidden>
+    <div class="xp-titlebar" data-drag-handle>
+      <div class="xp-title" id="recycleTitle">Recycle Bin</div>
+      <div class="xp-controls">
+        <button class="xp-btn xp-close" aria-label="Close">✕</button>
+      </div>
+    </div>
+    <div class="xp-content">
+      <p>The Recycle Bin is empty.</p>
+    </div>
+  </div>
+
+  <!-- Static start bar image -->
   <div class="taskbar-image">
     <img src="images/taskbar.png" alt="Windows XP Taskbar">
   </div>
 
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
