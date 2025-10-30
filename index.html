@@ -6,9 +6,11 @@
   <title>MaximPod</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
+  <!-- ===== Windows XP Desktop Area ===== -->
   <div class="desktop-area">
-    <!-- ♻ Recycle Bin (popup) -->
+    <!-- ♻ Recycle Bin (popup trigger) -->
     <div class="icon" style="top: 6%; left: 1%;" data-window="recycleWindow">
       <img src="images/recycle-bin-icon.png" alt="Recycle Bin Icon">
       <span>Recycle Bin</span>
@@ -63,31 +65,41 @@
     </div>
   </div>
 
-  <!-- ♻ XP-style popup window for Recycle Bin -->
- <div class="xp-content">
-  <div class="file">
-    <img src="images/text-file-icon.png" alt="Text File Icon">
-    <span>Too Late to Start</span>
-  </div>
-  <div class="file">
-    <img src="images/text-file-icon.png" alt="Text File Icon">
-    <span>Not Good Enough</span>
-  </div>
-  <div class="file">
-    <img src="images/text-file-icon.png" alt="Text File Icon">
-    <span>Replaceable</span>
-  </div>
-  <div class="file">
-    <img src="images/text-file-icon.png" alt="Text File Icon">
-    <span>Ready to Quit</span>
-  </div>
-</div>
+  <!-- ===== XP-style Recycle Bin Popup ===== -->
+  <div class="xp-window" id="recycleWindow" role="dialog" aria-labelledby="recycleTitle" hidden>
+    <div class="xp-titlebar" data-drag-handle>
+      <div class="xp-title" id="recycleTitle">Recycle Bin</div>
+      <div class="xp-controls">
+        <button class="xp-btn xp-close" aria-label="Close">✕</button>
+      </div>
+    </div>
 
-  <!-- Static start bar image -->
+    <div class="xp-content">
+      <div class="file">
+        <img src="images/text-file-icon.png" alt="Text File Icon">
+        <span>Too Late to Start</span>
+      </div>
+      <div class="file">
+        <img src="images/text-file-icon.png" alt="Text File Icon">
+        <span>Not Good Enough</span>
+      </div>
+      <div class="file">
+        <img src="images/text-file-icon.png" alt="Text File Icon">
+        <span>Replaceable</span>
+      </div>
+      <div class="file">
+        <img src="images/text-file-icon.png" alt="Text File Icon">
+        <span>Ready to Quit</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Static Taskbar Image ===== -->
   <div class="taskbar-image">
     <img src="images/taskbar.png" alt="Windows XP Taskbar">
   </div>
 
+  <!-- ===== Script Link ===== -->
   <script src="js/script.js"></script>
 </body>
 </html>
