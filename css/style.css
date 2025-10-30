@@ -25,6 +25,7 @@ html, body {
   width: 80px;
   text-align: center;
   cursor: pointer;
+  z-index: 10; /* ensure above wallpaper */
 }
 
 .icon img {
@@ -60,4 +61,77 @@ html, body {
   width: 100%;
   height: auto;
   display: block;
+}
+
+
+/* ================= XP Window Popup Styles ================= */
+.xp-window[hidden] { 
+  display: none; 
+}
+
+.xp-window {
+  position: absolute;
+  top: 15vh;
+  left: 15vw;
+  width: 520px;
+  max-width: 90vw;
+  background: #ece9d8;      /* XP beige */
+  border: 1px solid #3a6ea5;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+  z-index: 999;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.xp-titlebar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  background: linear-gradient(#3b78c2, #2a62aa);
+  color: #fff;
+  cursor: move;
+  user-select: none;
+}
+
+.xp-title {
+  font: 700 13px Tahoma, sans-serif;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.35);
+  padding-left: 4px;
+}
+
+.xp-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.xp-btn {
+  width: 22px;
+  height: 22px;
+  border: 1px solid rgba(0,0,0,0.35);
+  border-radius: 3px;
+  background: #e8e8e8;
+  font: 700 12px/20px Tahoma, sans-serif;
+  text-align: center;
+  cursor: pointer;
+}
+.xp-btn:hover { 
+  filter: brightness(0.95); 
+}
+.xp-close {
+  background: #e26d6d;
+  color: #fff;
+  border-color: #9b3a3a;
+}
+
+.xp-content {
+  padding: 14px;
+  color: #222;
+  font: 13px/1.5 Tahoma, sans-serif;
+  background: #fff;         /* classic XP white interior */
+  border-top: 1px solid #b7c7df;
+  max-height: 70vh;
+  overflow: auto;
 }
