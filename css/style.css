@@ -132,39 +132,54 @@ html, body {
 }
 
 /* =============================
-   Control Buttons (Min, Max, Close)
+   XP Titlebar Control Buttons
    ============================= */
 .title-bar-controls {
   display: flex;
   gap: 2px;
 }
 
+/* Shared button base */
 .title-bar-controls button {
   width: 21px;
   height: 21px;
-  border: 1px solid #0831d9;
-  background: linear-gradient(to bottom, #ffffff, #b5c7ff);
-  box-shadow: inset 1px 1px #e0e8ff, inset -1px -1px #6a8aff;
+  border: 1px solid white;
+  border-radius: 2px;
   cursor: pointer;
   position: relative;
   padding: 0;
-  border-radius: 2px;
   transition: all 0.1s ease-in-out;
+  box-shadow: inset 0 0 1px rgba(255,255,255,0.6);
 }
 
+/* Minimize + Maximize match XP bar blue */
+.min-btn,
+.max-btn {
+  background: linear-gradient(to bottom,
+    rgba(9,151,255,1) 0%,
+    rgba(0,83,238,1) 40%,
+    rgba(0,61,215,1) 100%);
+}
+
+/* Close button: true XP red */
+.close-btn {
+  background: linear-gradient(to bottom,
+    #ff4c4c 0%,
+    #cc0000 70%);
+}
+
+/* Hover / active */
 .title-bar-controls button:hover {
-  background: linear-gradient(to bottom, #ffffff, #a3bbff);
+  filter: brightness(1.2);
 }
-
 .title-bar-controls button:active {
-  background: linear-gradient(to bottom, #b5c7ff, #ffffff);
-  box-shadow: inset 1px 1px #6a8aff, inset -1px -1px #e0e8ff;
+  filter: brightness(0.9);
 }
 
-/* White symbols on buttons */
-.title-bar-controls .min-btn::before,
-.title-bar-controls .max-btn::before,
-.title-bar-controls .close-btn::before {
+/* White symbols on all */
+.min-btn::before,
+.max-btn::before,
+.close-btn::before {
   color: white;
   position: absolute;
   top: 0;
@@ -177,47 +192,21 @@ html, body {
   font-size: 12px;
 }
 
+/* XP-style symbols */
 .min-btn::before { content: "_"; top: -2px; }
 .max-btn::before { content: "☐"; font-size: 11px; }
 .close-btn::before { content: "✕"; }
 
-/* XP Button colors */
-.min-btn, .max-btn {
-  background-color: #0050ee;
-}
-
-.close-btn {
-  background-color: #d30000;
-  border-color: #7a0000;
-}
+/* Hover outlines (white glow) */
+.min-btn:hover,
+.max-btn:hover,
 .close-btn:hover {
-  background-color: #ff5555;
+  box-shadow:
+    0 0 3px white,
+    inset 0 0 1px rgba(255,255,255,0.8);
 }
 
-/* =============================
-   Window Body (from SCSS)
-   ============================= */
-.window-body {
-  background: white;
-  border: 1px solid #7f9db9;
-  border-top: none;
-  padding: 10px;
-  font-size: 12px;
-  color: black;
-}
-
-/* File list inside window */
-.file {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin: 4px 0;
-}
-.file img {
-  width: 16px;
-  height: 16px;
-}
-.file span {
-  font: 11px Tahoma, sans-serif;
-  color: #000;
+/* Distinct pressed state (like XP depress) */
+.title-bar-controls button:active {
+  transform: translateY(1px);
 }
