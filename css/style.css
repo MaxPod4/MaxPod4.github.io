@@ -221,3 +221,86 @@ html, body {
   font: 11px Tahoma, sans-serif;
   color: #000;
 }
+/* =============================
+   XP Taskbar + Start Menu
+   ============================= */
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 34px;
+  background: linear-gradient(to bottom, #245edb 0%, #1645a3 100%);
+  border-top: 2px solid #0b2e78;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+  box-sizing: border-box;
+  z-index: 2000;
+  color: white;
+  font-family: Tahoma, sans-serif;
+  font-size: 12px;
+}
+
+/* Start Button */
+.start-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: linear-gradient(to bottom, #3cb043, #1f621f);
+  border: 1px solid #0b2e0b;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  padding: 2px 10px;
+  cursor: pointer;
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.5);
+}
+.start-button img {
+  width: 18px;
+  height: 18px;
+}
+.start-button:hover {
+  filter: brightness(1.1);
+}
+
+/* Start Menu Popup */
+.start-menu {
+  position: absolute;
+  bottom: 36px;
+  left: 6px;
+  width: 180px;
+  background: #ece9d8;
+  border: 2px solid #0b2e78;
+  border-radius: 4px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+  color: black;
+  font-size: 12px;
+}
+.start-menu ul {
+  list-style: none;
+  margin: 4px;
+  padding: 0;
+}
+.start-menu li {
+  padding: 4px 8px;
+  border-radius: 2px;
+  cursor: default;
+}
+.start-menu li:hover {
+  background: #316ac5;
+  color: white;
+}
+
+/* System tray & clock */
+.system-tray {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+}
+#clock {
+  min-width: 50px;
+  text-align: right;
+}
