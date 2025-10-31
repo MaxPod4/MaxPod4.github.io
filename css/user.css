@@ -1,0 +1,87 @@
+/* =============================
+   USER (About) Page Styles
+   ============================= */
+
+/* Page layout */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Tahoma, sans-serif;
+  background: #ece9d8; /* XP-style beige */
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+/* Central container */
+.about-container {
+  width: 90%;
+  max-width: 800px;
+  margin-top: 60px;
+  text-align: center;
+}
+
+/* Top Section: Headshot + Logo */
+.top-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.headshot {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  border: 2px solid #fff;
+}
+.logo {
+  width: 120px;
+  height: auto;
+}
+
+/* Bio section */
+.bio-section {
+  background: white;
+  border: 1px solid #7f9db9;
+  border-radius: 6px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  padding: 20px 30px;
+  text-align: left;
+  margin-bottom: 40px;
+}
+.bio-section h2 {
+  color: #003399;
+  margin-top: 0;
+}
+.bio-section p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Links section */
+.links-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.links-section a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #003399;
+  background: linear-gradient(to bottom, #ffffff, #dce7f8);
+  padding: 8px 14px;
+  border-radius: 4px;
+  border: 1px solid #7f9db9;
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.6);
+  transition: all 0.15s ease;
+}
+.links-section a:hover {
+  background: linear-gradient(to bottom, #d6e4ff, #bcd2ff);
+  color: #000;
+}
