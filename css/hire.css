@@ -96,15 +96,21 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(10, 10, 10, 0.8);
-  display: flex;
+  display: none; /* hidden by default */
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(6px);
   z-index: 9999;
 }
+
 .lightbox img {
   max-width: 90%;
   max-height: 90%;
   border: 4px solid white;
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+/* When visible */
+.lightbox:not([hidden]) {
+  display: flex;
 }
