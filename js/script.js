@@ -116,28 +116,3 @@ document.querySelectorAll('.window').forEach(win => {
   const handle = win.querySelector('.title-bar');
   if (handle) makeDraggable(win, handle);
 });
-
-/*************** 🪟 XP Taskbar ***************/
-const startButton = document.querySelector('.start-button');
-const startMenu = document.getElementById('startMenu');
-
-startButton.addEventListener('click', () => {
-  startMenu.hidden = !startMenu.hidden;
-});
-
-document.addEventListener('click', (e) => {
-  if (!e.target.closest('.start-section')) {
-    startMenu.hidden = true;
-  }
-});
-
-// ⏰ XP Clock
-function updateClock() {
-  const now = new Date();
-  const h = now.getHours() % 12 || 12;
-  const m = now.getMinutes().toString().padStart(2, '0');
-  const ampm = now.getHours() >= 12 ? 'PM' : 'AM';
-  document.getElementById('clock').textContent = `${h}:${m} ${ampm}`;
-}
-setInterval(updateClock, 1000);
-updateClock();
