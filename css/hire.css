@@ -1,0 +1,110 @@
+/* ==========================
+   HIRE PAGE — Windows XP Style
+   ========================== */
+body {
+  margin: 0;
+  font-family: Tahoma, sans-serif;
+  background: #ece9d8;
+  color: #111;
+}
+
+/* Banner */
+.banner img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 2px solid #7f9db9;
+}
+
+/* XP Tabs */
+.xp-tabs {
+  display: flex;
+  justify-content: center;
+  background: #d4d0c8;
+  border-bottom: 2px solid #7f9db9;
+  padding: 4px 0;
+  box-shadow: inset 1px 1px #fff, inset -1px -1px #808080;
+}
+.xp-tabs .tab {
+  background: linear-gradient(to bottom, #ffffff, #d6e3f0);
+  border: 1px solid #7f9db9;
+  border-radius: 3px;
+  padding: 6px 20px;
+  margin: 0 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+.xp-tabs .tab:hover {
+  background: linear-gradient(to bottom, #f6f9ff, #bcd2ff);
+}
+.xp-tabs .tab.active {
+  background: linear-gradient(to bottom, #bcd2ff, #8cb2ff);
+  border-top: 2px solid #003cba;
+  border-left: 2px solid #003cba;
+  border-bottom: 2px solid #ffffff;
+  font-weight: bold;
+  transform: translateY(1px);
+}
+
+/* Tab content */
+.tab-content {
+  padding: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.tab-section {
+  display: none;
+}
+.tab-section.active {
+  display: block;
+}
+
+/* Services box */
+.services-box {
+  background: white;
+  border: 1px solid #7f9db9;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Galleries */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+}
+.gallery img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border: 1px solid #7f9db9;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+.gallery img:hover {
+  transform: scale(1.02);
+}
+
+/* Lightbox overlay */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(6px);
+  z-index: 9999;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border: 4px solid white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
