@@ -1,31 +1,29 @@
-/* Full-page wallpaper */
+/* =============================
+   Windows XP Desktop + Wallpaper
+   ============================= */
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   overflow: hidden;
-
-  /* Notice the ../ — this goes up one folder from /css/ to root, then into /images/ */
   background: url('../images/WindowsXP_Desktop.jpg') center / cover no-repeat fixed;
-
-  background-color: #0d2c6e; /* fallback while image loads */
+  background-color: #0d2c6e; /* fallback blue */
 }
 
-
-/* Container for icons */
+/* Desktop container */
 .desktop-area {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-/* Icons */
+/* Desktop icons */
 .icon {
-  position: absolute;   /* manual top/left via inline HTML */
+  position: absolute;
   width: 80px;
   text-align: center;
   cursor: pointer;
-  z-index: 10; /* ensure above wallpaper */
+  z-index: 10;
 }
 
 .icon img {
@@ -63,9 +61,9 @@ html, body {
   display: block;
 }
 
-/* =========================
+/* =============================
    Authentic Windows XP Window
-   ========================= */
+   ============================= */
 .window[hidden] { display: none; }
 
 .window {
@@ -75,6 +73,12 @@ html, body {
   width: 480px;
   max-width: 90vw;
   background: #ece9d8;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+  z-index: 999;
+  font-family: "Trebuchet MS", Tahoma, sans-serif;
+
+  /* Multilayer inset blue glow from SCSS */
   box-shadow:
     inset -1px -1px #00138c,
     inset 1px 1px #0831d9,
@@ -82,26 +86,23 @@ html, body {
     inset 2px 2px #166aee,
     inset -3px -3px #003bda,
     inset 3px 3px #0855dd;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  padding-bottom: 3px;
-  z-index: 999;
-  overflow: hidden;
-  font-family: "Trebuchet MS", Tahoma, sans-serif;
 }
 
-/* Title Bar */
+/* =============================
+   Title Bar (from your SCSS)
+   ============================= */
 .title-bar {
+  font-family: "Trebuchet MS";
   background: linear-gradient(
     180deg,
-    rgba(9, 151, 255, 1) 0%,
-    rgba(0, 83, 238, 1) 8%,
-    rgba(0, 80, 238, 1) 40%,
-    rgba(0, 102, 255, 1) 88%,
-    rgba(0, 102, 255, 1) 93%,
-    rgba(0, 91, 255, 1) 95%,
-    rgba(0, 61, 215, 1) 96%,
-    rgba(0, 61, 215, 1) 100%
+    rgba(9,151,255,1) 0%,
+    rgba(0,83,238,1) 8%,
+    rgba(0,80,238,1) 40%,
+    rgba(0,102,255,1) 88%,
+    rgba(0,102,255,1) 93%,
+    rgba(0,91,255,1) 95%,
+    rgba(0,61,215,1) 96%,
+    rgba(0,61,215,1) 100%
   );
   height: 28px;
   border-top: 1px solid #0831d9;
@@ -116,43 +117,86 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  cursor: move;
+  cursor: grab;
   user-select: none;
 }
 
+/* Active drag feedback */
+.window:active {
+  cursor: grabbing;
+}
+
+/* Title text */
 .title-bar-text {
   padding-left: 4px;
 }
 
-/* Control buttons */
+/* =============================
+   Control Buttons (Min, Max, Close)
+   ============================= */
 .title-bar-controls {
   display: flex;
   gap: 2px;
 }
 
 .title-bar-controls button {
-  min-width: 21px;
-  min-height: 21px;
-  border: none;
-  background-color: #0050ee;
-  background-repeat: no-repeat;
-  background-position: center;
+  width: 21px;
+  height: 21px;
+  border: 1px solid #0831d9;
+  background: linear-gradient(to bottom, #ffffff, #b5c7ff);
+  box-shadow: inset 1px 1px #e0e8ff, inset -1px -1px #6a8aff;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
   border-radius: 2px;
-  transition: filter 0.1s;
+  transition: all 0.1s ease-in-out;
 }
 
 .title-bar-controls button:hover {
-  filter: brightness(1.2);
+  background: linear-gradient(to bottom, #ffffff, #a3bbff);
 }
 
-.title-bar-controls .close-btn {
-  background-color: #d30000;
+.title-bar-controls button:active {
+  background: linear-gradient(to bottom, #b5c7ff, #ffffff);
+  box-shadow: inset 1px 1px #6a8aff, inset -1px -1px #e0e8ff;
 }
-.title-bar-controls .close-btn:hover {
+
+/* White symbols on buttons */
+.title-bar-controls .min-btn::before,
+.title-bar-controls .max-btn::before,
+.title-bar-controls .close-btn::before {
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  line-height: 20px;
+  font-weight: bold;
+  font-family: Tahoma, sans-serif;
+  font-size: 12px;
+}
+
+.min-btn::before { content: "_"; top: -2px; }
+.max-btn::before { content: "☐"; font-size: 11px; }
+.close-btn::before { content: "✕"; }
+
+/* XP Button colors */
+.min-btn, .max-btn {
+  background-color: #0050ee;
+}
+
+.close-btn {
+  background-color: #d30000;
+  border-color: #7a0000;
+}
+.close-btn:hover {
   background-color: #ff5555;
 }
 
-/* Window Body */
+/* =============================
+   Window Body (from SCSS)
+   ============================= */
 .window-body {
   background: white;
   border: 1px solid #7f9db9;
@@ -162,7 +206,7 @@ html, body {
   color: black;
 }
 
-/* File entries inside window */
+/* File list inside window */
 .file {
   display: flex;
   align-items: center;
