@@ -20,6 +20,7 @@ const lightboxImg = lightbox.querySelector('img');
 
 document.querySelectorAll('.gallery img').forEach(img => {
   img.addEventListener('click', () => {
+    if (!img.complete || img.naturalWidth === 0) return; // ✅ prevents broken images from triggering
     lightboxImg.src = img.src;
     lightbox.removeAttribute('hidden');
   });
