@@ -65,34 +65,36 @@
     </div>
   </div>
 
-  <!-- ===== XP-style Recycle Bin Popup ===== -->
-  <div class="xp-window" id="recycleWindow" role="dialog" aria-labelledby="recycleTitle" hidden>
-    <div class="xp-titlebar" data-drag-handle>
-      <div class="xp-title" id="recycleTitle">Recycle Bin</div>
-      <div class="xp-controls">
-        <button class="xp-btn xp-close" aria-label="Close">✕</button>
-      </div>
-    </div>
-
-    <div class="xp-content">
-      <div class="file">
-        <img src="images/text-file-icon.png" alt="Text File Icon">
-        <span>Too Late to Start</span>
-      </div>
-      <div class="file">
-        <img src="images/text-file-icon.png" alt="Text File Icon">
-        <span>Not Good Enough</span>
-      </div>
-      <div class="file">
-        <img src="images/text-file-icon.png" alt="Text File Icon">
-        <span>Replaceable</span>
-      </div>
-      <div class="file">
-        <img src="images/text-file-icon.png" alt="Text File Icon">
-        <span>Ready to Quit</span>
-      </div>
+ <!-- ♻ Windows XP–style Recycle Bin Window -->
+<div class="window" id="recycleWindow" hidden>
+  <div class="title-bar" data-drag-handle>
+    <div class="title-bar-text">Recycle Bin</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close" class="close-btn"></button>
     </div>
   </div>
+
+  <div class="window-body">
+    <div class="file">
+      <img src="images/text-file-icon.png" alt="Text File Icon">
+      <span>Too Late to Start</span>
+    </div>
+    <div class="file">
+      <img src="images/text-file-icon.png" alt="Text File Icon">
+      <span>Not Good Enough</span>
+    </div>
+    <div class="file">
+      <img src="images/text-file-icon.png" alt="Text File Icon">
+      <span>Replaceable</span>
+    </div>
+    <div class="file">
+      <img src="images/text-file-icon.png" alt="Text File Icon">
+      <span>Ready to Quit</span>
+    </div>
+  </div>
+</div>
 
   <!-- ===== Static Taskbar Image ===== -->
   <div class="taskbar-image">
