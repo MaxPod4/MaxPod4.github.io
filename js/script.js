@@ -12,7 +12,7 @@ icons.forEach(icon => {
     const link  = icon.dataset.link;
 
     if (winId) {
-      openXPWindow(winId);
+      openWindow(winId);
     } else if (link) {
       window.open(link, "_blank");
     }
@@ -21,16 +21,16 @@ icons.forEach(icon => {
 
 // Click empty space clears selection
 document.addEventListener('click', (e) => {
-  if (!e.target.closest('.icon') && !e.target.closest('.xp-window')) {
+  if (!e.target.closest('.icon') && !e.target.closest('.window')) {
     icons.forEach(i => i.classList.remove('selected'));
   }
 });
 
-/*************** XP window helpers ***************/
+/*************** Window helpers ***************/
 let zCounter = 1000;
 const nextZ = () => ++zCounter;
 
-function openXPWindow(id) {
+function openWindow(id) {
   const win = document.getElementById(id);
   if (!win) return;
   win.removeAttribute('hidden');
@@ -45,21 +45,21 @@ function openXPWindow(id) {
   win.style.zIndex = String(nextZ());
 }
 
-function closeXPWindow(win) {
+function closeWindow(win) {
   if (typeof win === 'string') win = document.getElementById(win);
   if (win) win.setAttribute('hidden', '');
 }
 
 /*************** Close buttons + bring-to-front ***************/
-document.querySelectorAll('.xp-window').forEach(win => {
+document.querySelectorAll('.window').forEach(win => {
   // Bring to front when interacting
   win.addEventListener('mousedown', () => {
     win.style.zIndex = String(nextZ());
   });
 
   // Wire up close buttons inside this window
-  win.querySelectorAll('.xp-close').forEach(btn => {
-    btn.addEventListener('click', () => closeXPWindow(win));
+  win.querySelectorAll('.close-btn').forEach(btn => {
+    btn.addEventListener('click', () => closeWindow(win));
   });
 });
 
@@ -112,7 +112,7 @@ function makeDraggable(win, handle) {
 }
 
 // Initialize draggable for every window with a handle
-document.querySelectorAll('.xp-window').forEach(win => {
-  const handle = win.querySelector('[data-drag-handle]');
+document.querySelectorAll('.window').forEach(win => {
+  const handle = win.querySelector('.title-bar');
   if (handle) makeDraggable(win, handle);
 });
