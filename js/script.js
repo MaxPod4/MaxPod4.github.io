@@ -57,8 +57,8 @@ document.querySelectorAll('.window').forEach(win => {
     win.style.zIndex = String(nextZ());
   });
 
-  // Wire up close buttons inside this window
-  win.querySelectorAll('.close-btn').forEach(btn => {
+  // Wire up both close and OK buttons
+  win.querySelectorAll('.close-btn, .ok-btn').forEach(btn => {
     btn.addEventListener('click', () => closeWindow(win));
   });
 });
