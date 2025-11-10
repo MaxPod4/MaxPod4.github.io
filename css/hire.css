@@ -51,7 +51,7 @@ body {
 /* Tab content */
 .tab-content {
   padding: 20px;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 .tab-section {
@@ -70,19 +70,31 @@ body {
   box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
 }
 
-/* Galleries */
+/* Masonry Galleries */
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 10px;
+  column-count: 1;
+  column-gap: 10px;
 }
+
+@media (min-width: 600px) {
+  .gallery { column-count: 2; }
+}
+@media (min-width: 900px) {
+  .gallery { column-count: 3; }
+}
+@media (min-width: 1200px) {
+  .gallery { column-count: 4; }
+}
+
 .gallery img {
   width: 100%;
-  height: 140px;
-  object-fit: cover;
+  margin-bottom: 10px;
   border: 1px solid #7f9db9;
+  border-radius: 3px;
   cursor: pointer;
   transition: transform 0.1s ease;
+  break-inside: avoid; /* prevents breaking in columns */
+  display: block;
 }
 .gallery img:hover {
   transform: scale(1.02);
@@ -102,15 +114,12 @@ body {
   backdrop-filter: blur(6px);
   z-index: 9999;
 }
-
 .lightbox img {
   max-width: 90%;
   max-height: 90%;
   border: 4px solid white;
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
-
-/* When visible */
 .lightbox:not([hidden]) {
   display: flex;
 }
