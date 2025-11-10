@@ -221,3 +221,20 @@ html, body {
   font: 11px Tahoma, sans-serif;
   color: #000;
 }
+
+.ok-btn {
+  background: #d4d0c8;
+  border: 1px solid #7f9db9;
+  border-radius: 3px;
+  padding: 4px 18px;
+  font-family: Tahoma, sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  box-shadow: inset 1px 1px #fff, inset -1px -1px #808080;
+}
+.ok-btn:hover {
+  background: #e6e3df;
+}
+.ok-btn:active {
+  box-shadow: inset -1px -1px #fff, inset 1px 1px #808080;
+}
