@@ -7,88 +7,65 @@
   <link rel="stylesheet" href="css/hire.css" />
 </head>
 <body>
-
-  <!-- 📸 Banner -->
+  <!-- 🖼 Banner -->
   <div class="banner">
-    <img src="images/hire/hire-banner.jpg" alt="Hire Banner">
+    <img src="images/hire/banner.jpg" alt="Hire Banner">
   </div>
 
-  <!-- 🧭 XP-Themed Navigation Tabs -->
+  <!-- 🧭 XP-style Navigation Tabs -->
   <div class="xp-tabs">
-    <button class="tab active" data-tab="services">Services</button>
-    <button class="tab" data-tab="portraits">Portraits</button>
-    <button class="tab" data-tab="livemusic">Live Music</button>
-    <button class="tab" data-tab="video">Video</button>
+    <div class="tab active" data-tab="services">Services</div>
+    <div class="tab" data-tab="portraits">Portraits</div>
+    <div class="tab" data-tab="livemusic">Live Music</div>
+    <div class="tab" data-tab="video">Video</div>
   </div>
 
-  <!-- 🪟 Tab Content Sections -->
+  <!-- 📄 Tab Content -->
   <div class="tab-content">
-
-    <!-- Services -->
+    <!-- Services Tab -->
     <section id="services" class="tab-section active">
       <div class="services-box">
-        <h2>Creative Services</h2>
+        <h2>Services</h2>
         <p>
-          This is where you can describe your services — photography, video, design, and any
-          other creative projects you're interested in collaborating on. Share your goals and the
-          kind of work that inspires you.
+          I specialize in creating authentic, story-driven photo and video content —
+          focusing on portraits, live music, and creative storytelling projects.
+        </p>
+        <p>
+          I’m available for creative collaborations, commissioned shoots, and event coverage.
         </p>
       </div>
     </section>
 
     <!-- Portraits Gallery -->
     <section id="portraits" class="tab-section">
-      <div class="gallery portraits-gallery">
-        <!-- Placeholder images -->
-        <img src="images/hire/portrait1.jpg" alt="Portrait 1">
-        <img src="images/hire/portrait2.jpg" alt="Portrait 2">
-        <img src="images/hire/portrait3.jpg" alt="Portrait 3">
-        <img src="images/hire/portrait4.jpg" alt="Portrait 4">
-        <img src="images/hire/portrait5.jpg" alt="Portrait 5">
-        <img src="images/hire/portrait6.jpg" alt="Portrait 6">
-        <img src="images/hire/portrait7.jpg" alt="Portrait 7">
-        <img src="images/hire/portrait8.jpg" alt="Portrait 8">
-        <img src="images/hire/portrait9.jpg" alt="Portrait 9">
-        <img src="images/hire/portrait10.jpg" alt="Portrait 10">
-        <img src="images/hire/portrait11.jpg" alt="Portrait 11">
-        <img src="images/hire/portrait12.jpg" alt="Portrait 12">
-        <img src="images/hire/portrait13.jpg" alt="Portrait 13">
-        <img src="images/hire/portrait14.jpg" alt="Portrait 14">
-        <img src="images/hire/portrait15.jpg" alt="Portrait 15">
+      <div class="gallery">
+        <!-- 20 Portrait Images -->
+        ${Array.from({ length: 20 }, (_, i) => `
+          <img src="images/hire/portrait${i+1}.jpg" alt="Portrait ${i+1}">
+        `).join('')}
       </div>
     </section>
 
     <!-- Live Music Gallery -->
     <section id="livemusic" class="tab-section">
-      <div class="gallery livemusic-gallery">
-        <img src="images/hire/livemusic1.jpg" alt="Live Music 1">
-        <img src="images/hire/livemusic2.jpg" alt="Live Music 2">
-        <img src="images/hire/livemusic3.jpg" alt="Live Music 3">
-        <img src="images/hire/livemusic4.jpg" alt="Live Music 4">
-        <img src="images/hire/livemusic5.jpg" alt="Live Music 5">
-        <img src="images/hire/livemusic6.jpg" alt="Live Music 6">
-        <img src="images/hire/livemusic7.jpg" alt="Live Music 7">
-        <img src="images/hire/livemusic8.jpg" alt="Live Music 8">
-        <img src="images/hire/livemusic9.jpg" alt="Live Music 9">
-        <img src="images/hire/livemusic10.jpg" alt="Live Music 10">
-        <img src="images/hire/livemusic11.jpg" alt="Live Music 11">
-        <img src="images/hire/livemusic12.jpg" alt="Live Music 12">
-        <img src="images/hire/livemusic13.jpg" alt="Live Music 13">
-        <img src="images/hire/livemusic14.jpg" alt="Live Music 14">
-        <img src="images/hire/livemusic15.jpg" alt="Live Music 15">
+      <div class="gallery">
+        <!-- 20 Live Music Images -->
+        ${Array.from({ length: 20 }, (_, i) => `
+          <img src="images/hire/livemusic${i+1}.jpg" alt="Live Music ${i+1}">
+        `).join('')}
       </div>
     </section>
 
-    <!-- Video (empty for now) -->
+    <!-- Video Tab -->
     <section id="video" class="tab-section">
-      <p style="text-align:center;">Video portfolio coming soon...</p>
+      <p>Video content coming soon.</p>
     </section>
   </div>
 
-<!-- 🪩 Lightbox for Enlarged Image -->
-<div id="lightbox" class="lightbox" hidden>
-  <img src="" alt="">
-</div>
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" hidden>
+    <img src="" alt="">
+  </div>
 
   <script src="js/hire.js"></script>
 </body>
