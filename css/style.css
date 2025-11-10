@@ -222,6 +222,13 @@ html, body {
   color: #000;
 }
 
+/* OK button + layout */
+.ok-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+
 .ok-btn {
   background: #d4d0c8;
   border: 1px solid #7f9db9;
@@ -237,4 +244,5 @@ html, body {
 }
 .ok-btn:active {
   box-shadow: inset -1px -1px #fff, inset 1px 1px #808080;
+  transform: translateY(1px);
 }
