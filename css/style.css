@@ -306,12 +306,11 @@ html, body {
 }
 
 /* Contact links section */
-.contact-link {
-  display: inline-flex;
-  align-items: center;
+.contact-links {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
   gap: 6px;
-  text-decoration: none;
-  width: fit-content; /* 🔹 restricts click area to icon + text only */
 }
 
 /* Each link row with icon + text */
@@ -319,7 +318,8 @@ html, body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  text-decoration: none; /* we’ll handle underline on the text span */
+  text-decoration: none;       /* underline handled on span */
+  width: fit-content;          /* keeps click area tight */
 }
 
 /* Icons next to link text */
@@ -328,13 +328,14 @@ html, body {
   height: 16px;
 }
 
-/* Hyperlink styling: blue + underline, purple when visited */
+/* Default hyperlink look: blue + underline */
 .contact-link span {
   text-decoration: underline;
-  color: #0000EE; /* blue */
+  color: #0000EE;              /* blue */
   font-size: 12px;
 }
 
-.contact-link:visited span {
-  color: #551A8B; /* purple for visited */
+/* Our custom "visited" state (not :visited) */
+.contact-link.visited span {
+  color: #551A8B;              /* purple while window is open */
 }
