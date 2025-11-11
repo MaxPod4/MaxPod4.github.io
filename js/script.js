@@ -47,7 +47,17 @@ function openWindow(id) {
 
 function closeWindow(win) {
   if (typeof win === 'string') win = document.getElementById(win);
-  if (win) win.setAttribute('hidden', '');
+  if (!win) return;
+
+  // Hide the window
+  win.setAttribute('hidden', '');
+
+  // Reset link colors when closing Contact window
+  if (win.id === 'contactWindow') {
+    win.querySelectorAll('.contact-link span').forEach(span => {
+      span.style.color = '#0000EE'; // restore blue
+    });
+  }
 }
 
 /*************** Close buttons + bring-to-front ***************/
