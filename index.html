@@ -47,7 +47,7 @@
 </div>
 
     <!-- 📫 Contact -->
-    <div class="icon" style="top: 66%; left: 1%;" data-link="maxymail.html">
+    <div class="icon" style="top: 66%; left: 1%;" data-window="contactWindow">
       <img src="images/contact-icon.png" alt="Contact Icon">
       <span>Contact</span>
     </div>
@@ -120,7 +120,77 @@
 </div>
   </div>
 </div>
-  
+
+  <!-- 📫 MaxyMail – XP Email Composer Popup -->
+<div class="window" id="contactWindow" hidden>
+  <div class="title-bar" data-drag-handle>
+    <div class="title-bar-text">
+      <img src="images/contact-icon.png" alt="Contact Icon">
+      New Message - Contact
+    </div>
+    <div class="title-bar-controls">
+      <button class="min-btn"></button>
+      <button class="max-btn"></button>
+      <button class="close-btn"></button>
+    </div>
+  </div>
+
+  <div class="window-body mail-window">
+    <!-- Header: To / Cc / Subject -->
+    <div class="mail-header">
+      <div class="mail-row">
+        <span class="mail-label">To:</span>
+        <div class="mail-input"></div>
+      </div>
+      <div class="mail-row">
+        <span class="mail-label">Cc:</span>
+        <div class="mail-input"></div>
+      </div>
+      <div class="mail-row">
+        <span class="mail-label">Subject:</span>
+        <div class="mail-input"></div>
+      </div>
+    </div>
+
+    <!-- Message area -->
+    <div class="mail-message-box">
+      <p class="mail-greeting">Dear Stranger,</p>
+      <p class="mail-body-text">
+        This is where your greeting or short message to visitors will go.
+        You can tweak this text to match your tone and what you want to invite people to do.
+      </p>
+
+      <!-- Contact links with icons -->
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:maxpodhaisky@gmail.com" target="_blank">
+          <img src="images/email-icon.png" alt="Email Icon">
+          <span>Email</span>
+        </a>
+        <a class="contact-link" href="https://www.instagram.com/YOURINSTAGRAM" target="_blank">
+          <img src="images/instagram-icon.png" alt="Instagram Icon">
+          <span>Instagram</span>
+        </a>
+        <a class="contact-link" href="https://www.tiktok.com/@YOURTIKTOK" target="_blank">
+          <img src="images/tiktok-icon.png" alt="TikTok Icon">
+          <span>TikTok</span>
+        </a>
+        <a class="contact-link" href="https://www.linkedin.com/in/YOURLINKEDIN" target="_blank">
+          <img src="images/linkedin-icon.png" alt="LinkedIn Icon">
+          <span>LinkedIn</span>
+        </a>
+        <a class="contact-link" href="https://YOUR-FATED-FINDS-LINK" target="_blank">
+          <img src="images/fatedfinds-icon.png" alt="Fated Finds Icon">
+          <span>Fated Finds Community</span>
+        </a>
+        <a class="contact-link" href="https://YOUR-FINETUNED-LINK" target="_blank">
+          <img src="images/finetuned-icon.png" alt="Fine Tuned Icon">
+          <span>Fine Tuned Spotlight</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ✅ Functional Windows XP Taskbar -->
 <div class="taskbar">
   <div class="start-section">
