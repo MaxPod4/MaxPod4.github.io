@@ -339,3 +339,27 @@ html, body {
 .contact-link.visited span {
   color: #551A8B;              /* purple while window is open */
 }
+
+/* =============================
+   Gaming GIF Window
+   ============================= */
+
+.gif-window {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+.gif-container {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.gif-container img {
+  max-width: 100%;
+  max-height: 60vh; /* keep it from getting too tall */
+  border: 1px solid #7f9db9;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+  display: block;
+}
