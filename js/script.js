@@ -43,6 +43,13 @@ function openWindow(id) {
   win.style.left = `${left}px`;
   win.style.top  = `${top}px`;
   win.style.zIndex = String(nextZ());
+
+  // 🔵 Reset contact link colors when the Contact window opens
+  if (id === 'contactWindow') {
+    win.querySelectorAll('.contact-link span').forEach(span => {
+      span.style.color = '#0000EE'; // restore classic blue
+    });
+  }
 }
 
 function closeWindow(win) {
