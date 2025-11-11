@@ -44,10 +44,10 @@ function openWindow(id) {
   win.style.top  = `${top}px`;
   win.style.zIndex = String(nextZ());
 
-  // 🔵 Reset contact link colors when the Contact window opens
+  // Reset contact link "visited" state when opening Contact
   if (id === 'contactWindow') {
-    win.querySelectorAll('.contact-link span').forEach(span => {
-      span.style.color = '#0000EE'; // restore classic blue
+    win.querySelectorAll('.contact-link').forEach(link => {
+      link.classList.remove('visited');
     });
   }
 }
@@ -56,15 +56,7 @@ function closeWindow(win) {
   if (typeof win === 'string') win = document.getElementById(win);
   if (!win) return;
 
-  // Hide the window
   win.setAttribute('hidden', '');
-
-  // Reset link colors when closing Contact window
-  if (win.id === 'contactWindow') {
-    win.querySelectorAll('.contact-link span').forEach(span => {
-      span.style.color = '#0000EE'; // restore blue
-    });
-  }
 }
 
 /*************** Close buttons + bring-to-front ***************/
@@ -109,6 +101,7 @@ function makeDraggable(win, handle) {
     const maxL = window.innerWidth - win.offsetWidth - pad;
     const maxT = window.innerHeight - win.offsetHeight - pad;
     newL = Math.min(Math.max(pad, newL), Math.max(pad, maxL));
+    newT = Math.min(Math.max(pad, newL), Math.max(pad, maxL));
     newT = Math.min(Math.max(pad, newT), Math.max(pad, maxT));
 
     win.style.left = `${newL}px`;
@@ -132,4 +125,11 @@ function makeDraggable(win, handle) {
 document.querySelectorAll('.window').forEach(win => {
   const handle = win.querySelector('.title-bar');
   if (handle) makeDraggable(win, handle);
+});
+
+/*************** Contact links: fake “visited” behavior ***************/
+document.querySelectorAll('#contactWindow .contact-link').forEach(link => {
+  link.addEventListener('click', () => {
+    link.classList.add('visited'); // this triggers the purple color in CSS
+  });
 });
