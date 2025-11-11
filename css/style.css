@@ -306,11 +306,12 @@ html, body {
 }
 
 /* Contact links section */
-.contact-links {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
+.contact-link {
+  display: inline-flex;
+  align-items: center;
   gap: 6px;
+  text-decoration: none;
+  width: fit-content; /* 🔹 restricts click area to icon + text only */
 }
 
 /* Each link row with icon + text */
