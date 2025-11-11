@@ -250,3 +250,90 @@ html, body {
   box-shadow: inset -1px -1px #fff, inset 1px 1px #808080;
   transform: translateY(1px);
 }
+
+/* =============================
+   MaxyMail - XP Email Window
+   ============================= */
+
+.mail-window {
+  padding: 8px 10px 10px;
+}
+
+/* Header rows: To / Cc / Subject */
+.mail-header {
+  margin-bottom: 8px;
+}
+
+.mail-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+.mail-label {
+  width: 70px;
+  font-weight: bold;
+}
+
+.mail-input {
+  flex: 1;
+  height: 20px;
+  background: #ffffff;
+  border: 1px solid #7f9db9;
+  box-shadow: inset 1px 1px #ffffff, inset -1px -1px #808080;
+}
+
+/* Message area */
+.mail-message-box {
+  background: #ffffff;
+  border: 1px solid #7f9db9;
+  box-shadow: inset 1px 1px #ffffff, inset -1px -1px #808080;
+  padding: 8px 10px;
+  min-height: 140px;
+  font-size: 12px;
+  color: #000;
+}
+
+.mail-greeting {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.mail-body-text {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* Contact links section */
+.contact-links {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Each link row with icon + text */
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none; /* we’ll handle underline on the text span */
+}
+
+/* Icons next to link text */
+.contact-link img {
+  width: 16px;
+  height: 16px;
+}
+
+/* Hyperlink styling: blue + underline, purple when visited */
+.contact-link span {
+  text-decoration: underline;
+  color: #0000EE; /* blue */
+  font-size: 12px;
+}
+
+.contact-link:visited span {
+  color: #551A8B; /* purple for visited */
+}
