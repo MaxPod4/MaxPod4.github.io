@@ -47,7 +47,7 @@ function openWindow(id) {
   // Reset contact link "visited" state when opening Contact
   if (id === 'contactWindow') {
     win.querySelectorAll('.contact-link').forEach(link => {
-      link.classList.remove('visited');
+      link.classList.remove('visited'); // back to blue
     });
   }
 }
@@ -80,13 +80,17 @@ function makeDraggable(win, handle) {
     isDown = true;
     win.style.zIndex = String(nextZ());
     const p = e.touches ? e.touches[0] : e;
-    startX = p.clientX; startY = p.clientY;
+    startX = p.clientX;
+    startY = p.clientY;
     const r = win.getBoundingClientRect();
-    startL = r.left; startT = r.top;
+    startL = r.left;
+    startT = r.top;
+
     document.addEventListener('mousemove', onPointerMove);
     document.addEventListener('mouseup', onPointerUp);
     document.addEventListener('touchmove', onPointerMove, { passive: false });
     document.addEventListener('touchend', onPointerUp);
+
     e.preventDefault();
   };
 
@@ -100,12 +104,13 @@ function makeDraggable(win, handle) {
     const pad = 8;
     const maxL = window.innerWidth - win.offsetWidth - pad;
     const maxT = window.innerHeight - win.offsetHeight - pad;
+
     newL = Math.min(Math.max(pad, newL), Math.max(pad, maxL));
-    newT = Math.min(Math.max(pad, newL), Math.max(pad, maxL));
     newT = Math.min(Math.max(pad, newT), Math.max(pad, maxT));
 
     win.style.left = `${newL}px`;
     win.style.top  = `${newT}px`;
+
     if (e.cancelable) e.preventDefault();
   };
 
@@ -130,6 +135,6 @@ document.querySelectorAll('.window').forEach(win => {
 /*************** Contact links: fake “visited” behavior ***************/
 document.querySelectorAll('#contactWindow .contact-link').forEach(link => {
   link.addEventListener('click', () => {
-    link.classList.add('visited'); // this triggers the purple color in CSS
+    link.classList.add('visited'); // triggers purple in CSS
   });
 });
