@@ -1,198 +1,174 @@
-/* =============================
-   PAGE BASE
-   ============================= */
-body {
-  margin: 0;
-  padding: 0;
-  background: #ece9d8; /* XP beige */
-  font-family: Tahoma, sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* =============================
-   HEADER (Headshot + Logo SIDE BY SIDE)
-   ============================= */
+/* =========================================
+   HEADER AREA (side-by-side headshot + logo)
+   ========================================= */
 .header-wrapper {
   margin-top: 30px;
   display: flex;
-  flex-direction: row;          /* side by side */
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 20px;
 }
 
-/* Circle headshot */
 .headshot {
   width: 160px;
   height: 160px;
-  border-radius: 50%;           /* make it a circle */
+  border-radius: 50%;       /* circle */
   object-fit: cover;
-  border: 3px solid #7f9db9;    /* XP-style border */
+  border: 2px solid #7f9db9;
 }
 
-/* Logo next to headshot */
 .logo {
   height: 160px;
-  width: auto;
   object-fit: contain;
 }
 
-/* =============================
-   XP WINDOW SHELL
-   ============================= */
+/* =========================================
+   XP WINDOW — SAME AS ORIGINAL, DO NOT CHANGE
+   ========================================= */
 .xp-window {
-  width: 640px;
-  max-width: 95%;
+  width: 600px;
+  max-width: 90%;
   background: #ece9d8;
-  border-radius: 8px 8px 0 0;
-  margin-top: 20px;
+  border-radius: 6px;
 
-  /* outer XP border */
-  border: 4px solid #003c74;
+  /* ORIGINAL XP multi-layer inset border */
   box-shadow:
-    0 0 0 2px #7f9db9;
+    inset -1px -1px #00138c,
+    inset 1px 1px #08a3ff,
+    inset -2px -2px #001ea0,
+    inset 2px 2px #166aee,
+    inset -3px -3px #003bda,
+    inset 3px 3px #0855dd;
+
+  /* NEW: thicker bottom + sides border */
+  border-left: 5px solid #003c74;
+  border-right: 5px solid #003c74;
+  border-bottom: 6px solid #003c74;
+  border-top: none; /* keep original top appearance */
 }
 
-/* =============================
-   TITLE BAR
-   ============================= */
+/* =========================================
+   TITLE BAR — RESTORED EXACT STYLE
+   ========================================= */
 .title-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   height: 28px;
   padding: 0 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
+  /* ORIGINAL XP GRADIENT — BACK TO ORIGINAL */
   background: linear-gradient(
     to right,
     #0a246a 0%,
     #0a5adf 30%,
-    #3a8bff 60%,
+    #3a8bff 80%,
     #0a246a 100%
   );
-  color: #fff;
-  font-size: 13px;
-  text-shadow: 1px 1px #000;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+
+  color: white;
+  text-shadow: 1px 1px black;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
 
 .title-bar-text {
-  display: flex;
-  align-items: center;
   padding-left: 4px;
+  font-size: 13px;
+  font-weight: bold;
 }
 
-/* =============================
-   TITLE BAR CONTROLS
-   ============================= */
+/* =========================================
+   TITLE BAR BUTTONS — EXACT ORIGINAL STYLE
+   ========================================= */
 .title-bar-controls {
   display: flex;
   gap: 3px;
 }
 
-/* buttons now use their inner text (_ □ x) */
 .title-bar-controls button {
-  width: 21px;
-  height: 21px;
+  width: 20px;
+  height: 20px;
   border-radius: 2px;
   border: 1px solid #003c74;
   padding: 0;
-  cursor: pointer;
   box-sizing: border-box;
 
-  background: linear-gradient(
-    to bottom,
-    #f4f4f4 0%,
-    #d4d0c8 30%,
-    #c0c0c0 100%
-  );
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-family: Tahoma, sans-serif;
-  font-size: 12px;
-  font-weight: bold;
-  color: white;
-}
-
-/* Hover + pressed animation */
-.title-bar-controls button:hover {
-  filter: brightness(1.1);
-}
-
-.title-bar-controls button:active {
-  filter: brightness(0.9);
-  transform: translateY(1px);
-}
-
-/* XP red close button */
-.close-btn {
-  background: linear-gradient(to bottom, #ff4c4c 0%, #cc0000 70%);
-  border-color: #7f0000;
-}
-
-/* =============================
-   WINDOW BODY (white box with thick border)
-   ============================= */
-.window-body {
-  margin: 6px;
-  padding: 12px;
-  background: #ffffff;            /* white text box */
-  border-radius: 3px;
-  border: 4px solid #7f9db9;      /* MUCH thicker border */
-  max-height: 380px;
-  overflow-y: auto;
-}
-
-.window-body p {
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-/* =============================
-   SOCIAL BUTTONS UNDER WINDOW
-   ============================= */
-.social-buttons {
-  margin-top: 15px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-/* Windows XP-ish buttons */
-.xp-btn {
-  min-width: 120px;
-  padding: 6px 12px;
-  font-size: 14px;
-  text-align: center;
-  text-decoration: none;
-  color: #000;
-  border-radius: 3px;
-  border: 2px solid #7f9db9;
+  /* ORIGINAL XP grey gradient */
   background: linear-gradient(
     to bottom,
     #f4f4f4 0%,
     #d4d0c8 40%,
     #b0aca4 100%
   );
+
+  font-family: Tahoma, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn {
+  background: linear-gradient(to bottom, #ff4c4c 0%, #cc0000 70%) !important;
+  border-color: #7f0000;
+  color: white;
+}
+
+.title-bar-controls button:active {
+  transform: translateY(1px);
+  filter: brightness(0.9);
+}
+
+/* =========================================
+   WINDOW BODY — now white + thicker border
+   ========================================= */
+.window-body {
+  padding: 12px;
+  background: white;              /* NEW white box */
+  border: 4px solid #7f9db9;      /* thicker border */
+  border-radius: 3px;
+  margin: 8px;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+/* =========================================
+   SOCIAL BUTTONS BELOW WINDOW
+   ========================================= */
+.social-buttons {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.xp-btn {
+  min-width: 120px;
+  padding: 6px 12px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 14px;
+  color: black;
+
+  /* matching original XP button look */
+  background: linear-gradient(
+    to bottom,
+    #f4f4f4 0%,
+    #d4d0c8 40%,
+    #b0aca4 100%
+  );
+  border: 2px solid #7f9db9;
+  border-radius: 3px;
   box-shadow:
-    inset 1px 1px #ffffff,
+    inset 1px 1px white,
     inset -1px -1px #808080;
 }
 
-.xp-btn:hover {
-  filter: brightness(1.05);
-}
-
 .xp-btn:active {
-  filter: brightness(0.95);
   transform: translateY(1px);
+  filter: brightness(0.95);
 }
