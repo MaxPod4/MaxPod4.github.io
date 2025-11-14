@@ -41,8 +41,8 @@ html, body {
    XP-style About window (text + buttons only)
    ============================= */
 .about-window {
-  width: 600px;
-  max-width: 90%;
+  width: 750px;      /* ⬅️ widened from 600px */
+  max-width: 95%;    /* ⬅️ allows better scaling on smaller screens */
   margin-top: 25px;
   background: #ece9d8;
   border-radius: 8px 8px 0 0;
