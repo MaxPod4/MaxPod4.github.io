@@ -8,46 +8,49 @@
 </head>
 <body>
 
-  <!-- ============= HEADER AREA (Headshot + Logo) ============= -->
+  <!-- ============= HEADER AREA (Headshot + Logo side by side) ============= -->
   <div class="header-wrapper">
-    <img src="images/headshot.jpg" alt="Headshot" class="headshot">
+    <img src="images/headshot.jpg" alt="Headshot of Maxim Podhaisky" class="headshot">
     <img src="images/logo.png" alt="Logo" class="logo">
   </div>
 
-  <!-- ============= FIXED XP WINDOW FOR ABOUT ME ============= -->
-  <div class="fixed-xp-window">
+  <!-- ============= WINDOWS XP STYLE POPUP ============= -->
+  <div class="xp-window">
     <div class="title-bar">
-      <div class="title-bar-text">About Me</div>
+      <div class="title-bar-text">About Maxim</div>
       <div class="title-bar-controls">
-        <button class="min-btn"></button>
-        <button class="max-btn"></button>
-        <button class="close-btn" id="closeWindow"></button>
+        <!-- text INSIDE buttons now so it stays in the box -->
+        <button class="min-btn" aria-label="Minimize">_</button>
+        <button class="max-btn" aria-label="Maximize">□</button>
+        <button class="close-btn" id="closeWindow" aria-label="Close">x</button>
       </div>
     </div>
 
     <div class="window-body">
       <p>
-        Hi! My name is Maxim Podhaisky.  
-        This is where your bio text goes.  
-        Write as much as you want and the box will scroll automatically.
+        Hi! My name is Maxim Podhaisky.
+        This is my little Windows XP–inspired about page.
       </p>
       <p>
-        You can describe your journey, your passions, goals, or anything else you want people to know.
+        I love mixing retro operating system aesthetics with modern content.
+        Here you’ll eventually find more info about my projects, creative work,
+        and the things I’m obsessed with right now.
       </p>
-
-      <hr>
-
-      <div class="social-links">
-        <a href="mailto:maxpodhaisky@gmail.com" target="_blank">Email</a>
-        <a href="https://instagram.com" target="_blank">Instagram</a>
-        <a href="https://tiktok.com" target="_blank">TikTok</a>
-        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-      </div>
     </div>
   </div>
 
+  <!-- ============= SOCIAL BUTTONS UNDERNEATH WINDOW ============= -->
+  <div class="social-buttons">
+    <a href="mailto:maxpodhaisky@gmail.com" class="xp-btn" target="_blank">Email</a>
+    <a href="https://instagram.com" class="xp-btn" target="_blank">Instagram</a>
+    <a href="https://tiktok.com" class="xp-btn" target="_blank">TikTok</a>
+    <a href="https://linkedin.com" class="xp-btn" target="_blank">LinkedIn</a>
+  </div>
+
+  <!-- ============= JS ============= -->
   <script>
-    // Close button closes THIS TAB only
+    // Close button – this may only work if the tab was script-opened.
+    // If not, you can swap to window.location.href = 'index.html';
     document.getElementById("closeWindow").addEventListener("click", () => {
       window.close();
     });
