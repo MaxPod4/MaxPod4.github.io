@@ -1,31 +1,52 @@
 /* =============================
-   PAGE BASE
+   Page base
    ============================= */
-html, body {
+body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  background: #ece9d8;
   font-family: Tahoma, sans-serif;
-}
-
-/* Center the window on the page */
-.about-wrapper {
-  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background: #ece9d8; /* neutral XP-ish background */
 }
 
 /* =============================
-   XP WINDOW SHELL
+   Headshot + Logo row (OUTSIDE XP window now)
    ============================= */
-.about-window {
-  width: min(800px, 95vw);
+.header-wrapper {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.headshot {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #7f9db9;
+}
+
+.logo {
+  height: 240px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* =============================
+   Fixed XP window (text + links only)
+   ============================= */
+.fixed-xp-window {
+  width: 600px;
+  max-width: 90%;
+  margin-top: 25px;   /* now sits BELOW the headshot+logo area */
   background: #ece9d8;
   border-radius: 8px 8px 0 0;
-
-  /* XP-style inset blue border glow */
+  overflow: hidden;
   box-shadow:
     inset -1px -1px #00138c,
     inset 1px 1px #0831d9,
@@ -36,7 +57,7 @@ html, body {
 }
 
 /* =============================
-   TITLE BAR
+   Title bar (unchanged)
    ============================= */
 .title-bar {
   display: flex;
@@ -44,7 +65,7 @@ html, body {
   justify-content: space-between;
 
   height: 28px;
-  padding: 3px 5px 3px 3px;
+  padding: 3px 5px;
 
   background: linear-gradient(
     180deg,
@@ -65,21 +86,8 @@ html, body {
   border-top-right-radius: 8px;
 }
 
-/* Title text with icon */
-.title-bar-text {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding-left: 4px;
-}
-
-.title-bar-text img {
-  width: 16px;
-  height: 16px;
-}
-
 /* =============================
-   TITLE BAR CONTROLS
+   Control Buttons
    ============================= */
 .title-bar-controls {
   display: flex;
@@ -90,15 +98,16 @@ html, body {
   width: 21px;
   height: 21px;
   border-radius: 2px;
-  position: relative;
   border: 1px solid white;
   cursor: pointer;
   padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-shadow: inset 0 0 1px rgba(255,255,255,0.6);
   transition: all 0.1s;
 }
 
-/* Minimize / Maximize – XP blue */
 .min-btn,
 .max-btn {
   background: linear-gradient(
@@ -109,21 +118,16 @@ html, body {
   );
 }
 
-/* Red XP close button */
 .close-btn {
   background: linear-gradient(to bottom, #ff4c4c 0%, #cc0000 70%);
 }
 
-/* Hover / active */
-.title-bar-controls button:hover {
-  filter: brightness(1.2);
-}
+.title-bar-controls button:hover { filter: brightness(1.2); }
 .title-bar-controls button:active {
   filter: brightness(0.9);
   transform: translateY(1px);
 }
 
-/* White symbols inside the buttons */
 .min-btn::before,
 .max-btn::before,
 .close-btn::before {
@@ -131,90 +135,61 @@ html, body {
   font-family: Tahoma, sans-serif;
   font-weight: bold;
   font-size: 12px;
-  line-height: 21px;
-  width: 100%;
-  text-align: center;
-  position: absolute;
-  top: 0;
-  left: 0;
+  content: "";
 }
 
-.min-btn::before { content: "_"; top: -2px; }
+.min-btn::before { content: "_"; margin-top: -2px; }
 .max-btn::before { content: "☐"; font-size: 11px; }
 .close-btn::before { content: "✕"; }
 
 /* =============================
-   WINDOW BODY / TEXT BOX
+   Window body with thicker BLUE border
    ============================= */
 .window-body {
-  background: #ffffff;                 /* white text box */
-  border-left: 4px solid #7f9db9;      /* thicker sides */
-  border-right: 4px solid #7f9db9;
-  border-bottom: 4px solid #7f9db9;    /* thicker bottom */
-  border-top: none;                    /* no top border, bar looks separate */
-  border-radius: 0 0 8px 8px;
-  padding: 18px 20px 20px;
-  max-height: 70vh;
+  background: #ece9d8;
+  padding: 14px;
+
+  /* Updated border to XP blue */
+  border-left: 4px solid #003cba;
+  border-right: 4px solid #003cba;
+  border-bottom: 4px solid #003cba;
+
+  max-height: 60vh;
   overflow-y: auto;
 }
 
 /* =============================
-   HEADSHOT + LOGO ROW
+   White inner text box
    ============================= */
-.header-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 24px;
-  margin-bottom: 18px;
-}
-
-/* Circular headshot */
-.headshot {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #7f9db9;
-}
-
-/* Logo to the right, 240px tall */
-.logo {
-  height: 240px;
-  width: auto;
-  object-fit: contain;
-}
-
-/* =============================
-   ABOUT TEXT
-   ============================= */
-.about-content {
+.about-box {
+  background: white;
+  border: 2px solid #7f9db9;
+  padding: 14px;
   font-size: 14px;
+  color: #000;
   line-height: 1.6;
-  color: #111;
-  margin-bottom: 18px;
 }
 
 /* =============================
-   SOCIAL BUTTONS
+   Social buttons
    ============================= */
 .social-buttons {
+  margin-top: 14px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
-/* XP-style buttons */
 .xp-button {
+  display: inline-block;
   padding: 4px 16px;
-  font-size: 13px;
-  color: #000;
-  text-decoration: none;
   background: #d4d0c8;
-  border: 1px solid #808080;
-  box-shadow:
-    inset 1px 1px #ffffff,
-    inset -1px -1px #404040;
+  border: 1px solid #7f9db9;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #000;
+  font-size: 13px;
+  box-shadow: inset 1px 1px #ffffff, inset -1px -1px #808080;
 }
 
 .xp-button:hover {
@@ -222,23 +197,6 @@ html, body {
 }
 
 .xp-button:active {
-  box-shadow:
-    inset -1px -1px #ffffff,
-    inset 1px 1px #404040;
+  box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080;
   transform: translateY(1px);
-}
-
-/* =============================
-   RESPONSIVE TWEAKS
-   ============================= */
-@media (max-width: 700px) {
-  .header-row {
-    flex-direction: column;
-  }
-
-  .headshot,
-  .logo {
-    height: 180px;
-    width: auto;
-  }
 }
