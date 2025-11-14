@@ -1,38 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | MaximPod</title>
-  <link rel="stylesheet" href="css/user.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me</title>
+  <link rel="stylesheet" href="css/user.css">
 </head>
 <body>
-  <div class="about-container">
 
-    <!-- 🧑 Headshot + Logo Section -->
-    <div class="top-section">
-      <img src="images/headshot.jpg" alt="Your Headshot" class="headshot">
-      <img src="images/logo.png" alt="Your Logo" class="logo">
-    </div>
-
-    <!-- ✍️ Bio Section -->
-    <div class="bio-section">
-      <h2>About Maxim Podhaisky</h2>
-      <p>
-        This is where your bio goes. You can write about your creative work,
-        photography, inspiration, or any story you want visitors to connect with.
-        Keep it conversational and authentic, reflecting your personal and professional style.
-      </p>
-    </div>
-
-    <!-- 🔗 Social Links Section -->
-    <div class="links-section">
-      <a href="https://www.instagram.com/YOURUSERNAME" target="_blank">Instagram</a>
-      <a href="https://www.tiktok.com/@YOURUSERNAME" target="_blank">TikTok</a>
-      <a href="https://www.linkedin.com/in/YOURUSERNAME" target="_blank">LinkedIn</a>
-      <a href="mailto:maxpodhaisky@gmail.com" target="_blank">Email</a>
-    </div>
-
+  <!-- ============= HEADER AREA (Headshot + Logo) ============= -->
+  <div class="header-wrapper">
+    <img src="images/headshot.jpg" alt="Headshot" class="headshot">
+    <img src="images/logo.png" alt="Logo" class="logo">
   </div>
+
+  <!-- ============= FIXED XP WINDOW FOR ABOUT ME ============= -->
+  <div class="fixed-xp-window">
+    <div class="title-bar">
+      <div class="title-bar-text">About Me</div>
+      <div class="title-bar-controls">
+        <button class="min-btn"></button>
+        <button class="max-btn"></button>
+        <button class="close-btn" id="closeWindow"></button>
+      </div>
+    </div>
+
+    <div class="window-body">
+      <p>
+        Hi! My name is Maxim Podhaisky.  
+        This is where your bio text goes.  
+        Write as much as you want and the box will scroll automatically.
+      </p>
+      <p>
+        You can describe your journey, your passions, goals, or anything else you want people to know.
+      </p>
+
+      <hr>
+
+      <div class="social-links">
+        <a href="mailto:maxpodhaisky@gmail.com" target="_blank">Email</a>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://tiktok.com" target="_blank">TikTok</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Close button closes THIS TAB only
+    document.getElementById("closeWindow").addEventListener("click", () => {
+      window.close();
+    });
+  </script>
+
 </body>
 </html>
