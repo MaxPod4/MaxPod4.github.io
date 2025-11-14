@@ -219,4 +219,31 @@ html, body {
   box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080;
   transform: translateY(1px);
 }
+/* =============================
+   Mobile adjustments
+   ============================= */
+@media (max-width: 600px) {
+  .header-wrapper {
+    margin-top: 20px;
+    flex-direction: column;   /* stack headshot & logo vertically */
+    gap: 12px;
+  }
+
+  .headshot {
+    width: 160px;
+    height: 160px;
+  }
+
+  .logo {
+    height: 160px;
+  }
+
+  .about-window {
+    width: 95vw;              /* keep it snug to the viewport on small screens */
+  }
+
+  .about-body {
+    max-height: 65vh;         /* a bit more room to breathe on tall phones */
+  }
+}
 
