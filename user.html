@@ -1,65 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Me</title>
-  <link rel="stylesheet" href="css/user.css">
+  <!-- Only this page's CSS; it’s self-contained -->
+  <link rel="stylesheet" href="css/user.css" />
 </head>
 <body>
 
-  <div class="about-wrapper">
-    <!-- Fixed, centered XP-style window -->
-    <div class="about-window">
-      <div class="title-bar">
-        <div class="title-bar-text">
-          <img src="images/user-icon.png" alt="User Icon">
-          About Me
-        </div>
-        <div class="title-bar-controls">
-          <button class="min-btn" aria-label="Minimize"></button>
-          <button class="max-btn" aria-label="Maximize"></button>
-          <button class="close-btn" id="closeWindow" aria-label="Close"></button>
-        </div>
+  <!-- Headshot + Logo side by side, centered ABOVE the window -->
+  <div class="header-wrapper">
+    <img src="images/headshot.jpg" alt="Headshot" class="headshot" />
+    <img src="images/logo.png" alt="Logo" class="logo" />
+  </div>
+
+  <!-- XP-style window containing ONLY the text + buttons -->
+  <div class="about-window">
+    <div class="about-title-bar">
+      <div class="about-title-text">About Me</div>
+      <div class="about-title-controls">
+        <button class="about-btn about-min" aria-label="Minimize"></button>
+        <button class="about-btn about-max" aria-label="Maximize"></button>
+        <button class="about-btn about-close" aria-label="Close"></button>
+      </div>
+    </div>
+
+    <div class="about-body">
+      <div class="about-box">
+        <p>
+          Hi! My name is Maxim Podhaisky.
+          This is where your bio text goes. Replace this with your real story
+          about who you are, what you create, and what kind of work you’re
+          interested in doing with clients and collaborators.
+        </p>
+        <p>
+          You can write as much as you’d like here. If the text gets longer,
+          this white box will scroll while keeping the XP-style frame around it.
+        </p>
       </div>
 
-      <div class="window-body">
-        <!-- Headshot + Logo side by side, centered -->
-        <div class="header-row">
-          <img src="images/headshot.jpg" alt="Headshot" class="headshot">
-          <img src="images/logo.png" alt="Logo" class="logo">
-        </div>
-
-        <!-- About text -->
-        <div class="about-content">
-          <p>
-            Hi! My name is Maxim Podhaisky.  
-            This is where your bio text goes. You can replace this paragraph with your real story,
-            your creative background, or anything you want visitors to know about you.
-          </p>
-          <p>
-            You can add multiple paragraphs here. The white box will scroll if the text gets long,
-            while keeping the XP window framing around it.
-          </p>
-        </div>
-
-        <!-- Buttons for links -->
-        <div class="social-buttons">
-          <a class="xp-button" href="mailto:maxpodhaisky@gmail.com" target="_blank">Email</a>
-          <a class="xp-button" href="https://instagram.com" target="_blank">Instagram</a>
-          <a class="xp-button" href="https://tiktok.com" target="_blank">TikTok</a>
-          <a class="xp-button" href="https://linkedin.com" target="_blank">LinkedIn</a>
-        </div>
+      <div class="social-buttons">
+        <a href="mailto:maxpodhaisky@gmail.com" target="_blank" class="xp-button">Email</a>
+        <a href="https://instagram.com" target="_blank" class="xp-button">Instagram</a>
+        <a href="https://tiktok.com" target="_blank" class="xp-button">TikTok</a>
+        <a href="https://linkedin.com" target="_blank" class="xp-button">LinkedIn</a>
       </div>
     </div>
   </div>
 
   <script>
-    // Close button: closes this tab (works for tabs opened via window.open)
-    document.getElementById("closeWindow")?.addEventListener("click", () => {
-      window.close();
+    // Close just closes this tab (works when opened via window.open from your desktop)
+    document.addEventListener("DOMContentLoaded", () => {
+      const closeBtn = document.querySelector(".about-close");
+      if (closeBtn) {
+        closeBtn.addEventListener("click", () => {
+          window.close();
+        });
+      }
+      // Min/Max are visual only
+      const minBtn = document.querySelector(".about-min");
+      const maxBtn = document.querySelector(".about-max");
+      if (minBtn) minBtn.addEventListener("click", () => {});
+      if (maxBtn) maxBtn.addEventListener("click", () => {});
     });
   </script>
-
 </body>
 </html>
+
