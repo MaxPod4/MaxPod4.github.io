@@ -1,7 +1,7 @@
 /* =============================
    Page base
    ============================= */
-body {
+html, body {
   margin: 0;
   padding: 0;
   background: #ece9d8;
@@ -12,12 +12,12 @@ body {
 }
 
 /* =============================
-   Headshot + Logo row (OUTSIDE XP window now)
+   Headshot + Logo row (outside the window)
    ============================= */
 .header-wrapper {
   margin-top: 30px;
   display: flex;
-  flex-direction: row;
+  flex-direction: row;         /* side by side */
   align-items: center;
   justify-content: center;
   gap: 24px;
@@ -26,27 +26,29 @@ body {
 .headshot {
   width: 220px;
   height: 220px;
-  border-radius: 50%;
+  border-radius: 50%;          /* circle */
   object-fit: cover;
   border: 2px solid #7f9db9;
 }
 
 .logo {
-  height: 240px;
+  height: 240px;               /* your chosen size */
   width: auto;
   object-fit: contain;
 }
 
 /* =============================
-   Fixed XP window (text + links only)
+   XP-style About window (text + buttons only)
    ============================= */
-.fixed-xp-window {
+.about-window {
   width: 600px;
   max-width: 90%;
-  margin-top: 25px;   /* now sits BELOW the headshot+logo area */
+  margin-top: 25px;
   background: #ece9d8;
   border-radius: 8px 8px 0 0;
   overflow: hidden;
+
+  /* XP-style blue bevel — same family as your desktop windows */
   box-shadow:
     inset -1px -1px #00138c,
     inset 1px 1px #0831d9,
@@ -57,13 +59,12 @@ body {
 }
 
 /* =============================
-   Title bar (unchanged)
+   Title bar (XP blue)
    ============================= */
-.title-bar {
+.about-title-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   height: 28px;
   padding: 3px 5px;
 
@@ -86,30 +87,37 @@ body {
   border-top-right-radius: 8px;
 }
 
+.about-title-text {
+  padding-left: 4px;
+}
+
 /* =============================
-   Control Buttons
+   Control buttons (Min/Max/Close)
    ============================= */
-.title-bar-controls {
+.about-title-controls {
   display: flex;
   gap: 3px;
 }
 
-.title-bar-controls button {
+.about-btn {
   width: 21px;
   height: 21px;
   border-radius: 2px;
   border: 1px solid white;
   cursor: pointer;
   padding: 0;
-  display: flex;
+
+  display: flex;                 /* center symbol inside */
   align-items: center;
   justify-content: center;
+
   box-shadow: inset 0 0 1px rgba(255,255,255,0.6);
   transition: all 0.1s;
 }
 
-.min-btn,
-.max-btn {
+/* Min/Max: XP blue buttons */
+.about-min,
+.about-max {
   background: linear-gradient(
     to bottom,
     rgba(9,151,255,1) 0%,
@@ -118,19 +126,23 @@ body {
   );
 }
 
-.close-btn {
+/* Close: XP red */
+.about-close {
   background: linear-gradient(to bottom, #ff4c4c 0%, #cc0000 70%);
 }
 
-.title-bar-controls button:hover { filter: brightness(1.2); }
-.title-bar-controls button:active {
+.about-btn:hover {
+  filter: brightness(1.2);
+}
+.about-btn:active {
   filter: brightness(0.9);
   transform: translateY(1px);
 }
 
-.min-btn::before,
-.max-btn::before,
-.close-btn::before {
+/* Centered glyphs inside buttons */
+.about-min::before,
+.about-max::before,
+.about-close::before {
   color: white;
   font-family: Tahoma, sans-serif;
   font-weight: bold;
@@ -138,18 +150,28 @@ body {
   content: "";
 }
 
-.min-btn::before { content: "_"; margin-top: -2px; }
-.max-btn::before { content: "☐"; font-size: 11px; }
-.close-btn::before { content: "✕"; }
+.about-min::before {
+  content: "_";
+  margin-top: -2px;
+}
+
+.about-max::before {
+  content: "☐";
+  font-size: 11px;
+}
+
+.about-close::before {
+  content: "✕";
+}
 
 /* =============================
-   Window body with thicker BLUE border
+   Window body with XP BLUE side/bottom border
    ============================= */
-.window-body {
+.about-body {
   background: #ece9d8;
   padding: 14px;
 
-  /* Updated border to XP blue */
+  /* Your request: side & bottom borders same blue tone as XP bar */
   border-left: 4px solid #003cba;
   border-right: 4px solid #003cba;
   border-bottom: 4px solid #003cba;
@@ -158,9 +180,7 @@ body {
   overflow-y: auto;
 }
 
-/* =============================
-   White inner text box
-   ============================= */
+/* White inner text box */
 .about-box {
   background: white;
   border: 2px solid #7f9db9;
@@ -171,7 +191,7 @@ body {
 }
 
 /* =============================
-   Social buttons
+   Social buttons under the text box
    ============================= */
 .social-buttons {
   margin-top: 14px;
@@ -200,3 +220,4 @@ body {
   box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080;
   transform: translateY(1px);
 }
+
