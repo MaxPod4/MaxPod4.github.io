@@ -78,6 +78,8 @@ html, body {
   overflow: hidden;
   z-index: 999;
   font-family: "Trebuchet MS", Tahoma, sans-serif;
+
+  /* XP bevel (already existed) */
   box-shadow:
     inset -1px -1px #00138c,
     inset 1px 1px #0831d9,
@@ -85,6 +87,11 @@ html, body {
     inset 2px 2px #166aee,
     inset -3px -3px #003bda,
     inset 3px 3px #0855dd;
+
+  /* ⭐ NEW — Thick XP blue side & bottom borders */
+  border-left: 4px solid #003cba;
+  border-right: 4px solid #003cba;
+  border-bottom: 4px solid #003cba;
 }
 
 /* Title Bar */
