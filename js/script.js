@@ -138,3 +138,30 @@ document.querySelectorAll('#contactWindow .contact-link').forEach(link => {
     link.classList.add('visited'); // triggers purple in CSS
   });
 });
+
+/* =======================
+   Live XP-style Clock
+   ======================= */
+function updateClock() {
+  const clockEl = document.getElementById("trayClock");
+  if (!clockEl) return;
+
+  const now = new Date();
+  
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+
+  // XP uses 12-hour format with no leading zero
+  const ampm = hours >= 12 ? "PM" : "AM";
+  hours = hours % 12;
+  hours = hours ? hours : 12; 
+
+  // Add leading zero to minutes
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+
+  clockEl.textContent = `${hours}:${minutes} ${ampm}`;
+}
+
+// Update clock every second
+setInterval(updateClock, 1000);
+updateClock(); // initial
