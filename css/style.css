@@ -426,26 +426,24 @@ box-shadow:
   align-items: center;
   gap: 8px;
   padding: 0 8px;
-  height: 100%;  /* match taskbar height exactly */
+  height: 100%;
 
-  /* Your Photoshop blue with a slight gradient */
+  /* Your chosen blue gradient */
   background: linear-gradient(
     to bottom,
-    #c7e6ff 0%,
-    #119def 45%,
-    #0b77c4 100%
+    #6bb8f0 0%,      /* soft top highlight */
+    #119def 45%,     /* core XP blue */
+    #0b77c4 100%     /* deeper bottom edge */
   );
 
-  /* XP-style bevel (same family as the taskbar) */
+  /* XP bevel (restored) but brightest highlight matched to your blue */
   box-shadow:
-    inset 2px 2px 3px rgba(0, 0, 0, 0.4),       /* darker inner top-left shadow */
-    inset -2px -2px 3px rgba(0, 0, 0, 0.5),     /* deeper inner bottom-right shade */
-    inset 4px 4px 6px rgba(0, 0, 0, 0.35),      /* softened dark contour */
-    inset -4px -4px 6px rgba(0, 0, 0, 0.4);     /* stronger dark lower edge */
+    inset 2px 2px 3px rgba(17, 157, 239, 0.65),   /* brighter, but BLUE not white */
+    inset -2px -2px 3px rgba(0, 60, 150, 0.50),   /* deeper lower shadow */
+    inset 4px 4px 6px rgba(17, 157, 239, 0.35),   /* blue-tinted soft glow */
+    inset -4px -4px 6px rgba(0, 60, 150, 0.45);   /* XP shadow tone */
 
-  border-radius: 0;   /* so it looks like a continuation of the bar */
-
-  /* still purely aesthetic */
+  border-radius: 0;
   pointer-events: none;
 }
 
