@@ -415,7 +415,7 @@ box-shadow:
   display: flex;
   justify-content: space-between;  /* Start on left, tray on right */
   align-items: stretch;
-  padding: 0 6px;
+  padding: 0;
 
   /* Entire bar is still aesthetic-only */
   pointer-events: none;
@@ -486,6 +486,7 @@ box-shadow:
   align-items: center;
   gap: 6px;
   padding: 3px 12px 4px 10px;
+  height: 100%;
 
   /* Green XP-style gradient using your core color #46aa45 */
   background: linear-gradient(
