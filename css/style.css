@@ -406,3 +406,49 @@ box-shadow:
   inset 4px 4px 6px rgba(160,190,255,0.45),  /* secondary soft blue highlight */
   inset -4px -4px 6px rgba(0,0,0,0.18);      /* deeper corner shading */
 }
+
+/* =============================
+   XP System Tray (Aesthetic Only)
+   ============================= */
+.taskbar-inner {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 6px;
+
+  /* Entire tray is non-interactive */
+  pointer-events: none;
+}
+
+.system-tray {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(to bottom, #dfefff 0%, #b8d9ff 100%);
+  border: 1px solid #7f9db9;
+  border-radius: 3px;
+  padding: 3px 8px;
+
+  /* also non-interactive */
+  pointer-events: none;
+}
+
+.tray-icons {
+  display: flex;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.tray-icons img {
+  width: 16px;
+  height: 16px;
+  pointer-events: none; /* ensures click passes through */
+}
+
+.tray-clock {
+  font-family: Tahoma, sans-serif;
+  font-size: 12px;
+  color: black;
+  pointer-events: none;
+}
