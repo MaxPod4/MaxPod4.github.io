@@ -459,12 +459,6 @@ box-shadow:
   pointer-events: none; /* ensures click passes through */
 }
 
-.tray-clock {
-  font-family: Tahoma, sans-serif;
-  font-size: 12px;
-  color: white;
-  pointer-events: none;
-}
 /* XP-style clock */
 .tray-clock {
   font-family: Tahoma, sans-serif;
