@@ -449,7 +449,7 @@ box-shadow:
 
 .tray-icons {
   display: flex;
-  gap: 4px;
+  gap: 2px;
   pointer-events: none;
 }
 
