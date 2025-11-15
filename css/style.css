@@ -486,7 +486,7 @@ box-shadow:
   align-items: center;
   gap: 6px;
   padding: 3px 18px 4px 14px;
-  height: 24px;        /* slightly shorter visually */
+  height: 23px;        /* slightly shorter visually */
   margin-top: 2px;     /* nudges it down a bit */
 
   /* Green XP-style gradient using your core color #46aa45 */
