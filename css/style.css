@@ -413,11 +413,11 @@ box-shadow:
 .taskbar-inner {
   height: 100%;
   display: flex;
-  justify-content: flex-end;   /* push tray to the far right */
-  align-items: stretch;        /* make tray fill the full height */
-  padding-right: 0;            /* no gap from right edge */
+  justify-content: space-between;  /* Start on left, tray on right */
+  align-items: stretch;
+  padding: 0 6px;
 
-  /* tray is purely aesthetic */
+  /* Entire bar is still aesthetic-only */
   pointer-events: none;
 }
 
@@ -470,4 +470,57 @@ box-shadow:
   display: flex;
   align-items: center;
   white-space: nowrap;
+}
+/* =============================
+   XP Start Button (static)
+   ============================= */
+.start-button {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  pointer-events: none; /* aesthetic only */
+}
+
+.start-inner {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 12px 4px 10px;
+
+  /* Green XP-style gradient using your core color #46aa45 */
+  background: linear-gradient(
+    to bottom,
+    #76d06f 0%,    /* light top highlight */
+    #46aa45 45%,   /* core green you chose */
+    #2c7a2b 100%   /* darker bottom edge */
+  );
+
+  /* Bevel similar to taskbar style */
+  box-shadow:
+    inset 2px 2px 3px rgba(255,255,255,0.6),
+    inset -2px -2px 3px rgba(0,0,0,0.35),
+    inset 4px 4px 6px rgba(255,255,255,0.3),
+    inset -4px -4px 6px rgba(0,0,0,0.4);
+
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.5);
+
+  pointer-events: none; /* still non-clickable for now */
+}
+
+/* XP logo inside Start button */
+.start-inner img {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+/* "Start" text – thicker, slightly bubbly */
+.start-inner span {
+  font-family: Tahoma, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
+  letter-spacing: 0.2px;
 }
