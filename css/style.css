@@ -400,9 +400,9 @@ html, body {
  border-radius: 10px; /* ← makes taskbar rounded */
 
   /* XP style bevel (matches your popup windows) */
- box-shadow:
-    inset 2px 2px 3px rgba(120,160,240,0.45),   /* brighter top-left bevel */
-    inset -2px -2px 3px rgba(0,0,0,0.25),      /* stronger bottom-right shade */
-    inset 4px 4px 6px rgba(255,255,255,0.5),   /* secondary highlight */
-    inset -4px -4px 6px rgba(0,0,0,0.18);      /* secondary shading */
+box-shadow:
+  inset 2px 2px 3px rgba(180,210,255,0.9),   /* strong light-blue highlight */
+  inset -2px -2px 3px rgba(0,0,0,0.25),      /* XP dark shadow */
+  inset 4px 4px 6px rgba(160,190,255,0.45),  /* secondary soft blue highlight */
+  inset -4px -4px 6px rgba(0,0,0,0.18);      /* deeper corner shading */
 }
