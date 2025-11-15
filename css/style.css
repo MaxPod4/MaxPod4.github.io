@@ -397,12 +397,12 @@ html, body {
     rgba(0,61,215,1) 100%
   );
 
+ border-radius: 10px; /* ← makes taskbar rounded */
+
   /* XP style bevel (matches your popup windows) */
-  box-shadow:
-    inset -1px -1px #00138c,
-    inset 1px 1px #0831d9,
-    inset -2px -2px #001ea0,
-    inset 2px 2px #166aee,
-    inset -3px -3px #003bda,
-    inset 3px 3px #0855dd;
+ box-shadow:
+    inset 2px 2px 3px rgba(255,255,255,0.9),   /* brighter top-left bevel */
+    inset -2px -2px 3px rgba(0,0,0,0.25),      /* stronger bottom-right shade */
+    inset 4px 4px 6px rgba(255,255,255,0.5),   /* secondary highlight */
+    inset -4px -4px 6px rgba(0,0,0,0.18);      /* secondary shading */
 }
