@@ -110,8 +110,6 @@ html, body {
   );
   height: 28px;
   border-top: 1px solid #0831d9;
-  border-left: 1px solid #0831d9;
-  border-right: 1px solid #001ea0;
   border-top-left-radius: 8px;
   border-top-right-radius: 7px;
   color: white;
@@ -123,6 +121,10 @@ html, body {
   justify-content: space-between;
   cursor: grab;
   user-select: none;
+ 
+ /* 🔹 New: let the bar overlap the thick outer border */
+  margin-left: -4px;
+  margin-right: -4px;
 }
 
 /* Title text with icon */
