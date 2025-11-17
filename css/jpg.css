@@ -1,46 +1,37 @@
-/* Black background */
+/* ============================
+   JPG PAGE BASE STYLING
+   ============================ */
+
+/* Full-page black background for gallery vibe */
 html, body {
   margin: 0;
   padding: 0;
-  background-color: black;
-  color: white;
-  height: 100%;
-  overflow-x: hidden;
-  font-family: sans-serif;
+  min-height: 100%;
+  background: #000;
+  color: #fff;
+  font-family: Tahoma, sans-serif;
 }
 
-/* Gallery container */
-.gallery {
+/* Optional main wrapper if you use one */
+.jpg-page {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Each image takes full screen height */
-.photo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* each photo fills viewport height */
-  width: 100%;
-  padding: 20px 0;
-  box-sizing: border-box;
-}
 
-/* Photos scale responsively */
-.photo img {
-  max-height: 90vh;
-  max-width: 90vw;
-  object-fit: contain;
-  border-radius: 6px; /* optional */
-}
-/* =============================
-   XP-style About window (text + buttons only)
-   ============================= */
+/* ============================
+   XP-STYLE WINDOW (35mm Film box)
+   Reused from user page, adapted for center layout
+   ============================ */
+
 .about-window {
-  width: 600px;
+  /* center it above the gallery */
+  width: 700px;
   max-width: 90%;
-  margin-top: 25px;
+  margin: 30px auto 20px auto;
+
   background: #ece9d8;
   border-radius: 8px 8px 0 0;
   overflow: hidden;
@@ -53,9 +44,14 @@ html, body {
     inset 2px 2px #166aee,
     inset -3px -3px #003bda,
     inset 3px 3px #0855dd;
+
+  /* thicker outer border on sides + bottom */
+  border-left: 3px solid #003cba;
+  border-right: 3px solid #003cba;
+  border-bottom: 3px solid #003cba;
 }
 
-/* Title Bar */
+/* Title Bar (same as user page) */
 .about-title-bar {
   background: linear-gradient(
     180deg,
@@ -84,7 +80,7 @@ html, body {
   user-select: none;
 }
 
-/* Title bar text w/ icon */
+/* Title text with icon (camera + "35mm Film") */
 .about-title-bar-text {
   display: flex;
   align-items: center;
@@ -96,7 +92,7 @@ html, body {
   height: 16px;
 }
 
-/* XP Titlebar control buttons */
+/* Title bar controls (you can keep or remove these buttons visually) */
 .about-title-bar-controls {
   display: flex;
   gap: 2px;
@@ -109,27 +105,22 @@ html, body {
   border-radius: 2px;
   position: relative;
   padding: 0;
-
   box-shadow: inset 0 0 1px rgba(255,255,255,0.6);
-}
-
-/* Minimize + Maximize buttons */
-.min-btn, .max-btn {
   background: linear-gradient(to bottom,
     rgba(9,151,255,1) 0%,
     rgba(0,83,238,1) 40%,
     rgba(0,61,215,1) 100%);
 }
 
-/* Close button */
-.close-btn {
+/* Close button red */
+.about-title-bar-controls .close-btn {
   background: linear-gradient(to bottom, #ff4c4c 0%, #cc0000 70%);
 }
 
 /* White symbols */
-.min-btn::before,
-.max-btn::before,
-.close-btn::before {
+.about-title-bar-controls .min-btn::before,
+.about-title-bar-controls .max-btn::before,
+.about-title-bar-controls .close-btn::before {
   color: white;
   position: absolute;
   top: 0;
@@ -141,16 +132,47 @@ html, body {
   font-family: Tahoma, sans-serif;
   font-size: 12px;
 }
-.min-btn::before { content: "_"; top: -2px; }
-.max-btn::before { content: "☐"; font-size: 11px; }
-.close-btn::before { content: "✕"; }
+.about-title-bar-controls .min-btn::before { content: "_"; top: -2px; }
+.about-title-bar-controls .max-btn::before { content: "☐"; font-size: 11px; }
+.about-title-bar-controls .close-btn::before { content: "✕"; }
 
-/* Content area */
+/* Inner text area */
 .about-window-body {
-  background: white;
+  background: #ffffff;
   border: 1px solid #7f9db9;
   border-top: none;
-  padding: 16px;
-  font-size: 12px;
-  color: black;
+  padding: 16px 18px;
+  font-size: 13px;
+  color: #000000;
+  line-height: 1.5;
+}
+
+/* If you want the text nicely constrained */
+.about-window-body p {
+  margin: 0 0 8px 0;
+}
+
+
+/* ============================
+   JPG GALLERY BELOW WINDOW
+   ============================ */
+
+.jpg-gallery {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 40px auto;
+}
+
+/* vertical scrolling gallery, images centered with space on sides */
+.jpg-gallery img {
+  display: block;
+  margin: 30px auto;
+  max-width: min(90vw, 800px);  /* big but not too big */
+  height: auto;
+  box-shadow: 0 0 18px rgba(0,0,0,0.6);
+}
+
+/* Optional: subtle fade border around images */
+.jpg-gallery img::selection {
+  background: transparent;
 }
