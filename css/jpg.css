@@ -4,6 +4,7 @@ html, body {
   padding: 0;
   background: #000;   /* <-- black */
   color: #fff;        /* optional: white text if you add captions later */
+  
 }
 .gallery {
   display: flex;
