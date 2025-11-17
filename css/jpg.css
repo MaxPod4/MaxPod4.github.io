@@ -41,7 +41,7 @@ html, body {
   border-radius: 8px 8px 0 0;
   overflow: hidden;
 
-  /* XP blue bevel border */
+  /* thick XP border */
   border-left: 3px solid #003cba;
   border-right: 3px solid #003cba;
   border-bottom: 3px solid #003cba;
@@ -81,7 +81,14 @@ html, body {
 
 /* Title Text */
 .jpg-title-text {
-  padding-left: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.jpg-title-text img {
+  width: 16px;
+  height: 16px;
 }
 
 /* Controls container */
