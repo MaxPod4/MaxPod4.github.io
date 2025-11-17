@@ -89,4 +89,9 @@ html, body {
   font-family: Tahoma, sans-serif;
   color: #000;
   line-height: 1.45;
+
+  /*side & bottom borders same blue tone as XP bar */
+  border-left: 4px solid #003cba;
+  border-right: 4px solid #003cba;
+  border-bottom: 4px solid #003cba;
 }
