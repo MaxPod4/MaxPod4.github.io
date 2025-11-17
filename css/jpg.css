@@ -30,3 +30,63 @@ html, body {
   object-fit: contain;
   border-radius: 6px; /* optional */
 }
+/* ============================
+   XP-style window for JPG page
+   ============================ */
+
+.jpg-info-window {
+  width: 90%;
+  max-width: 650px;
+  margin: 25px auto 40px auto;
+  border-radius: 8px 8px 0 0;
+  background: #ece9d8;
+  overflow: hidden;
+
+  /* XP-style bevel border */
+  box-shadow:
+    inset -1px -1px #00138c,
+    inset 1px 1px #0831d9,
+    inset -2px -2px #001ea0,
+    inset 2px 2px #166aee,
+    inset -3px -3px #003bda,
+    inset 3px 3px #0855dd;
+}
+
+/* XP title bar */
+.jpg-title-bar {
+  background: linear-gradient(
+    180deg,
+    rgba(9,151,255,1) 0%,
+    rgba(0,83,238,1) 8%,
+    rgba(0,80,238,1) 40%,
+    rgba(0,102,255,1) 88%,
+    rgba(0,102,255,1) 93%,
+    rgba(0,91,255,1) 95%,
+    rgba(0,61,215,1) 96%,
+    rgba(0,61,215,1) 100%
+  );
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  height: 28px;
+  color: white;
+  font-family: Tahoma, sans-serif;
+  font-size: 13px;
+  text-shadow: 1px 1px #0f1089;
+}
+
+.jpg-title-bar img {
+  width: 16px;
+  height: 16px;
+}
+
+/* Window body */
+.jpg-window-body {
+  padding: 12px 16px;
+  background: #ece9d8;
+  font-size: 13px;
+  font-family: Tahoma, sans-serif;
+  color: #000;
+  line-height: 1.45;
+}
