@@ -1,0 +1,296 @@
+/* ==========================
+   Fated Finds — Base layout
+   ========================== */
+body {
+  margin: 0;
+  font-family: Tahoma, sans-serif;
+  background: #ece9d8; /* XP grey/tan */
+  color: #111;
+}
+
+.ff-page {
+  min-height: 100vh;
+  padding: 24px 16px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Top logo */
+.ff-logo img {
+  max-width: 220px;
+  height: auto;
+  display: block;
+  margin: 0 auto 18px auto;
+}
+
+/* ==========================
+   XP-style main window
+   ========================== */
+
+.ff-window {
+  width: 95%;
+  max-width: 900px;
+  background: #ece9d8;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+
+  /* Thick XP borders on sides + bottom */
+  border-left: 3px solid #003cba;
+  border-right: 3px solid #003cba;
+  border-bottom: 3px solid #003cba;
+
+  /* Inset XP blue bevel */
+  box-shadow:
+    inset -1px -1px #00138c,
+    inset 1px 1px #0831d9,
+    inset -2px -2px #001ea0,
+    inset 2px 2px #166aee,
+    inset -3px -3px #003bda,
+    inset 3px 3px #0855dd;
+
+  margin-bottom: 32px;
+}
+
+/* Title bar (XP style) */
+.ff-title-bar {
+  background: linear-gradient(
+    180deg,
+    rgba(9,151,255,1) 0%,
+    rgba(0,83,238,1) 8%,
+    rgba(0,80,238,1) 40%,
+    rgba(0,102,255,1) 88%,
+    rgba(0,102,255,1) 93%,
+    rgba(0,91,255,1) 95%,
+    rgba(0,61,215,1) 96%,
+    rgba(0,61,215,1) 100%
+  );
+  height: 28px;
+  border-top: 1px solid #0831d9;
+  border-left: 1px solid #0831d9;
+  border-right: 1px solid #001ea0;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 7px;
+  color: white;
+  text-shadow: 1px 1px #0f1089;
+  font-size: 13px;
+  padding: 3px 5px 3px 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Title text with icon */
+.ff-title-text {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-left: 4px;
+}
+
+.ff-title-text img {
+  width: 16px;
+  height: 16px;
+}
+
+/* XP titlebar control buttons */
+.ff-title-controls {
+  display: flex;
+  gap: 2px;
+}
+
+.ff-btn {
+  width: 21px;
+  height: 21px;
+  border: 1px solid white;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  transition: all 0.1s ease-in-out;
+  box-shadow: inset 0 0 1px rgba(255,255,255,0.6);
+}
+
+/* Minimize + Maximize: blue */
+.ff-min,
+.ff-max {
+  background: linear-gradient(to bottom,
+    rgba(9,151,255,1) 0%,
+    rgba(0,83,238,1) 40%,
+    rgba(0,61,215,1) 100%);
+}
+
+/* Close: red */
+.ff-close {
+  background: linear-gradient(to bottom, #ff4c4c 0%, #cc0000 70%);
+}
+
+/* Button glyphs */
+.ff-btn::before {
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  line-height: 20px;
+  font-weight: bold;
+  font-family: Tahoma, sans-serif;
+  font-size: 12px;
+}
+
+.ff-min::before { content: "_"; top: -2px; }
+.ff-max::before { content: "☐"; font-size: 11px; }
+.ff-close::before { content: "✕"; }
+
+/* Hover/active states */
+.ff-btn:hover {
+  filter: brightness(1.2);
+}
+.ff-btn:active {
+  filter: brightness(0.9);
+  transform: translateY(1px);
+}
+
+/* Window body layout */
+.ff-window-body {
+  background: #ffffff;
+  border: 1px solid #7f9db9;
+  border-top: none;
+  padding: 16px 18px;
+  font-size: 13px;
+  color: #000;
+  line-height: 1.5;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Left = text block */
+.ff-text {
+  flex: 1.3;
+  min-width: 240px;
+}
+
+/* XP-style link buttons */
+.ff-links {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ff-link-button {
+  display: inline-block;
+  padding: 4px 14px;
+  background: #d4d0c8;
+  border: 1px solid #7f9db9;
+  border-radius: 3px;
+  box-shadow: inset 1px 1px #ffffff, inset -1px -1px #808080;
+  font-size: 12px;
+  text-decoration: none;
+  color: #000;
+}
+
+.ff-link-button:hover {
+  background: #e6e3df;
+}
+
+.ff-link-button:active {
+  box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080;
+  transform: translateY(1px);
+}
+
+/* Stats block */
+.ff-stats {
+  margin-top: 14px;
+  font-size: 12px;
+}
+
+.ff-stats h3 {
+  margin: 0 0 6px 0;
+  font-size: 13px;
+}
+
+.ff-stats ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ff-stats li {
+  margin-bottom: 3px;
+}
+
+.ff-stat-label {
+  font-weight: bold;
+}
+
+.ff-stat-value {
+  margin-left: 4px;
+}
+
+/* Right = video block */
+.ff-video {
+  flex: 1;
+  min-width: 220px;
+}
+
+/* Responsive video frame */
+.ff-video-frame {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  background: #000;
+  border: 1px solid #7f9db9;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+.ff-video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Stack columns on small screens */
+@media (max-width: 720px) {
+  .ff-window-body {
+    flex-direction: column;
+  }
+
+  .ff-video,
+  .ff-text {
+    min-width: 100%;
+  }
+}
+
+/* ==========================
+   Stills / extra images
+   ========================== */
+.ff-gallery {
+  width: 95%;
+  max-width: 900px;
+}
+
+.ff-gallery-title {
+  font-size: 16px;
+  margin: 0 0 10px 0;
+}
+
+.ff-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.ff-gallery-grid img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border: 1px solid #7f9db9;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+  background: #000;
+}
