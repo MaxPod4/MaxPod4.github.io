@@ -202,35 +202,6 @@ body {
   transform: translateY(1px);
 }
 
-/* Stats block */
-.ff-stats {
-  margin-top: 14px;
-  font-size: 12px;
-}
-
-.ff-stats h3 {
-  margin: 0 0 6px 0;
-  font-size: 13px;
-}
-
-.ff-stats ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.ff-stats li {
-  margin-bottom: 3px;
-}
-
-.ff-stat-label {
-  font-weight: bold;
-}
-
-.ff-stat-value {
-  margin-left: 4px;
-}
-
 /* Right = video block */
 .ff-video {
   flex: 1;
