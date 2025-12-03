@@ -206,6 +206,7 @@ body {
 .ff-video {
   flex: 1;
   min-width: 220px;
+  margin-top: 20px;   /* adjust 15–40px to taste */
 }
 
 /* Responsive video frame */
