@@ -123,3 +123,28 @@ body {
 .lightbox:not([hidden]) {
   display: flex;
 }
+
+/* ==========================
+   Video Embeds Tab
+   ========================== */
+.video-embeds {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;     /* spacing between videos */
+  margin-top: 10px;
+}
+
+.video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* keeps proper video shape */
+  border: 1px solid #7f9db9;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.video-frame iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
