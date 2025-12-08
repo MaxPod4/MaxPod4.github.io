@@ -263,9 +263,8 @@ body {
   width: 100%;
   height: auto;
   object-fit: contain;
-  border: 1px solid #7f9db9;
+  border: none;
   box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-  background: #000;
-  padding: 10px;
+  background: transparent;
   box-sizing: border-box;
 }
