@@ -165,3 +165,29 @@ function updateClock() {
 // Update clock every second
 setInterval(updateClock, 1000);
 updateClock(); // initial
+
+/* =============================
+   PodOS Portfolio Window
+   ============================= */
+
+function openPortfolioWindow() {
+  const windowEl = document.getElementById("portfolioWindow");
+  const iframe = document.getElementById("portfolioFrame");
+
+  if (!windowEl || !iframe) return;
+
+  // Load portfolio.html only when Portfolio is first opened
+  if (!iframe.getAttribute("src")) {
+    iframe.src = iframe.dataset.src;
+  }
+
+  windowEl.hidden = false;
+}
+
+function closePortfolioWindow() {
+  const windowEl = document.getElementById("portfolioWindow");
+
+  if (!windowEl) return;
+
+  windowEl.hidden = true;
+}
