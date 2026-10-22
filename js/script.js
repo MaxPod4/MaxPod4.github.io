@@ -30,6 +30,107 @@ document.addEventListener('click', (e) => {
 let zCounter = 1000;
 const nextZ = () => ++zCounter;
 
+/*************** PodOS Taskbar Management ***************/
+
+function getTaskbarButton(win) {
+  return document.querySelector(
+    `.taskbar-app[data-window="${win.id}"]`
+  );
+}
+
+function updateTaskbarActive() {
+  const visibleWindows = [...document.querySelectorAll('.window')]
+    .filter(win => !win.hidden && !win.classList.contains('minimized'));
+
+  const topWindow = visibleWindows.sort(
+    (a, b) =>
+      (parseInt(b.style.zIndex) || 0) -
+      (parseInt(a.style.zIndex) || 0)
+  )[0];
+
+  document.querySelectorAll('.taskbar-app').forEach(btn => {
+    btn.classList.toggle(
+      'active',
+      !!topWindow && btn.dataset.window === topWindow.id
+    );
+  });
+}
+
+function createTaskbarButton(win) {
+  const container = document.getElementById('taskbarApps');
+
+  if (!container || getTaskbarButton(win)) return;
+
+  const title = win.querySelector('.title-bar-text span')?.textContent
+    || win.id;
+
+  const icon = win.querySelector('.title-bar-text img')?.getAttribute('src');
+
+  const button = document.createElement('button');
+
+  button.type = 'button';
+  button.className = 'taskbar-app';
+  button.dataset.window = win.id;
+  button.title = title;
+
+  if (icon) {
+    const img = document.createElement('img');
+    img.src = icon;
+    img.alt = '';
+    button.appendChild(img);
+  }
+
+  const label = document.createElement('span');
+  label.textContent = title;
+  button.appendChild(label);
+
+  button.addEventListener('click', () => {
+    if (win.classList.contains('minimized') || win.hidden) {
+      restoreWindow(win);
+    } else if (button.classList.contains('active')) {
+      minimizeWindow(win);
+    } else {
+      win.style.zIndex = String(nextZ());
+      updateTaskbarActive();
+    }
+  });
+
+  container.appendChild(button);
+}
+
+function minimizeWindow(win) {
+  if (typeof win === 'string') {
+    win = document.getElementById(win);
+  }
+
+  if (!win) return;
+
+  win.classList.add('minimized');
+  win.hidden = true;
+
+  updateTaskbarActive();
+}
+
+function restoreWindow(win) {
+  if (typeof win === 'string') {
+    win = document.getElementById(win);
+  }
+
+  if (!win) return;
+
+  win.classList.remove('minimized');
+  win.hidden = false;
+
+  win.style.zIndex = String(nextZ());
+
+  updateTaskbarActive();
+}
+
+function removeTaskbarButton(win) {
+  getTaskbarButton(win)?.remove();
+  updateTaskbarActive();
+}
+
 /*************** Maximize / Restore Windows ***************/
 
 function toggleMaximize(win) {
@@ -64,33 +165,57 @@ function toggleMaximize(win) {
   // Bring window to front
   win.style.zIndex = String(nextZ());
 }
+
 function openWindow(id) {
   const win = document.getElementById(id);
   if (!win) return;
+
+  // If minimized, restore without changing size or position
+  if (win.classList.contains('minimized')) {
+    restoreWindow(win);
+    return;
+  }
+
   win.removeAttribute('hidden');
 
-  // center-ish when opened
-  const vw = window.innerWidth, vh = window.innerHeight;
+  // Center-ish when opened
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+
   const rect = win.getBoundingClientRect();
+
   const left = Math.max(8, (vw - rect.width) / 2);
-  const top  = Math.max(8, (vh - rect.height) / 3);
+  const top = Math.max(8, (vh - rect.height) / 3);
+
   win.style.left = `${left}px`;
-  win.style.top  = `${top}px`;
+  win.style.top = `${top}px`;
+
   win.style.zIndex = String(nextZ());
 
-  // Reset contact link "visited" state when opening Contact
+  // Create taskbar button
+  createTaskbarButton(win);
+  updateTaskbarActive();
+
+  // Reset contact link visited state
   if (id === 'contactWindow') {
     win.querySelectorAll('.contact-link').forEach(link => {
-      link.classList.remove('visited'); // back to blue
+      link.classList.remove('visited');
     });
   }
 }
 
 function closeWindow(win) {
-  if (typeof win === 'string') win = document.getElementById(win);
+  if (typeof win === 'string') {
+    win = document.getElementById(win);
+  }
+
   if (!win) return;
 
-  win.setAttribute('hidden', '');
+  win.classList.remove('minimized');
+  win.hidden = true;
+
+  // Remove application from taskbar
+  removeTaskbarButton(win);
 }
 
 /*************** Window Controls + Bring-to-Front ***************/
@@ -99,14 +224,24 @@ document.querySelectorAll('.window').forEach(win => {
 
   // Bring window to front when interacting
   win.addEventListener('mousedown', () => {
-    win.style.zIndex = String(nextZ());
-  });
+  win.style.zIndex = String(nextZ());
+  updateTaskbarActive();
+});
 
   // Close buttons
   win.querySelectorAll('.close-btn, .ok-btn').forEach(btn => {
     btn.addEventListener('click', () => closeWindow(win));
   });
+  
+  // Minimize button
+  const minBtn = win.querySelector('.min-btn');
 
+  if (minBtn) {
+  minBtn.addEventListener('click', () => {
+    minimizeWindow(win);
+  });
+}
+  
   // Maximize / Restore button
   const maxBtn = win.querySelector('.max-btn');
 
