@@ -7,7 +7,7 @@ html, body {
   height: 100%;
   overflow: hidden;
   background: url('../images/WindowsXP_Desktop.jpg') center / cover no-repeat fixed;
-  background-color: #0d2c6e; /* fallback blue */
+  background-color: #496F96; /* fallback Forest Slate Blue */
 }
 
 /* Desktop container */
