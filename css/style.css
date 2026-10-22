@@ -530,3 +530,32 @@ html, body {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
   letter-spacing: 0.2px;
 }
+
+/* =============================
+   PodOS Portfolio Window
+   ============================= */
+
+.portfolio-window {
+  width: 850px;
+  height: 550px;
+  max-width: 90vw;
+  max-height: 85vh;
+}
+
+.portfolio-body {
+  height: calc(100% - 32px);
+  padding: 0;
+  overflow: hidden;
+}
+
+.portfolio-body iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Ensure hidden windows stay hidden */
+.window[hidden] {
+  display: none;
+}
