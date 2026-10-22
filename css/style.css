@@ -553,9 +553,6 @@ html, body {
   width: 100%;
   height: 100%;
   border: none;
-
-  /* Testing iframe interaction */
-  pointer-events: none;
 }
 
 /* Ensure hidden windows stay hidden */
