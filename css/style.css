@@ -528,3 +528,59 @@ box-shadow:
   text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
   letter-spacing: 0.2px;
 }
+/* ==========================================
+   PodOS — Forest Slate Color Test
+   ========================================== */
+
+/* Main Taskbar — Slate Blue */
+.taskbar {
+  background: linear-gradient(
+    180deg,
+    #91A4B5 0%,
+    #60788E 8%,
+    #52677D 40%,
+    #5E7489 88%,
+    #52677D 95%,
+    #34485C 100%
+  );
+
+  box-shadow:
+    inset 2px 2px 3px rgba(190,210,225,0.8),
+    inset -2px -2px 3px rgba(0,0,0,0.25),
+    inset 4px 4px 6px rgba(170,190,210,0.35),
+    inset -4px -4px 6px rgba(0,0,0,0.18);
+}
+
+/* System Tray — Lighter Slate Blue */
+.system-tray {
+  background: linear-gradient(
+    to bottom,
+    #9AABBA 0%,
+    #71889C 45%,
+    #435C72 100%
+  );
+
+  box-shadow:
+    inset 2px 2px 3px rgba(210,225,235,0.7),
+    inset -2px -2px 3px rgba(0,0,0,0.25),
+    inset 4px 4px 6px rgba(180,200,215,0.35),
+    inset -4px -4px 6px rgba(0,0,0,0.18);
+}
+
+/* Start Button — Forest Green */
+.start-inner {
+  background: linear-gradient(
+    to bottom,
+    #94B594 0%,
+    #719671 15%,
+    #527A52 45%,
+    #527A52 75%,
+    #355635 100%
+  );
+
+  box-shadow:
+    inset 2px 2px 3px rgba(230,255,230,0.6),
+    inset -2px -2px 3px rgba(0,0,0,0.35),
+    inset 4px 4px 6px rgba(200,230,200,0.3),
+    inset -4px -4px 6px rgba(0,0,0,0.4);
+}
