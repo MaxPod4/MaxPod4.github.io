@@ -375,7 +375,7 @@ html, body {
   display: block;
 }
 /* =============================
-   LIVE XP-STYLE TASKBAR
+   PodOS Taskbar
    ============================= */
 .taskbar {
   position: fixed;
@@ -384,33 +384,31 @@ html, body {
   width: 100%;
   height: 28px; /* XP-ish height */
   z-index: 5000;
-  pointer-events: none;  /* 👈 let clicks go through to icons */
-   
-  /* SAME GRADIENT as your XP window title bar */
+  pointer-events: none; /* Let clicks pass through */
+
+  /* PodOS Slate Blue Gradient */
   background: linear-gradient(
     180deg,
-    rgba(9,151,255,1) 0%,
-    rgba(0,83,238,1) 8%,
-    rgba(0,80,238,1) 40%,
-    rgba(0,102,255,1) 88%,
-    rgba(0,102,255,1) 93%,
-    rgba(0,91,255,1) 95%,
-    rgba(0,61,215,1) 96%,
-    rgba(0,61,215,1) 100%
+    #8BA9C4 0%,
+    #5C85AB 8%,
+    #496F96 40%,
+    #557DA3 88%,
+    #496F96 95%,
+    #304F70 100%
   );
 
- border-radius: 10px; /* ← makes taskbar rounded */
+  border-radius: 10px;
 
-  /* XP style bevel (matches your popup windows) */
-box-shadow:
-  inset 2px 2px 3px rgba(180,210,255,0.9),   /* strong light-blue highlight */
-  inset -2px -2px 3px rgba(0,0,0,0.25),      /* XP dark shadow */
-  inset 4px 4px 6px rgba(160,190,255,0.45),  /* secondary soft blue highlight */
-  inset -4px -4px 6px rgba(0,0,0,0.18);      /* deeper corner shading */
+  /* PodOS XP-style bevel */
+  box-shadow:
+    inset 2px 2px 3px rgba(190,215,240,0.8),
+    inset -2px -2px 3px rgba(0,0,0,0.25),
+    inset 4px 4px 6px rgba(160,195,225,0.4),
+    inset -4px -4px 6px rgba(0,0,0,0.18);
 }
 
 /* =============================
-   XP System Tray (Aesthetic Only)
+   PodOS System Tray
    ============================= */
 .taskbar-inner {
   height: 100%;
@@ -430,19 +428,19 @@ box-shadow:
   padding: 0 8px;
   height: 100%;
 
-  /* Your chosen blue gradient */
+  /* PodOS Dusty Sky Blue Gradient */
   background: linear-gradient(
     to bottom,
-    #6bb8f0 0%,      /* soft top highlight */
-    #119def 45%,     /* core XP blue */
-    #0b77c4 100%     /* deeper bottom edge */
+    #A1D0E8 0%,
+    #69A9CC 45%,
+    #407FA5 100%
   );
 
-  /* XP bevel (restored) but brightest highlight matched to your blue */
- box-shadow:
-    inset 2px 2px 3px rgba(180,210,255,0.9),
+  /* PodOS XP-style bevel */
+  box-shadow:
+    inset 2px 2px 3px rgba(225,245,255,0.8),
     inset -2px -2px 3px rgba(0,0,0,0.25),
-    inset 4px 4px 6px rgba(160,190,255,0.45),
+    inset 4px 4px 6px rgba(185,220,240,0.4),
     inset -4px -4px 6px rgba(0,0,0,0.18);
 
   border-radius: 0;
@@ -463,7 +461,7 @@ box-shadow:
 
 /* XP-style clock */
 .tray-clock {
-  font-family: Tahoma, sans-serif;
+  font-family: 'Fredoka', sans-serif;
   font-size: 12px;
   color: white;
   padding-left: 10px;
@@ -474,7 +472,7 @@ box-shadow:
   white-space: nowrap;
 }
 /* =============================
-   XP Start Button (static)
+   PodOS Start Button
    ============================= */
 .start-button {
   height: 100%;
@@ -488,28 +486,30 @@ box-shadow:
   align-items: center;
   gap: 6px;
   padding: 3px 18px 4px 14px;
-  height: 23px;        /* slightly shorter visually */
-  margin-top: 2px;     /* nudges it down a bit */
+  height: 23px;
+  margin-top: 2px;
 
-  /* Green XP-style gradient using your core color #46aa45 */
+  /* PodOS Forest Green Gradient */
   background: linear-gradient(
     to bottom,
-    #76d06f 0%,    /* light top highlight */
-    #46aa45 45%,   /* core green you chose */
-    #2c7a2b 100%   /* darker bottom edge */
+    #91C88A 0%,
+    #6BAD64 15%,
+    #52934F 45%,
+    #52934F 75%,
+    #326B35 100%
   );
 
-  /* Bevel similar to taskbar style */
+  /* PodOS XP-style bevel */
   box-shadow:
-    inset 2px 2px 3px rgba(255,255,255,0.6),
+    inset 2px 2px 3px rgba(230,255,230,0.65),
     inset -2px -2px 3px rgba(0,0,0,0.35),
-    inset 4px 4px 6px rgba(255,255,255,0.3),
+    inset 4px 4px 6px rgba(200,240,200,0.35),
     inset -4px -4px 6px rgba(0,0,0,0.4);
 
   border-radius: 0 6px 6px 0;
   border: 1px solid rgba(0,0,0,0.5);
 
-  pointer-events: none; /* still non-clickable for now */
+  pointer-events: none;
 }
 
 /* PodOS Logo */
@@ -529,60 +529,4 @@ box-shadow:
   color: #ffffff;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
   letter-spacing: 0.2px;
-}
-/* ==========================================
-   PodOS — Vibrant Forest Slate
-   ========================================== */
-
-/* Main Taskbar */
-.taskbar {
-  background: linear-gradient(
-    180deg,
-    #8BA9C4 0%,
-    #5C85AB 8%,
-    #496F96 40%,
-    #557DA3 88%,
-    #496F96 95%,
-    #304F70 100%
-  );
-
-  box-shadow:
-    inset 2px 2px 3px rgba(190,215,240,0.8),
-    inset -2px -2px 3px rgba(0,0,0,0.25),
-    inset 4px 4px 6px rgba(160,195,225,0.4),
-    inset -4px -4px 6px rgba(0,0,0,0.18);
-}
-
-/* System Tray — Vibrant Sky Blue */
-.system-tray {
-  background: linear-gradient(
-    to bottom,
-    #A1D0E8 0%,
-    #69A9CC 45%,
-    #407FA5 100%
-  );
-
-  box-shadow:
-    inset 2px 2px 3px rgba(225,245,255,0.8),
-    inset -2px -2px 3px rgba(0,0,0,0.25),
-    inset 4px 4px 6px rgba(185,220,240,0.4),
-    inset -4px -4px 6px rgba(0,0,0,0.18);
-}
-
-/* Start Button — Vibrant Forest Green */
-.start-inner {
-  background: linear-gradient(
-    to bottom,
-    #91C88A 0%,
-    #6BAD64 15%,
-    #52934F 45%,
-    #52934F 75%,
-    #326B35 100%
-  );
-
-  box-shadow:
-    inset 2px 2px 3px rgba(230,255,230,0.65),
-    inset -2px -2px 3px rgba(0,0,0,0.35),
-    inset 4px 4px 6px rgba(200,240,200,0.35),
-    inset -4px -4px 6px rgba(0,0,0,0.4);
 }
