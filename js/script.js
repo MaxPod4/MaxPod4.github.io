@@ -77,8 +77,14 @@ function makeDraggable(win, handle) {
   let isDown = false, startX = 0, startY = 0, startL = 0, startT = 0;
 
   const onPointerDown = (e) => {
-    isDown = true;
-    win.style.zIndex = String(nextZ());
+
+  // Don't start dragging when clicking window buttons
+  if (e.target.closest('button, .close-btn, .minimize-btn, .maximize-btn')) {
+    return;
+  }
+
+  isDown = true;
+  win.style.zIndex = String(nextZ());
     const p = e.touches ? e.touches[0] : e;
     startX = p.clientX;
     startY = p.clientY;
