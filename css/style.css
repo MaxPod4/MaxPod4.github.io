@@ -601,3 +601,10 @@ html, body {
 .portfolio-window.maximized .portfolio-body {
   height: calc(100% - 35px);
 }
+/* =============================
+   PodOS Minimized Windows
+   ============================= */
+
+.window.minimized {
+  display: none !important;
+}
