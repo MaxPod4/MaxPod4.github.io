@@ -551,19 +551,19 @@ box-shadow:
     inset -4px -4px 6px rgba(0,0,0,0.18);
 }
 
-/* System Tray — Lighter Slate Blue */
+/* System Tray — Dusty Sky Blue */
 .system-tray {
   background: linear-gradient(
     to bottom,
-    #9AABBA 0%,
-    #71889C 45%,
-    #435C72 100%
+    #A4C1D1 0%,   /* Light highlight */
+    #779DB5 45%,  /* Main dusty sky blue */
+    #547A94 100%  /* Darker bottom edge */
   );
 
   box-shadow:
-    inset 2px 2px 3px rgba(210,225,235,0.7),
+    inset 2px 2px 3px rgba(220,240,250,0.7),
     inset -2px -2px 3px rgba(0,0,0,0.25),
-    inset 4px 4px 6px rgba(180,200,215,0.35),
+    inset 4px 4px 6px rgba(190,215,230,0.35),
     inset -4px -4px 6px rgba(0,0,0,0.18);
 }
 
