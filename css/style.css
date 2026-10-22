@@ -462,7 +462,7 @@ html, body {
 /* XP-style clock */
 .tray-clock {
   font-family: 'Space Mono', monospace;
-  font-size: 16px;
+  font-size: 12px;
   color: white;
   padding-left: 10px;
   padding-right: 4px;
