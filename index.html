@@ -12,7 +12,10 @@
 </head>
 
 <body>
-  <!-- ===== Windows XP Desktop Area ===== -->
+
+  <!-- =============================
+     PodOS Desktop Area
+     ============================= -->
   <div class="desktop-area">
     <!-- ♻ Recycle Bin (popup trigger) -->
     <div class="icon" style="top: 6%; left: 1%;" data-window="recycleWindow">
@@ -97,7 +100,30 @@
   </div>
 </div>
 
-<!-- 🧠 Fine Tuned - Error Popup -->
+<!-- =============================
+     PodOS Portfolio Window
+     ============================= -->
+<div class="window portfolio-window" id="portfolioWindow" hidden>
+
+  <div class="title-bar">
+    <span>Portfolio</span>
+
+    <button type="button" class="close-btn" onclick="closePortfolioWindow()">
+      ✕
+    </button>
+  </div>
+
+  <div class="window-body portfolio-body">
+    <iframe
+      id="portfolioFrame"
+      title="Portfolio"
+      data-src="portfolio.html">
+    </iframe>
+  </div>
+
+</div>
+       
+<!-- 🧠 Fine Tuned - Error Popup REMOVEREMOVEREMOVEREMOVEREMOVEREMOVEREMOVEREMOVEREMOVEREMOVEREMOVEREMOVEREMOVEREMOVEREMOVEREMOVEREMOVEREMOVEREMOVEREMOVEREMOVEREMOVEREMOVEREMOVEREMOVEREMOVEREMOVEREMOVEREMOVE -->
 <div class="window" id="finetunedWindow" hidden>
   <div class="title-bar" data-drag-handle>
     <div class="title-bar-text">
