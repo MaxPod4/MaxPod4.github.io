@@ -523,9 +523,9 @@ box-shadow:
 
 /* "Start" text – thicker, slightly bubbly */
 .start-inner span {
-  font-family: 'Outfit', sans-serif;
-  font-size: 14px;
-  font-weight: bold;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
   color: #ffffff;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
   letter-spacing: 0.2px;
