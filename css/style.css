@@ -523,7 +523,7 @@ box-shadow:
 
 /* "Start" text – thicker, slightly bubbly */
 .start-inner span {
-  font-family: Tahoma, sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 14px;
   font-weight: bold;
   color: #ffffff;
