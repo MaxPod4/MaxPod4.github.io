@@ -105,9 +105,14 @@ function minimizeWindow(win) {
 
   if (!win) return;
 
+  // Ensure the window has a taskbar button
+  createTaskbarButton(win);
+
+  // Hide the window without closing it
   win.classList.add('minimized');
   win.hidden = true;
 
+  // Update active taskbar application
   updateTaskbarActive();
 }
 
