@@ -78,35 +78,44 @@ function makeDraggable(win, handle) {
 
   const onPointerDown = (e) => {
 
-  // Don't start dragging when clicking window buttons
-  if (e.target.closest('button, .close-btn, .minimize-btn, .maximize-btn')) {
-    return;
-  }
+    // Don't start dragging when clicking window buttons
+    if (e.target.closest('button, .close-btn, .minimize-btn, .maximize-btn')) {
+      return;
+    }
 
-  isDown = true;
-  win.style.zIndex = String(nextZ());
+    isDown = true;
+    win.style.zIndex = String(nextZ());
+
     const p = e.touches ? e.touches[0] : e;
     startX = p.clientX;
     startY = p.clientY;
+
     const r = win.getBoundingClientRect();
     startL = r.left;
     startT = r.top;
+
+    // Temporarily disable iframe interaction while dragging
+    win.querySelectorAll('iframe').forEach(frame => {
+      frame.style.pointerEvents = 'none';
+    });
 
     document.addEventListener('mousemove', onPointerMove);
     document.addEventListener('mouseup', onPointerUp);
     document.addEventListener('touchmove', onPointerMove, { passive: false });
     document.addEventListener('touchend', onPointerUp);
 
-    e.preventDefault();
+    if (e.cancelable) e.preventDefault();
   };
 
   const onPointerMove = (e) => {
     if (!isDown) return;
+
     const p = e.touches ? e.touches[0] : e;
+
     let newL = startL + (p.clientX - startX);
     let newT = startT + (p.clientY - startY);
 
-    // keep within viewport
+    // Keep window within viewport
     const pad = 8;
     const maxL = window.innerWidth - win.offsetWidth - pad;
     const maxT = window.innerHeight - win.offsetHeight - pad;
@@ -115,13 +124,19 @@ function makeDraggable(win, handle) {
     newT = Math.min(Math.max(pad, newT), Math.max(pad, maxT));
 
     win.style.left = `${newL}px`;
-    win.style.top  = `${newT}px`;
+    win.style.top = `${newT}px`;
 
     if (e.cancelable) e.preventDefault();
   };
 
   const onPointerUp = () => {
     isDown = false;
+
+    // Restore iframe interaction when dragging ends
+    win.querySelectorAll('iframe').forEach(frame => {
+      frame.style.pointerEvents = '';
+    });
+
     document.removeEventListener('mousemove', onPointerMove);
     document.removeEventListener('mouseup', onPointerUp);
     document.removeEventListener('touchmove', onPointerMove);
@@ -177,23 +192,15 @@ updateClock(); // initial
    ============================= */
 
 function openPortfolioWindow() {
-  const windowEl = document.getElementById("portfolioWindow");
   const iframe = document.getElementById("portfolioFrame");
 
-  if (!windowEl || !iframe) return;
+  if (!iframe) return;
 
-  // Load portfolio.html only when Portfolio is first opened
+  // Load portfolio.html only when first opened
   if (!iframe.getAttribute("src")) {
     iframe.src = iframe.dataset.src;
   }
 
-  windowEl.hidden = false;
-}
-
-function closePortfolioWindow() {
-  const windowEl = document.getElementById("portfolioWindow");
-
-  if (!windowEl) return;
-
-  windowEl.hidden = true;
+  // Use the existing PodOS window system
+  openWindow("portfolioWindow");
 }
