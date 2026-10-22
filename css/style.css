@@ -536,8 +536,9 @@ html, body {
    ============================= */
 
 .portfolio-window {
-  width: 850px;
-  height: 550px;
+  width: clamp(850px, 52vw, 1500px);
+  height: clamp(550px, 62vh, 950px);
+
   max-width: 90vw;
   max-height: 85vh;
 }
