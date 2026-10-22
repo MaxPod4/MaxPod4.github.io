@@ -529,58 +529,58 @@ box-shadow:
   letter-spacing: 0.2px;
 }
 /* ==========================================
-   PodOS — Forest Slate Color Test
+   PodOS — Vibrant Forest Slate
    ========================================== */
 
-/* Main Taskbar — Slate Blue */
+/* Main Taskbar */
 .taskbar {
   background: linear-gradient(
     180deg,
-    #91A4B5 0%,
-    #60788E 8%,
-    #52677D 40%,
-    #5E7489 88%,
-    #52677D 95%,
-    #34485C 100%
+    #8BA9C4 0%,
+    #5C85AB 8%,
+    #496F96 40%,
+    #557DA3 88%,
+    #496F96 95%,
+    #304F70 100%
   );
 
   box-shadow:
-    inset 2px 2px 3px rgba(190,210,225,0.8),
+    inset 2px 2px 3px rgba(190,215,240,0.8),
     inset -2px -2px 3px rgba(0,0,0,0.25),
-    inset 4px 4px 6px rgba(170,190,210,0.35),
+    inset 4px 4px 6px rgba(160,195,225,0.4),
     inset -4px -4px 6px rgba(0,0,0,0.18);
 }
 
-/* System Tray — Dusty Sky Blue */
+/* System Tray — Vibrant Sky Blue */
 .system-tray {
   background: linear-gradient(
     to bottom,
-    #A4C1D1 0%,   /* Light highlight */
-    #779DB5 45%,  /* Main dusty sky blue */
-    #547A94 100%  /* Darker bottom edge */
+    #A1D0E8 0%,
+    #69A9CC 45%,
+    #407FA5 100%
   );
 
   box-shadow:
-    inset 2px 2px 3px rgba(220,240,250,0.7),
+    inset 2px 2px 3px rgba(225,245,255,0.8),
     inset -2px -2px 3px rgba(0,0,0,0.25),
-    inset 4px 4px 6px rgba(190,215,230,0.35),
+    inset 4px 4px 6px rgba(185,220,240,0.4),
     inset -4px -4px 6px rgba(0,0,0,0.18);
 }
 
-/* Start Button — Forest Green */
+/* Start Button — Vibrant Forest Green */
 .start-inner {
   background: linear-gradient(
     to bottom,
-    #94B594 0%,
-    #719671 15%,
-    #527A52 45%,
-    #527A52 75%,
-    #355635 100%
+    #91C88A 0%,
+    #6BAD64 15%,
+    #52934F 45%,
+    #52934F 75%,
+    #326B35 100%
   );
 
   box-shadow:
-    inset 2px 2px 3px rgba(230,255,230,0.6),
+    inset 2px 2px 3px rgba(230,255,230,0.65),
     inset -2px -2px 3px rgba(0,0,0,0.35),
-    inset 4px 4px 6px rgba(200,230,200,0.3),
+    inset 4px 4px 6px rgba(200,240,200,0.35),
     inset -4px -4px 6px rgba(0,0,0,0.4);
 }
