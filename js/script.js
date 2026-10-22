@@ -30,6 +30,40 @@ document.addEventListener('click', (e) => {
 let zCounter = 1000;
 const nextZ = () => ++zCounter;
 
+/*************** Maximize / Restore Windows ***************/
+
+function toggleMaximize(win) {
+  if (typeof win === 'string') {
+    win = document.getElementById(win);
+  }
+
+  if (!win) return;
+
+  const isMaximized = win.classList.contains('maximized');
+
+  if (isMaximized) {
+    // Restore original window size and position
+    win.classList.remove('maximized');
+
+    win.style.left = win.dataset.restoreLeft || '';
+    win.style.top = win.dataset.restoreTop || '';
+    win.style.width = win.dataset.restoreWidth || '';
+    win.style.height = win.dataset.restoreHeight || '';
+
+  } else {
+    // Remember the current size and position
+    win.dataset.restoreLeft = win.style.left;
+    win.dataset.restoreTop = win.style.top;
+    win.dataset.restoreWidth = win.style.width;
+    win.dataset.restoreHeight = win.style.height;
+
+    // Maximize window
+    win.classList.add('maximized');
+  }
+
+  // Bring window to front
+  win.style.zIndex = String(nextZ());
+}
 function openWindow(id) {
   const win = document.getElementById(id);
   if (!win) return;
@@ -59,29 +93,59 @@ function closeWindow(win) {
   win.setAttribute('hidden', '');
 }
 
-/*************** Close buttons + bring-to-front ***************/
+/*************** Window Controls + Bring-to-Front ***************/
+
 document.querySelectorAll('.window').forEach(win => {
-  // Bring to front when interacting
+
+  // Bring window to front when interacting
   win.addEventListener('mousedown', () => {
     win.style.zIndex = String(nextZ());
   });
 
-  // Wire up both close and OK buttons
+  // Close buttons
   win.querySelectorAll('.close-btn, .ok-btn').forEach(btn => {
     btn.addEventListener('click', () => closeWindow(win));
   });
+
+  // Maximize / Restore button
+  const maxBtn = win.querySelector('.max-btn');
+
+  if (maxBtn) {
+    maxBtn.addEventListener('click', () => {
+      toggleMaximize(win);
+    });
+  }
+
+  // Double-click title bar to maximize / restore
+  const titleBar = win.querySelector('.title-bar');
+
+  if (titleBar) {
+    titleBar.addEventListener('dblclick', (e) => {
+
+      // Don't maximize when double-clicking window controls
+      if (e.target.closest('button, .title-bar-controls')) return;
+
+      toggleMaximize(win);
+    });
+  }
+
 });
 
 /*************** Make all windows draggable ***************/
 function makeDraggable(win, handle) {
   let isDown = false, startX = 0, startY = 0, startL = 0, startT = 0;
 
-  const onPointerDown = (e) => {
+ const onPointerDown = (e) => {
 
-    // Don't start dragging when clicking window buttons
-    if (e.target.closest('button, .close-btn, .minimize-btn, .maximize-btn')) {
-      return;
-    }
+  // Don't drag maximized windows
+  if (win.classList.contains('maximized')) {
+    return;
+  }
+
+  // Don't drag when clicking window controls
+  if (e.target.closest('button, .title-bar-controls')) {
+    return;
+  }
 
     isDown = true;
     win.style.zIndex = String(nextZ());
