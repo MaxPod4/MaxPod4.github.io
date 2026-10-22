@@ -461,8 +461,8 @@ html, body {
 
 /* XP-style clock */
 .tray-clock {
-  font-family: 'Fredoka', sans-serif;
-  font-size: 12px;
+  font-family: 'VT323', monospace;
+  font-size: 18px;
   color: white;
   padding-left: 10px;
   padding-right: 4px;
