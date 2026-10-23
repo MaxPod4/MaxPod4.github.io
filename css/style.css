@@ -753,7 +753,14 @@ html, body {
 
 @media (min-width: 769px) {
   .start-button {
-    min-width: 140px;
+    width: 125px;
+    min-width: 125px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+  }
+
+  .start-inner {
+    width: 100%;
     box-sizing: border-box;
   }
 }
