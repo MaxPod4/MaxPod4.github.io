@@ -408,3 +408,70 @@ function openPortfolioWindow() {
   // Use the existing PodOS window system
   openWindow("portfolioWindow");
 }
+
+/*************** PodOS Start Menu ***************/
+
+const startButton = document.getElementById('startButton');
+const startMenu = document.getElementById('startMenu');
+
+function openStartMenu() {
+  if (!startButton || !startMenu) return;
+
+  startMenu.hidden = false;
+  startButton.classList.add('menu-open');
+  startButton.setAttribute('aria-expanded', 'true');
+}
+
+function closeStartMenu() {
+  if (!startButton || !startMenu) return;
+
+  startMenu.hidden = true;
+  startButton.classList.remove('menu-open');
+  startButton.setAttribute('aria-expanded', 'false');
+}
+
+function toggleStartMenu() {
+  if (!startMenu) return;
+
+  if (startMenu.hidden) {
+    openStartMenu();
+  } else {
+    closeStartMenu();
+  }
+}
+
+// Clicking Start toggles the menu
+if (startButton && startMenu) {
+
+  startButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleStartMenu();
+  });
+
+  // Keyboard support: Enter or Space
+  startButton.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleStartMenu();
+    }
+  });
+
+  // Clicking outside the Start menu closes it
+  document.addEventListener('click', (e) => {
+    if (
+      !startMenu.hidden &&
+      !startMenu.contains(e.target) &&
+      !startButton.contains(e.target)
+    ) {
+      closeStartMenu();
+    }
+  });
+
+  // Pressing Escape closes the Start menu
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !startMenu.hidden) {
+      closeStartMenu();
+      startButton.focus();
+    }
+  });
+}
