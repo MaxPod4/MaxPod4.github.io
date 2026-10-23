@@ -479,7 +479,8 @@ html, body {
   height: 100%;
   display: flex;
   align-items: center;
-  pointer-events: none; /* aesthetic only */
+  pointer-events: auto; /* Start button is now interactive */
+  cursor: pointer;
 }
 
 .start-inner {
@@ -1093,4 +1094,21 @@ html, body {
     font-size: 20px;
   }
 
+}
+
+/* =============================
+   PodOS Start Button Interaction
+   ============================= */
+
+.start-button {
+  user-select: none;
+}
+
+.start-button:active .start-inner {
+  filter: brightness(0.9);
+}
+
+/* Highlight Start when the menu is open */
+.start-button.menu-open .start-inner {
+  filter: brightness(0.85);
 }
