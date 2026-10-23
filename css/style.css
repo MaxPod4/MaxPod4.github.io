@@ -1058,10 +1058,10 @@ html, body {
     padding: 8px 12px;
   }
 
-  .start-menu-header img {
-    width: 36px;
-    height: 36px;
-  }
+  .start-menu-profile {
+   width: 40px;
+   height: 40px;
+ }
 
   .start-menu-name {
     font-size: 20px;
