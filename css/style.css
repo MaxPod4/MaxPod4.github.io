@@ -747,3 +747,13 @@ html, body {
   }
 
 }
+/* =============================
+   PodOS Desktop Start Button
+   ============================= */
+
+@media (min-width: 769px) {
+  .start-button {
+    min-width: 125px;
+    box-sizing: border-box;
+  }
+}
