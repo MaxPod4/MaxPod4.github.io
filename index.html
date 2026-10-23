@@ -337,13 +337,21 @@
 <div class="taskbar">
   <div class="taskbar-inner">
 
-    <!-- START button (static for now) -->
-    <div class="start-button">
-      <div class="start-inner">
-        <img src="images/podos-logo.png" alt="PodOS Logo">
-        <span>Start</span>
-      </div>
-    </div>
+    <!-- PodOS Start Button -->
+<div
+  class="start-button"
+  id="startButton"
+  role="button"
+  tabindex="0"
+  aria-label="Open Start menu"
+  aria-expanded="false"
+  aria-controls="startMenu"
+>
+  <div class="start-inner">
+    <img src="images/podos-logo.png" alt="PodOS Logo">
+    <span>Start</span>
+  </div>
+</div>
 
     <!-- Open Application Buttons -->
     <div class="taskbar-apps" id="taskbarApps"></div>
