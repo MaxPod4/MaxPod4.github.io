@@ -476,7 +476,7 @@ if (startButton && startMenu) {
   });
 }
 
-// Start menu application shortcuts
+/*************** Start Menu Shortcuts ***************/
 if (startMenu) {
   startMenu.addEventListener('click', (e) => {
 
@@ -485,6 +485,7 @@ if (startMenu) {
 
     const app = shortcut.dataset.app;
     const link = shortcut.dataset.link;
+    const url = shortcut.dataset.url;
 
     // Open existing PodOS windows
     if (app) {
@@ -500,8 +501,13 @@ if (startMenu) {
       window.open(link, '_blank');
     }
 
+    // Open external social media profiles
+    if (url) {
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+
     // Close Start menu after selecting a shortcut
-    if (app || link) {
+    if (app || link || url) {
       closeStartMenu();
     }
 
