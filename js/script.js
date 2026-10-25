@@ -234,9 +234,9 @@ document.querySelectorAll('.window').forEach(win => {
 });
 
   // Close buttons
-  win.querySelectorAll('.close-btn, .ok-btn').forEach(btn => {
-    btn.addEventListener('click', () => closeWindow(win));
-  });
+win.querySelectorAll('.close-btn').forEach(btn => {
+  btn.addEventListener('click', () => closeWindow(win));
+});
   
   // Minimize button
   const minBtn = win.querySelector('.min-btn');
