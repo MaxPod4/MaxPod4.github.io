@@ -475,3 +475,35 @@ if (startButton && startMenu) {
     }
   });
 }
+
+// Start menu application shortcuts
+if (startMenu) {
+  startMenu.addEventListener('click', (e) => {
+
+    const shortcut = e.target.closest('.start-menu-item');
+    if (!shortcut) return;
+
+    const app = shortcut.dataset.app;
+    const link = shortcut.dataset.link;
+
+    // Open existing PodOS windows
+    if (app) {
+      if (app === 'portfolioWindow') {
+        openPortfolioWindow();
+      } else {
+        openWindow(app);
+      }
+    }
+
+    // Open standalone HTML pages
+    if (link) {
+      window.open(link, '_blank');
+    }
+
+    // Close Start menu after selecting a shortcut
+    if (app || link) {
+      closeStartMenu();
+    }
+
+  });
+}
