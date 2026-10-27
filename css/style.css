@@ -331,6 +331,15 @@ html, body {
 }
 
 /* =============================
+   Portfolio Maximized State
+   ============================= */
+
+/* Make Portfolio content fill the maximized window */
+.portfolio-window.maximized .portfolio-body {
+  height: calc(100% - 35px);
+}
+
+/* =============================
    Recycle Bin (Files entry in Windows)
    ============================= */
 .file {
@@ -797,16 +806,9 @@ html, body {
 
 }
 
-
-
 /* Ensure hidden windows stay hidden */
 .window[hidden] {
   display: none;
-}
-
-/* Make Portfolio content fill the maximized window */
-.portfolio-window.maximized .portfolio-body {
-  height: calc(100% - 35px);
 }
 
 /* Keep system tray aligned to the right */
