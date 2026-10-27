@@ -334,10 +334,10 @@ html, body {
    Portfolio Maximized State
    ============================= */
 
-/* Make Portfolio content fill the maximized window */
+/* Make Portfolio content fill the maximized window 
 .portfolio-window.maximized .portfolio-body {
   height: calc(100% - 35px);
-}
+} */
 
 /* =============================
    Recycle Bin (Files entry in Windows)
