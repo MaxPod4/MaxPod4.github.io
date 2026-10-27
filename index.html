@@ -129,7 +129,36 @@
   </div>
 
 </div>
-       
+    
+<!-- =============================
+     JPG Photo Gallery
+     ============================= -->
+<div class="window jpg-window" id="jpgWindow" hidden>
+
+  <div class="title-bar" data-drag-handle>
+    <div class="title-bar-text">
+      <img src="images/jpg-icon.png" alt="">
+      <span>JPG</span>
+    </div>
+
+    <div class="title-bar-controls">
+      <button class="min-btn" aria-label="Minimize"></button>
+      <button class="max-btn" aria-label="Maximize"></button>
+      <button class="close-btn" aria-label="Close"></button>
+    </div>
+  </div>
+
+  <div class="window-body">
+    <iframe
+      id="jpgFrame"
+      data-src="jpg.html"
+      title="JPG Photo Gallery"
+      loading="lazy">
+    </iframe>
+  </div>
+
+</div>  
+    
 <!-- 📫 Contact – XP Email Composer Popup -->
 <div class="window" id="contactWindow" hidden>
   <div class="title-bar" data-drag-handle>
