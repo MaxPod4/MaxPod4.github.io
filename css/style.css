@@ -48,19 +48,6 @@ html, body {
   padding: 2px 4px;
 }
 
-/* Taskbar image pinned to bottom (static PNG) */
-.taskbar-image {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-.taskbar-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 /* ========================================================================
    02. SHARED WINDOW SYSTEM
    ======================================================================== */
