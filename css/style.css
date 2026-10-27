@@ -522,6 +522,7 @@ html, body {
   align-items: center;
   pointer-events: auto; /* Start button is now interactive */
   cursor: pointer;
+  user-select: none;
 }
 
 .start-inner {
@@ -597,10 +598,6 @@ html, body {
 /* =============================
    PodOS Start Button Interaction
    ============================= */
-
-.start-button {
-  user-select: none;
-}
 
 .start-button:active .start-inner {
   filter: brightness(0.9);
