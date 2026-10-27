@@ -752,7 +752,6 @@ html, body {
 
 /* Make the system tray more compact */
 .system-tray {
-  flex-shrink: 0;
   padding: 0 5px;
   min-width: 0;
 }
