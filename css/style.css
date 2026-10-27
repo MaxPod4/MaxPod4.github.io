@@ -593,7 +593,7 @@ html, body {
 }
 
 /* =============================
-   PodOS System Tray
+   Taskbar Inner Layout
    ============================= */
 .taskbar-inner {
   height: 100%;
@@ -606,6 +606,10 @@ html, body {
   /* Allow interaction with taskbar buttons */
   pointer-events: auto;
 }
+
+/* =============================
+   System Tray & Clock
+   ============================= */
 
 .system-tray {
   display: flex;
