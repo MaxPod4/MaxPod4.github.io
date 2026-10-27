@@ -763,9 +763,8 @@ html, body {
 
   /* Make the clock more compact */
   .tray-clock {
-    font-size: 10px;
-    white-space: nowrap;
-  }
+  font-size: 10px;
+}
 
   /* Give application buttons available space */
   .taskbar-apps {
