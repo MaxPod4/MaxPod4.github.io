@@ -506,35 +506,40 @@ html, body {
 }
 
 /* =============================
-   PodOS Portfolio Window
+   PodOS Portfolio & JPG Windows
    ============================= */
 
-.portfolio-window {
+/* Shared window dimensions */
+.portfolio-window,
+.jpg-window {
   width: 75vw;
   height: 80vh;
-
   max-width: 1800px;
   max-height: 1100px;
 }
 
-/* Mobile Portfolio Window */
+/* Mobile window dimensions */
 @media (max-width: 768px) {
-  .portfolio-window {
+  .portfolio-window,
+  .jpg-window {
     width: 90vw;
     height: 65vh;
-
     max-width: 90vw;
     max-height: 85vh;
   }
 }
 
-.portfolio-body {
+/* Shared window content */
+.portfolio-body,
+.jpg-body {
   height: calc(100% - 32px);
   padding: 0;
   overflow: hidden;
 }
 
-.portfolio-body iframe {
+/* Shared iframe styling */
+.portfolio-body iframe,
+.jpg-body iframe {
   display: block;
   width: 100%;
   height: 100%;
@@ -545,6 +550,7 @@ html, body {
 .window[hidden] {
   display: none;
 }
+
 /* =============================
    PodOS Maximize / Restore
    ============================= */
