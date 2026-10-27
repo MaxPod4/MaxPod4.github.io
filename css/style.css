@@ -180,13 +180,13 @@ html, body {
   );
 }
 
-/* Dusty coral red close button */
+/* Saturated coral red close button */
 .close-btn {
   background: linear-gradient(
     to bottom,
-    #D99087 0%,
-    #C66F68 45%,
-    #A9504C 100%
+    #F28A7E 0%,
+    #DF6258 45%,
+    #B83E3A 100%
   );
 }
 
