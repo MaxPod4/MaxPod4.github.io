@@ -177,15 +177,16 @@ function openWindow(id) {
 
   // If minimized, restore without changing size or position
   if (win.classList.contains('minimized')) {
-    restoreWindow(win);
-    return;
+  restoreWindow(win);
+  return;
+}
     
   // Load window iframe only when first opened
   const iframe = win.querySelector('iframe[data-src]');
 
   if (iframe && !iframe.getAttribute('src')) {
     iframe.src = iframe.dataset.src;
-  }
+}
 
   win.removeAttribute('hidden');
 
