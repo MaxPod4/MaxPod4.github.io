@@ -98,6 +98,40 @@ html, body {
 }
 
 /* =============================
+   Window States: Maximized
+   ============================= */
+
+.window.maximized {
+  position: fixed;
+
+  top: 0 !important;
+  left: 0 !important;
+
+  width: 100vw !important;
+  height: calc(100vh - 28px) !important;
+
+  max-width: none !important;
+  max-height: none !important;
+
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+/* Change maximize icon to restore icon */
+.window.maximized .max-btn::before {
+  content: "❐";
+  font-size: 12px;
+}
+
+/* =============================
+   Window States: Minimized
+   ============================= */
+
+.window.minimized {
+  display: none !important;
+}
+
+/* =============================
    Window Title Bar
    ============================= */
 
@@ -764,44 +798,10 @@ html, body {
   display: none;
 }
 
-/* =============================
-   PodOS Maximize / Restore
-   ============================= */
-
-.window.maximized {
-  position: fixed;
-
-  top: 0 !important;
-  left: 0 !important;
-
-  width: 100vw !important;
-  height: calc(100vh - 28px) !important;
-
-  max-width: none !important;
-  max-height: none !important;
-
-  border-radius: 0;
-  box-sizing: border-box;
-}
-
-/* Change maximize icon to restore icon */
-.window.maximized .max-btn::before {
-  content: "❐";
-  font-size: 12px;
-}
-
 /* Make Portfolio content fill the maximized window */
 .portfolio-window.maximized .portfolio-body {
   height: calc(100% - 35px);
 }
-/* =============================
-   PodOS Minimized Windows
-   ============================= */
-
-.window.minimized {
-  display: none !important;
-}
-
 
 /* Keep system tray aligned to the right */
 .system-tray {
