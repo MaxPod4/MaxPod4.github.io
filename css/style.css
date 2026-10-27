@@ -62,9 +62,12 @@ html, body {
 }
 
 /* =============================
-   Authentic Windows XP Window
+   PodOS Windows
    ============================= */
-.window[hidden] { display: none; }
+
+.window[hidden] {
+  display: none;
+}
 
 .window {
   position: absolute;
@@ -79,41 +82,46 @@ html, body {
   z-index: 999;
   font-family: "Trebuchet MS", Tahoma, sans-serif;
 
-  /* XP bevel (already existed) */
+  /* Slate blue XP-style bevel */
   box-shadow:
-    inset -1px -1px #00138c,
-    inset 1px 1px #0831d9,
-    inset -2px -2px #001ea0,
-    inset 2px 2px #166aee,
-    inset -3px -3px #003bda,
-    inset 3px 3px #0855dd;
+    inset -1px -1px #304E6C,
+    inset 1px 1px #7797B7,
+    inset -2px -2px #365777,
+    inset 2px 2px #6F90B0,
+    inset -3px -3px #3E6082,
+    inset 3px 3px #5D81A5;
 
-  /* ⭐ NEW — Thick XP blue side & bottom borders */
-  border-left: 4px solid #003DD7;
-  border-right: 4px solid #003DD7;
-  border-bottom: 4px solid #003DD7;
+  /* Slate blue window borders */
+  border-left: 4px solid #3B5D7E;
+  border-right: 4px solid #3B5D7E;
+  border-bottom: 4px solid #3B5D7E;
 }
 
-/* Title Bar */
+/* =============================
+   Title Bar
+   ============================= */
+
 .title-bar {
   font-family: "Trebuchet MS";
+
   background: linear-gradient(
     180deg,
-    rgba(9,151,255,1) 0%,
-    rgba(0,83,238,1) 8%,
-    rgba(0,80,238,1) 40%,
-    rgba(0,102,255,1) 88%,
-    rgba(0,102,255,1) 93%,
-    rgba(0,91,255,1) 95%,
-    rgba(0,61,215,1) 96%,
-    rgba(0,61,215,1) 100%
+    #83A3C0 0%,
+    #5F85AA 8%,
+    #496F96 40%,
+    #557DA3 88%,
+    #557DA3 93%,
+    #496F96 95%,
+    #365777 96%,
+    #365777 100%
   );
+
   height: 28px;
-  border-top: 1px solid #0831d9;
+  border-top: 1px solid #7797B7;
   border-top-left-radius: 8px;
   border-top-right-radius: 7px;
   color: white;
-  text-shadow: 1px 1px #0f1089;
+  text-shadow: 1px 1px #304E6C;
   font-size: 13px;
   padding: 3px 5px 3px 3px;
   display: flex;
@@ -121,8 +129,8 @@ html, body {
   justify-content: space-between;
   cursor: grab;
   user-select: none;
- 
- /* 🔹 New: let the bar overlap the thick outer border */
+
+  /* Allow title bar to overlap outer borders */
   margin-left: -4px;
   margin-right: -4px;
 }
@@ -134,12 +142,16 @@ html, body {
   gap: 6px;
   padding-left: 4px;
 }
+
 .title-bar-text img {
   width: 16px;
   height: 16px;
 }
 
-/* XP Titlebar Control Buttons */
+/* =============================
+   Window Controls
+   ============================= */
+
 .title-bar-controls {
   display: flex;
   gap: 2px;
@@ -157,25 +169,39 @@ html, body {
   box-shadow: inset 0 0 1px rgba(255,255,255,0.6);
 }
 
-/* Minimize + Maximize buttons */
+/* Slate blue minimize and maximize buttons */
 .min-btn,
 .max-btn {
-  background: linear-gradient(to bottom,
-    rgba(9,151,255,1) 0%,
-    rgba(0,83,238,1) 40%,
-    rgba(0,61,215,1) 100%);
+  background: linear-gradient(
+    to bottom,
+    #83A3C0 0%,
+    #496F96 40%,
+    #365777 100%
+  );
 }
 
-/* Close button: true XP red */
+/* Dusty coral red close button */
 .close-btn {
-  background: linear-gradient(to bottom, #ff4c4c 0%, #cc0000 70%);
+  background: linear-gradient(
+    to bottom,
+    #D99087 0%,
+    #C66F68 45%,
+    #A9504C 100%
+  );
 }
 
-/* Hover / active */
-.title-bar-controls button:hover { filter: brightness(1.2); }
-.title-bar-controls button:active { filter: brightness(0.9); transform: translateY(1px); }
+/* Hover and active states */
+.title-bar-controls button:hover {
+  filter: brightness(1.2);
+  box-shadow: 0 0 3px white, inset 0 0 1px rgba(255,255,255,0.8);
+}
 
-/* White symbols */
+.title-bar-controls button:active {
+  filter: brightness(0.9);
+  transform: translateY(1px);
+}
+
+/* White button symbols */
 .min-btn::before,
 .max-btn::before,
 .close-btn::before {
@@ -190,16 +216,25 @@ html, body {
   font-family: Tahoma, sans-serif;
   font-size: 12px;
 }
-.min-btn::before { content: "_"; top: -2px; }
-.max-btn::before { content: "☐"; font-size: 11px; }
-.close-btn::before { content: "✕"; }
 
-/* Hover outlines */
-.title-bar-controls button:hover {
-  box-shadow: 0 0 3px white, inset 0 0 1px rgba(255,255,255,0.8);
+.min-btn::before {
+  content: "_";
+  top: -2px;
 }
 
-/* Window Body (XP dialog background) */
+.max-btn::before {
+  content: "☐";
+  font-size: 11px;
+}
+
+.close-btn::before {
+  content: "✕";
+}
+
+/* =============================
+   Window Body
+   ============================= */
+
 .window-body {
   display: flex;
   flex-direction: column;
@@ -208,7 +243,7 @@ html, body {
   justify-content: flex-start;
   overflow-y: auto;
   padding: 10px;
-  background: #ece9d8; /* XP gray for all windows */
+  background: #ece9d8;
   border: 1px solid #7f9db9;
   border-top: none;
   font-size: 12px;
