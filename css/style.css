@@ -331,7 +331,7 @@ html, body {
 }
 
 /* =============================
-   Recycle Bin (Files entry in Windows)
+   Recycle Bin Window
    ============================= */
 .file {
   display: flex;
