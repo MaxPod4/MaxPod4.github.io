@@ -788,14 +788,6 @@ html, body {
   .taskbar-app span {
     display: none;
   }
-
-  /* Keep application icons visible */
-  .taskbar-app img {
-    width: 16px;
-    height: 16px;
-    flex-shrink: 0;
-  }
-
 }
 
 /* ========================================================================
