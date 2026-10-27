@@ -753,19 +753,11 @@ html, body {
 
 @media (max-width: 768px) {
 
- /* Make the system tray more compact */
+/* Make the system tray more compact */
 .system-tray {
   flex-shrink: 0;
   padding: 0 5px;
   min-width: 0;
-
-  /* Preserve dusty sky blue background on mobile */
-  background: linear-gradient(
-    to bottom,
-    #A1D0E8 0%,
-    #69A9CC 45%,
-    #407FA5 100%
-  );
 }
 
   /* Hide decorative tray icons on mobile */
