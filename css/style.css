@@ -61,9 +61,9 @@ html, body {
   display: block;
 }
 
-/* =============================
-   PodOS Windows
-   ============================= */
+/* ==========================================
+   04. SHARED WINDOW SYSTEM
+   ========================================== */
 
 .window[hidden] {
   display: none;
@@ -98,7 +98,7 @@ html, body {
 }
 
 /* =============================
-   Title Bar
+   Window Title Bar
    ============================= */
 
 .title-bar {
@@ -150,6 +150,7 @@ html, body {
 
 /* =============================
    Window Controls
+   Minimize / Maximize / Close
    ============================= */
 
 .title-bar-controls {
@@ -232,7 +233,7 @@ html, body {
 }
 
 /* =============================
-   Window Body
+   Window Content Area
    ============================= */
 
 .window-body {
