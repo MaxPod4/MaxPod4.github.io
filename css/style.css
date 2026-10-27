@@ -285,6 +285,51 @@ html, body {
   color: black;
 }
 
+/* ==========================================
+   05. APPLICATION WINDOWS
+   ========================================== */
+
+/* =============================
+   Portfolio & JPG Windows
+   ============================= */
+
+/* Shared window dimensions */
+.portfolio-window,
+.jpg-window {
+  width: 75vw;
+  height: 80vh;
+  max-width: 1800px;
+  max-height: 1100px;
+}
+
+/* Mobile window dimensions */
+@media (max-width: 768px) {
+  .portfolio-window,
+  .jpg-window {
+    width: 90vw;
+    height: 65vh;
+    max-width: 90vw;
+    max-height: 85vh;
+  }
+}
+
+/* Shared window content */
+.portfolio-body,
+.jpg-body {
+  height: calc(100% - 32px);
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Shared iframe styling */
+.portfolio-body iframe,
+.jpg-body iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* =============================
    Recycle Bin (Files entry in Windows)
    ============================= */
@@ -752,46 +797,7 @@ html, body {
 
 }
 
-/* =============================
-   PodOS Portfolio & JPG Windows
-   ============================= */
 
-/* Shared window dimensions */
-.portfolio-window,
-.jpg-window {
-  width: 75vw;
-  height: 80vh;
-  max-width: 1800px;
-  max-height: 1100px;
-}
-
-/* Mobile window dimensions */
-@media (max-width: 768px) {
-  .portfolio-window,
-  .jpg-window {
-    width: 90vw;
-    height: 65vh;
-    max-width: 90vw;
-    max-height: 85vh;
-  }
-}
-
-/* Shared window content */
-.portfolio-body,
-.jpg-body {
-  height: calc(100% - 32px);
-  padding: 0;
-  overflow: hidden;
-}
-
-/* Shared iframe styling */
-.portfolio-body iframe,
-.jpg-body iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
 
 /* Ensure hidden windows stay hidden */
 .window[hidden] {
