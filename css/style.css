@@ -413,6 +413,68 @@ html, body {
     inset 4px 4px 6px rgba(160,195,225,0.4),
     inset -4px -4px 6px rgba(0,0,0,0.18);
 }
+
+/* =============================
+   PodOS Start Button
+   ============================= */
+.start-button {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  pointer-events: auto; /* Start button is now interactive */
+  cursor: pointer;
+}
+
+.start-inner {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 18px 4px 14px;
+  height: 23px;
+  margin-top: 2px;
+
+  /* PodOS Forest Green Gradient */
+  background: linear-gradient(
+    to bottom,
+    #91C88A 0%,
+    #6BAD64 15%,
+    #52934F 45%,
+    #52934F 75%,
+    #326B35 100%
+  );
+
+  /* PodOS XP-style bevel */
+  box-shadow:
+    inset 2px 2px 3px rgba(230,255,230,0.65),
+    inset -2px -2px 3px rgba(0,0,0,0.35),
+    inset 4px 4px 6px rgba(200,240,200,0.35),
+    inset -4px -4px 6px rgba(0,0,0,0.4);
+
+  border-radius: 0 6px 6px 0;
+  border: 1px solid rgba(0,0,0,0.5);
+
+  pointer-events: none;
+}
+
+/* PodOS Logo */
+.start-inner img {
+  width: 16px;
+  height: 16px;
+  display: block;
+
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.7));
+}
+
+/* "Start" text – thicker, slightly bubbly */
+.start-inner span {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
+  letter-spacing: 0.2px;
+}
+
 /* =============================
    PodOS Taskbar Applications
    ============================= */
@@ -558,66 +620,7 @@ html, body {
   align-items: center;
   white-space: nowrap;
 }
-/* =============================
-   PodOS Start Button
-   ============================= */
-.start-button {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  pointer-events: auto; /* Start button is now interactive */
-  cursor: pointer;
-}
 
-.start-inner {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 3px 18px 4px 14px;
-  height: 23px;
-  margin-top: 2px;
-
-  /* PodOS Forest Green Gradient */
-  background: linear-gradient(
-    to bottom,
-    #91C88A 0%,
-    #6BAD64 15%,
-    #52934F 45%,
-    #52934F 75%,
-    #326B35 100%
-  );
-
-  /* PodOS XP-style bevel */
-  box-shadow:
-    inset 2px 2px 3px rgba(230,255,230,0.65),
-    inset -2px -2px 3px rgba(0,0,0,0.35),
-    inset 4px 4px 6px rgba(200,240,200,0.35),
-    inset -4px -4px 6px rgba(0,0,0,0.4);
-
-  border-radius: 0 6px 6px 0;
-  border: 1px solid rgba(0,0,0,0.5);
-
-  pointer-events: none;
-}
-
-/* PodOS Logo */
-.start-inner img {
-  width: 16px;
-  height: 16px;
-  display: block;
-
-  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.7));
-}
-
-/* "Start" text – thicker, slightly bubbly */
-.start-inner span {
-  font-family: 'Fredoka', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  color: #ffffff;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
-  letter-spacing: 0.2px;
-}
 
 /* =============================
    PodOS Portfolio & JPG Windows
