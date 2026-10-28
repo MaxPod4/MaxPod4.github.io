@@ -24,7 +24,7 @@
     </div>
 
     <!-- 👤 User -->
-    <div class="icon" style="top: 16%; left: 1%;" data-link="user.html">
+    <div class="icon" style="top: 16%; left: 1%;" data-window="userWindow">
       <img src="images/user-icon.png" alt="User Icon">
       <span>User</span>
     </div>
@@ -100,8 +100,30 @@
   </div>
 </div>
 
+    <!-- =============================
+     User(about me) Window
+     ============================= -->
+    <div class="title-bar-controls">
+      <button type="button" aria-label="Minimize" class="min-btn"></button>
+      <button type="button" aria-label="Maximize" class="max-btn"></button>
+      <button type="button" aria-label="Close" class="close-btn"></button>
+    </div>
+
+  </div>
+
+  <div class="window-body user-body">
+    <iframe
+      id="userFrame"
+      title="User"
+      data-src="user.html"
+      loading="lazy">
+    </iframe>
+  </div>
+
+</div>
+  
 <!-- =============================
-     PodOS Portfolio Window
+    Portfolio Window
      ============================= -->
 <div class="window portfolio-window" id="portfolioWindow" hidden>
 
