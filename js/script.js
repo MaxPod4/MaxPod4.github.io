@@ -398,24 +398,6 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock(); // initial
 
-/* =============================
-   PodOS Portfolio Window
-   ============================= */
-
-function openPortfolioWindow() {
-  const iframe = document.getElementById("portfolioFrame");
-
-  if (!iframe) return;
-
-  // Load portfolio.html only when first opened
-  if (!iframe.getAttribute("src")) {
-    iframe.src = iframe.dataset.src;
-  }
-
-  // Use the existing PodOS window system
-  openWindow("portfolioWindow");
-}
-
 /*************** PodOS Start Menu ***************/
 
 const startButton = document.getElementById('startButton');
@@ -496,11 +478,7 @@ if (startMenu) {
 
     // Open existing PodOS windows
     if (app) {
-      if (app === 'portfolioWindow') {
-        openPortfolioWindow();
-      } else {
-        openWindow(app);
-      }
+      openWindow(app);
     }
 
     // Open standalone HTML pages
