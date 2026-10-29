@@ -340,6 +340,9 @@ html, body {
 /* Main window layout */
 .recycle-body {
   display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
   height: calc(100% - 32px);
   padding: 0;
   overflow: hidden;
