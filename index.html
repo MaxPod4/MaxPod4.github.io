@@ -58,39 +58,60 @@
       <img src="images/gaming-icon.png" alt="Gaming Icon">
       <span>Gaming</span>
     </div>
+<!-- ======================================================================================================================
+     App Windows
+     ====================================================================================================================== -->
+<!-- =============================
+     Recycle Bin Window
+     ============================= -->
+<div class="window recycle-window" id="recycleWindow" hidden>
 
- <!-- ♻ Windows XP–style Recycle Bin Window -->
-<div class="window" id="recycleWindow" hidden>
   <div class="title-bar" data-drag-handle>
     <div class="title-bar-text">
-  <img src="images/recycle-bin-icon.png" alt="Recycle Bin Icon">
-  <span>Recycle Bin</span>
-</div>
+      <img src="images/recycle-bin-icon.png" alt="Recycle Bin Icon">
+      <span>Recycle Bin</span>
+    </div>
 
-   <div class="title-bar-controls">
-  <button aria-label="Minimize" class="min-btn"></button>
-  <button aria-label="Maximize" class="max-btn"></button>
-  <button aria-label="Close" class="close-btn"></button>
-</div>
+    <div class="title-bar-controls">
+      <button type="button" aria-label="Minimize" class="min-btn"></button>
+      <button type="button" aria-label="Maximize" class="max-btn"></button>
+      <button type="button" aria-label="Close" class="close-btn"></button>
+    </div>
   </div>
 
-  <div class="window-body">
-    <div class="file">
-      <img src="images/text-file-icon.png" alt="Text File Icon">
-      <span>Too Late to Start</span>
+  <div class="window-body recycle-body">
+
+    <!-- Left Sidebar -->
+    <aside class="recycle-sidebar">
+      <div class="recycle-sidebar-title">File Tasks</div>
+      <p>Deleted Items</p>
+    </aside>
+
+    <!-- File Area -->
+    <div class="recycle-files">
+
+      <div class="file">
+        <img src="images/text-file-icon.png" alt="Text File Icon">
+        <span>Too Late to Start</span>
+      </div>
+
+      <div class="file">
+        <img src="images/text-file-icon.png" alt="Text File Icon">
+        <span>Imposter Syndrome</span>
+      </div>
+
+      <div class="file">
+        <img src="images/text-file-icon.png" alt="Text File Icon">
+        <span>Burnout</span>
+      </div>
+
+      <div class="file">
+        <img src="images/text-file-icon.png" alt="Text File Icon">
+        <span>Time</span>
+      </div>
+
     </div>
-    <div class="file">
-      <img src="images/text-file-icon.png" alt="Text File Icon">
-      <span>Imposter Syndrome</span>
-    </div>
-    <div class="file">
-      <img src="images/text-file-icon.png" alt="Text File Icon">
-      <span>Burnout</span>
-    </div>
-    <div class="file">
-      <img src="images/text-file-icon.png" alt="Text File Icon">
-      <span>Time</span>
-    </div>
+
   </div>
 </div>
 
@@ -333,11 +354,11 @@
     </div>
   </div>
 </div>
-
-  <!-- =============================
-   PodOS Start Menu
-  ============================= -->
-
+    
+<!-- ======================================================================================================================
+     Start Menu
+     ====================================================================================================================== -->
+    
 <div class="start-menu" id="startMenu" hidden>
 
 <!-- Start Menu Header -->
@@ -452,9 +473,9 @@
 
 </div>
     
-<!-- =============================
-     PodOS Taskbar
-     ============================= -->
+<!-- ======================================================================================================================
+     Taskbar
+     ====================================================================================================================== -->
 <div class="taskbar">
   <div class="taskbar-inner">
 
