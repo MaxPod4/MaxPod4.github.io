@@ -223,7 +223,22 @@ function closeWindow(win) {
 
   if (!win) return;
 
-  win.classList.remove('minimized');
+  // Reset window states
+  win.classList.remove('minimized', 'maximized');
+
+  // Clear custom dimensions and positioning
+  win.style.width = '';
+  win.style.height = '';
+  win.style.left = '';
+  win.style.top = '';
+
+  // Clear saved maximize/restore dimensions
+  delete win.dataset.restoreLeft;
+  delete win.dataset.restoreTop;
+  delete win.dataset.restoreWidth;
+  delete win.dataset.restoreHeight;
+
+  // Hide the window
   win.hidden = true;
 
   // Remove application from taskbar
