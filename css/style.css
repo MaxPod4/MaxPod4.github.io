@@ -329,9 +329,9 @@ html, body {
    Recycle Bin Window
    ============================= */
 
-/* Smaller square window */
+/* Smaller rectangle window */
 .recycle-window {
-  width: 420px;
+  width: 630px;
   height: 420px;
   max-width: 95vw;
   max-height: 85vh;
@@ -343,12 +343,14 @@ html, body {
   height: calc(100% - 32px);
   padding: 0;
   overflow: hidden;
-  background: #fff;
+  background: #ece9d8;
+  box-sizing: border-box;
 }
 
 /* Blue sidebar */
 .recycle-sidebar {
-  width: 125px;
+  width: 150px;
+  height: 100%;
   flex-shrink: 0;
   background: #d6e3f4;
   border-right: 1px solid #a5bad4;
@@ -374,8 +376,11 @@ html, body {
 .recycle-files {
   flex: 1;
   min-width: 0;
+  height: 100%;
   padding: 12px;
   overflow-y: auto;
+  background: #ece9d8;
+  box-sizing: border-box;
 }
 
 /* Individual text files */
