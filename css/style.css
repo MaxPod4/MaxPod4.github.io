@@ -277,26 +277,26 @@ html, body {
    ======================================================================== */
 
 /* =============================
-   Portfolio, JPG, User & Hire me Windows
+   Portfolio, JPG, User, Hire Me & MP4 Windows
    ============================= */
 
-/* Shared window dimensions */
 .portfolio-window,
 .jpg-window,
 .user-window,
-.hire-window {
+.hire-window,
+.mp4-window {
   width: 75vw;
   height: 80vh;
   max-width: 1800px;
   max-height: 1100px;
 }
 
-/* Mobile window dimensions */
 @media (max-width: 768px) {
   .portfolio-window,
   .jpg-window,
   .user-window,
-  .hire-window {
+  .hire-window,
+  .mp4-window {
     width: 90vw;
     height: 65vh;
     max-width: 90vw;
@@ -304,21 +304,21 @@ html, body {
   }
 }
 
-/* Shared window content */
 .portfolio-body,
 .jpg-body,
 .user-body,
-.hire-body {
+.hire-body,
+.mp4-body {
   height: calc(100% - 32px);
   padding: 0;
   overflow: hidden;
 }
 
-/* Shared iframe styling */
 .portfolio-body iframe,
 .jpg-body iframe,
 .user-body iframe,
-.hire-body iframe {
+.hire-body iframe,
+.mp4-body iframe {
   display: block;
   width: 100%;
   height: 100%;
