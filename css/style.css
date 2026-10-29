@@ -328,20 +328,92 @@ html, body {
 /* =============================
    Recycle Bin Window
    ============================= */
-.file {
+
+/* Smaller square window */
+.recycle-window {
+  width: 420px;
+  height: 420px;
+  max-width: 95vw;
+  max-height: 85vh;
+}
+
+/* Main window layout */
+.recycle-body {
+  display: flex;
+  height: calc(100% - 32px);
+  padding: 0;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* Blue sidebar */
+.recycle-sidebar {
+  width: 125px;
+  flex-shrink: 0;
+  background: #d6e3f4;
+  border-right: 1px solid #a5bad4;
+  padding: 12px 8px;
+  box-sizing: border-box;
+}
+
+/* Sidebar heading */
+.recycle-sidebar-title {
+  font: bold 12px Tahoma, sans-serif;
+  color: #315b8a;
+  margin-bottom: 12px;
+}
+
+/* Sidebar text */
+.recycle-sidebar p {
+  font: 11px Tahoma, sans-serif;
+  color: #496f96;
+  margin: 0;
+}
+
+/* File area */
+.recycle-files {
+  flex: 1;
+  min-width: 0;
+  padding: 12px;
+  overflow-y: auto;
+}
+
+/* Individual text files */
+.recycle-files .file {
   display: flex;
   align-items: center;
   gap: 6px;
-  margin: 4px 0;
+  margin-bottom: 12px;
 }
-.file img {
+
+/* File icons */
+.recycle-files .file img {
   width: 16px;
   height: 16px;
   flex-shrink: 0;
 }
-.file span {
+
+/* File names */
+.recycle-files .file span {
   font: 11px Tahoma, sans-serif;
   color: #000;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .recycle-window {
+    width: 90vw;
+    height: 360px;
+    max-height: 75vh;
+  }
+
+  .recycle-sidebar {
+    width: 95px;
+  }
+
+  .recycle-files {
+    padding: 10px;
+  }
 }
 
 /* =============================
