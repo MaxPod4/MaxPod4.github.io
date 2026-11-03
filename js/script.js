@@ -341,13 +341,23 @@ function makeDraggable(win, handle) {
     let newL = startL + (p.clientX - startX);
     let newT = startT + (p.clientY - startY);
 
-    // Keep window within viewport
-    const pad = 8;
-    const maxL = window.innerWidth - win.offsetWidth - pad;
-    const maxT = window.innerHeight - win.offsetHeight - pad;
+    // Keep window within the usable desktop area
+    const bounds = getDesktopBounds();
+    
+    const maxL = bounds.right - win.offsetWidth;
+    const maxT = bounds.bottom - win.offsetHeight;
 
-    newL = Math.min(Math.max(pad, newL), Math.max(pad, maxL));
-    newT = Math.min(Math.max(pad, newT), Math.max(pad, maxT));
+    // Keep the window inside the boundaries when it fits.
+    // If it's too large, prioritize keeping its title bar accessible.
+  newL = Math.min(
+    Math.max(bounds.left, newL),
+    Math.max(bounds.left, maxL)
+  );
+  
+  newT = Math.min(
+    Math.max(bounds.top, newT),
+    Math.max(bounds.top, maxT)
+  );
 
     win.style.left = `${newL}px`;
     win.style.top = `${newT}px`;
