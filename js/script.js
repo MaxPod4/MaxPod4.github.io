@@ -448,7 +448,7 @@ function makeResizable(win) {
       const iframe = win.querySelector('iframe');
 
       // Prevent iframe interaction during resizing
-      if (iframe) iframe.style.pointerEvents = 'none';
+      // if (iframe) iframe.style.pointerEvents = 'none';
 
       // Keep tracking the pointer even if it leaves the handle
       handle.setPointerCapture(e.pointerId);
@@ -507,8 +507,7 @@ function makeResizable(win) {
       function onPointerUp(event) {
         // Restore iframe interaction
       if (iframe) {
-        iframe.style.pointerEvents = '';
-        iframe.focus({ preventScroll: true });
+       // if (iframe) iframe.style.pointerEvents = '';
       }
       
         // Explicitly release pointer capture
