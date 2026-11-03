@@ -386,6 +386,113 @@ document.querySelectorAll('#contactWindow .contact-link').forEach(link => {
   });
 });
 
+/* =============================
+   Window Resizing
+   ============================= */
+
+function makeResizable(win) {
+  const handles = win.querySelectorAll('.resize-handle');
+
+  const minWidth = 350;
+  const minHeight = 250;
+
+  handles.forEach(handle => {
+    handle.addEventListener('pointerdown', (e) => {
+      if (win.classList.contains('maximized')) return;
+      if (window.innerWidth <= 768) return;
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      const direction = handle.dataset.resize;
+      const rect = win.getBoundingClientRect();
+
+      const startX = e.clientX;
+      const startY = e.clientY;
+
+      const startWidth = rect.width;
+      const startHeight = rect.height;
+      const startLeft = rect.left;
+      const startTop = rect.top;
+
+      const iframe = win.querySelector('iframe');
+
+      // Prevent iframe interaction during resizing
+      if (iframe) iframe.style.pointerEvents = 'none';
+
+      // Keep tracking the pointer even if it leaves the handle
+      handle.setPointerCapture(e.pointerId);
+
+      function onPointerMove(event) {
+        const dx = event.clientX - startX;
+        const dy = event.clientY - startY;
+
+        const maxWidth = window.innerWidth - 8;
+        const maxHeight = window.innerHeight - 36;
+
+        let width = startWidth;
+        let height = startHeight;
+        let left = startLeft;
+        let top = startTop;
+
+        if (direction.includes('e')) {
+          width = Math.max(
+            minWidth,
+            Math.min(startWidth + dx, maxWidth - startLeft)
+          );
+        }
+
+        if (direction.includes('s')) {
+          height = Math.max(
+            minHeight,
+            Math.min(startHeight + dy, maxHeight - startTop)
+          );
+        }
+
+        if (direction.includes('w')) {
+          const newLeft = Math.max(
+            8,
+            Math.min(startLeft + dx, startLeft + startWidth - minWidth)
+          );
+
+          width = startWidth + (startLeft - newLeft);
+          left = newLeft;
+        }
+
+        if (direction.includes('n')) {
+          const newTop = Math.max(
+            8,
+            Math.min(startTop + dy, startTop + startHeight - minHeight)
+          );
+
+          height = startHeight + (startTop - newTop);
+          top = newTop;
+        }
+
+        win.style.width = `${width}px`;
+        win.style.height = `${height}px`;
+        win.style.left = `${left}px`;
+        win.style.top = `${top}px`;
+      }
+
+      function onPointerUp() {
+        handle.removeEventListener('pointermove', onPointerMove);
+        handle.removeEventListener('pointerup', onPointerUp);
+        handle.removeEventListener('pointercancel', onPointerUp);
+
+        if (iframe) iframe.style.pointerEvents = '';
+      }
+
+      handle.addEventListener('pointermove', onPointerMove);
+      handle.addEventListener('pointerup', onPointerUp);
+      handle.addEventListener('pointercancel', onPointerUp);
+    });
+  });
+}
+
+// Enable resizing for Recycle Bin only
+makeResizable(document.getElementById('recycleWindow'));
+
 /* =======================
    Live XP-style Clock
    ======================= */
