@@ -445,11 +445,6 @@ function makeResizable(win) {
       const startLeft = rect.left;
       const startTop = rect.top;
 
-      const iframe = win.querySelector('iframe');
-
-      // Prevent iframe interaction during resizing
-      // if (iframe) iframe.style.pointerEvents = 'none';
-
       // Keep tracking the pointer even if it leaves the handle
       handle.setPointerCapture(e.pointerId);
 
@@ -504,19 +499,14 @@ function makeResizable(win) {
         win.style.top = `${top}px`;
       }
 
-      function onPointerUp(event) {
-        // Restore iframe interaction
-      if (iframe) {
-       // if (iframe) iframe.style.pointerEvents = '';
+     function onPointerUp(event) {
+      // Explicitly release pointer capture
+      if (
+        event.type !== 'lostpointercapture' &&
+        handle.hasPointerCapture(event.pointerId)
+      ) {
+        handle.releasePointerCapture(event.pointerId);
       }
-      
-        // Explicitly release pointer capture
-        if (
-          event.type !== 'lostpointercapture' &&
-          handle.hasPointerCapture(event.pointerId)
-        ) {
-          handle.releasePointerCapture(event.pointerId);
-        }
       
         // Remove resize event listeners
         handle.removeEventListener('pointermove', onPointerMove);
