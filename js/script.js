@@ -505,16 +505,20 @@ function makeResizable(win) {
       }
 
       function onPointerUp() {
+        // Restore iframe interaction immediately
+        if (iframe) iframe.style.pointerEvents = '';
+      
+        // Remove resize event listeners
         handle.removeEventListener('pointermove', onPointerMove);
         handle.removeEventListener('pointerup', onPointerUp);
         handle.removeEventListener('pointercancel', onPointerUp);
-
-        if (iframe) iframe.style.pointerEvents = '';
+        handle.removeEventListener('lostpointercapture', onPointerUp);
       }
 
       handle.addEventListener('pointermove', onPointerMove);
       handle.addEventListener('pointerup', onPointerUp);
       handle.addEventListener('pointercancel', onPointerUp);
+      handle.addEventListener('lostpointercapture', onPointerUp);
     });
   });
 }
