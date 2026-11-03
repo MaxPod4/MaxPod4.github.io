@@ -279,6 +279,7 @@ html, body {
 .resize-handle {
   position: absolute;
   z-index: 10;
+  touch-action: none;
 }
 
 /* Edges */
