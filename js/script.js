@@ -387,6 +387,26 @@ document.querySelectorAll('#contactWindow .contact-link').forEach(link => {
 });
 
 /* =============================
+   Desktop Window Boundaries
+   ============================= */
+
+function getDesktopBounds() {
+  const margin = 8;
+  const taskbar = document.querySelector('.taskbar');
+
+  const taskbarTop = taskbar
+    ? taskbar.getBoundingClientRect().top
+    : window.innerHeight;
+
+  return {
+    left: margin,
+    top: margin,
+    right: window.innerWidth - margin,
+    bottom: taskbarTop - margin
+  };
+}
+
+/* =============================
    Window Resizing
    ============================= */
 
