@@ -519,8 +519,9 @@ function makeResizable(win) {
   });
 }
 
-// Enable resizing for Recycle Bin only
+// Enable resizing for Recycle Bin and jpg
 makeResizable(document.getElementById('recycleWindow'));
+makeResizable(document.getElementById('jpgWindow'));
 
 /* =======================
    Live XP-style Clock
