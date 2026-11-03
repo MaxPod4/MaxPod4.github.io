@@ -506,7 +506,10 @@ function makeResizable(win) {
 
       function onPointerUp(event) {
         // Restore iframe interaction
-        if (iframe) iframe.style.pointerEvents = '';
+      if (iframe) {
+        iframe.style.pointerEvents = '';
+        iframe.focus({ preventScroll: true });
+      }
       
         // Explicitly release pointer capture
         if (
