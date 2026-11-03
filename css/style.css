@@ -345,6 +345,11 @@ html, body {
   }
 }
 
+/* Hide resize handles when a window is maximized */
+.window.maximized .resize-handle {
+  display: none;
+}
+
 /* ========================================================================
    03. APPLICATION WINDOWS
    ======================================================================== */
@@ -406,8 +411,8 @@ html, body {
 .recycle-window {
   width: 630px;
   height: 420px;
-  max-width: 95vw;
-  max-height: 85vh;
+  max-width: calc(100vw - 16px);
+  max-height: calc(100vh - 44px);
 }
 
 /* Main window layout */
