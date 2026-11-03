@@ -360,7 +360,6 @@ html, body {
    ============================= */
 
 .portfolio-window,
-.jpg-window,
 .user-window,
 .hire-window,
 .mp4-window {
@@ -368,6 +367,14 @@ html, body {
   height: 80vh;
   max-width: 1800px;
   max-height: 1100px;
+}
+
+/* JPG Gallery Window */
+.jpg-window {
+  width: 75vw;
+  height: 80vh;
+  max-width: calc(100vw - 16px);
+  max-height: calc(100vh - 44px);
 }
 
 @media (max-width: 768px) {
