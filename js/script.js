@@ -457,31 +457,30 @@ function makeResizable(win) {
         const dx = event.clientX - startX;
         const dy = event.clientY - startY;
 
-        const maxWidth = window.innerWidth - 8;
-        const maxHeight = window.innerHeight - 36;
+        const bounds = getDesktopBounds();
 
         let width = startWidth;
         let height = startHeight;
         let left = startLeft;
         let top = startTop;
 
-        if (direction.includes('e')) {
+       if (direction.includes('e')) {
           width = Math.max(
             minWidth,
-            Math.min(startWidth + dx, maxWidth - startLeft)
+            Math.min(startWidth + dx, bounds.right - startLeft)
           );
         }
 
         if (direction.includes('s')) {
           height = Math.max(
             minHeight,
-            Math.min(startHeight + dy, maxHeight - startTop)
+            Math.min(startHeight + dy, bounds.bottom - startTop)
           );
         }
 
-        if (direction.includes('w')) {
+         if (direction.includes('w')) {
           const newLeft = Math.max(
-            8,
+            bounds.left,
             Math.min(startLeft + dx, startLeft + startWidth - minWidth)
           );
 
@@ -491,7 +490,7 @@ function makeResizable(win) {
 
         if (direction.includes('n')) {
           const newTop = Math.max(
-            8,
+            bounds.top,
             Math.min(startTop + dy, startTop + startHeight - minHeight)
           );
 
