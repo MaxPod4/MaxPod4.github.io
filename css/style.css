@@ -58,6 +58,7 @@ html, body {
 
 .window {
   position: absolute;
+  box-sizing: border-box;
   top: 15vh;
   left: 15vw;
   width: 420px;
