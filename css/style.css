@@ -359,18 +359,11 @@ html, body {
    Portfolio, JPG, User, Hire Me & MP4 Windows
    ============================= */
 
+.jpg-window,
 .portfolio-window,
 .user-window,
 .hire-window,
 .mp4-window {
-  width: 75vw;
-  height: 80vh;
-  max-width: 1800px;
-  max-height: 1100px;
-}
-
-/* JPG Gallery Window */
-.jpg-window {
   width: 75vw;
   height: 80vh;
   max-width: calc(100vw - 16px);
