@@ -523,10 +523,9 @@ function makeResizable(win) {
   });
 }
 
-// Enable resizing for Recycle Bin and jpg
-makeResizable(document.getElementById('recycleWindow'));
-makeResizable(document.getElementById('jpgWindow'));
-makeResizable(document.getElementById('portfolioWindow'));
+// Enable resizing for all windows except Gaming and Contact
+document.querySelectorAll('.window:not(#gamingWindow):not(#contactWindow)')
+  .forEach(makeResizable);
 
 /* =======================
    Live XP-style Clock
