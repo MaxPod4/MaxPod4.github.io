@@ -526,6 +526,7 @@ function makeResizable(win) {
 // Enable resizing for Recycle Bin and jpg
 makeResizable(document.getElementById('recycleWindow'));
 makeResizable(document.getElementById('jpgWindow'));
+makeResizable(document.getElementById('portfolioWindow'));
 
 /* =======================
    Live XP-style Clock
